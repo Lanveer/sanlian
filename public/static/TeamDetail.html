@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <link href="../../public/css/n_common.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/css/TeamDetail.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../public/js/jquery-1.7.2.min.js"></script>
+    <title>球队详情</title>
+</head>
+<body>
+    <!--排头详情-->
+    <div class="pm_bg">
+        <img src="images/background@2x.png" class="pmbg_img"/>
+        <div class="pm_head padtop25">
+            <div class="pm_headl size14">
+                <p class="padbottom5">人数 <span>25人</span></p>
+                <p class="padbottom5 pub_Beyhid">均龄 <span>26.0岁</span></p>
+                <p class="padbottom5 pub_Beyhid">均高 <span>177.3cm</span></p>
+                <p class="pading5 pub_Beyhid">均重 <span>57.8KG</span></p>
+            </div>
+            <div class="pm_headc">
+                <img src="images/wait-for@2x.png" class="icon_img_center"/>
+                <p class="myteam">我的球队</p>
+            </div>
+            <div class="pm_headr size14">
+                <p class="pub_Beyhid">战点 <span>50</span></p>
+                <p class="pading5 pub_Beyhid">胜率 <span>55%</span></p>
+                <p class="pub_Beyhid">排名 <span>2</span></p>
+            </div>
+            <div class="clear"></div>
+            <div class="myteam_name pub_Beyhid size16">东城兄弟俱乐部</div>
+        </div>
+    </div>
+    <!--nav start-->
+    <div class="teamdetail_navbg">
+        <div class="teamdetail_nav">
+            <ul id="teamdetailnav_ul" class="teamdetailnav_ul">
+                <li class="tli_hover tli_now"><div class="tli_01"></div></li>
+                <li><div class="tli_02"></div></li>
+                <li><div class="tli_03"></div></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <!--nav end-->
+
+    <!--分页内容-->
+    <div class="td_content" id="td_content">
+        <!--概括 start-->
+        <div class="gk_content td_main td_content_now">
+            <!--相册-->
+            <div class="gk_photo">
+                <img src="images/album@2x.png" class="gk_photo_img"/>
+                <div class="dingwei_more">
+                    <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+                    <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+                </div>
+                <!--有相册的情况下-->
+                <div class="two_bg">
+                    <div class="two_width">
+                        <ul class="gk_photoul">
+                            <!--此处循环li标签，添加图片-->
+                            <li><img src="images/zhaopian.png"/></li>
+                            <li><img src="images/zhaopian.png"/></li>
+                            <li><img src="images/zhaopian.png"/></li>
+                            <li><img src="images/zhaopian.png"/></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+                <!--没有相册的情况下,此处为隐藏状态-->
+                <div class="two_bg" style="display: none;">
+                    <div class="two_width">
+                        <div class="team_img">
+                            <img src="images/Team_zhaopian@2x.png">你还没有任何的球队照片哟！
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear03"></div>
+            <!--所属区域-->
+            <div class="gk_photo">
+                <img src="images/adress@2x.png" class="gk_photo_img"/>
+                <div class="dingwei_more">
+                    <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+                    <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+                </div>
+                <div class="two_bg">
+                    <div class="two_width">
+                        <div class="adress_div"><img src="images/icon-adress@2x.png" class="adress_icon"/>四川省-成都市-双流县</div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear03"></div>
+            <!--球队成员-->
+            <div class="gk_photo">
+                <img src="images/player@2x.png" class="gk_photo_img"/>
+                <div class="dingwei_more">
+                    <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+                    <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+                </div>
+                <div class="two_bg">
+                    <div class="two_width">
+                        <ul class="gk_qiuduiul">
+                            <!--此处循环li标签，添加头像-->
+                            <li>
+                                <div class="touxiang">
+                                    <img src="images/zhaopian.png"/>
+                                </div>
+                                <p class="touxiang_name pub_Beyhid">张大大</p>
+                                <p class="touxiang_info pub_Beyhid">11号.前锋</p>
+                            </li>
+                            <li>
+                                <div class="touxiang">
+                                    <img src="images/zhaopian.png"/>
+                                </div>
+                                <p class="touxiang_name pub_Beyhid">张大大</p>
+                                <p class="touxiang_info pub_Beyhid">11号.前锋</p>
+                            </li>
+                            <li>
+                                <div class="touxiang">
+                                    <img src="images/zhaopian.png"/>
+                                </div>
+                                <p class="touxiang_name pub_Beyhid">张大大</p>
+                                <p class="touxiang_info pub_Beyhid">11号.前锋</p>
+                            </li>
+                            <li>
+                                <div class="touxiang">
+                                    <img src="images/zhaopian.png"/>
+                                </div>
+                                <p class="touxiang_name pub_Beyhid">张大大</p>
+                                <p class="touxiang_info pub_Beyhid">11号.前锋</p>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear03"></div>
+            <!--球队活动-->
+            <div class="gk_photo">
+                <img src="images/Team-activities@2x.png" class="gk_photo_img"/>
+                <div class="dingwei_more">
+                    <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+                    <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+                </div>
+                <div class="two_bg">
+                    <div class="two_width">
+                        <div class="team_active pading10">
+                            <div class="time_active padtop5"><div class="time_yuandian"></div><p class="ta_p">16年05月22日</p></div>
+                            <p  class="ta_p padtop5">庆祝球友某某某的生日(非赛事类)</p>
+                            <div class="ta_adress padtop5"><img src="images/icon-adress@2x.png"/>高新区益州大道天府五街芭夯兔</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear03"></div>
+            <!--视频-->
+            <!--<div class="gk_photo">-->
+                <!--<img src="images/Team-video@2x.png" class="gk_photo_img"/>-->
+                <!--<div class="dingwei_more">-->
+                    <!--<img src="images/zhan_img2@2x.png" class="zhan_img2"/>-->
+                    <!--<a href="#"><img src="images/more@2x.png" class="more_img"/></a>-->
+                <!--</div>-->
+                <!--<div class="two_bg">-->
+                    <!--<div class="two_width">-->
+                        <!--<ul class="gk_photoul">-->
+                            <!--&lt;!&ndash;此处循环li标签，添加视频&ndash;&gt;-->
+                            <!--<li>-->
+                                <!--<video controls="controls" class="video">-->
+                                    <!--<source src="movie.mp4" type="video/mp4" />-->
+                                    <!--<source src="movie.ogg" type="video/ogg" />-->
+                                    <!--<source src="movie.webm" type="video/webm" />-->
+                                    <!--Your browser does not support the video tag.-->
+                                <!--</video>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<video controls="controls" class="video">-->
+                                    <!--<source src="movie.mp4" type="video/mp4" />-->
+                                    <!--<source src="movie.ogg" type="video/ogg" />-->
+                                    <!--<source src="movie.webm" type="video/webm" />-->
+                                    <!--Your browser does not support the video tag.-->
+                                <!--</video>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<video controls="controls" class="video">-->
+                                    <!--<source src="movie.mp4" type="video/mp4" />-->
+                                    <!--<source src="movie.ogg" type="video/ogg" />-->
+                                    <!--<source src="movie.webm" type="video/webm" />-->
+                                    <!--Your browser does not support the video tag.-->
+                                <!--</video>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<video controls="controls" class="video">-->
+                                    <!--<source src="movie.mp4" type="video/mp4" />-->
+                                    <!--<source src="movie.ogg" type="video/ogg" />-->
+                                    <!--<source src="movie.webm" type="video/webm" />-->
+                                    <!--Your browser does not support the video tag.-->
+                                <!--</video>-->
+                            <!--</li>-->
+                            <!--<div class="clear"></div>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="clear03"></div>-->
+            <!--球队公告-->
+            <div class="gk_photo">
+                <img src="images/teamgonggao@2x.png" class="gk_photo_img"/>
+                <div class="dingwei_more">
+                    <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+                    <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+                </div>
+                <div class="two_bg">
+                    <div class="three_width gonggao_content">
+                        <div class="t_gonggao padtop15">
+                            <!--头像，姓名-->
+                            <div class="t_gonggaol">
+                                <img src="images/zhaopian.png"/>
+                            </div>
+                            <div class="t_gonggaor">
+                                <div class="t_gonggao_name">页扁舟<span class="t_gonggao_span">&nbsp;队员&nbsp;</span></div>
+                                <div class="t_gonggao_time">16-05-22</div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <!--文本内容-->
+                        <div class="t_gonggao_wenben">文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本</div>
+                        <img src="images/Message@2x.png" class="message_img"/>
+                    </div>
+                </div>
+            </div>
+            <div class="clear03"></div>
+        </div>
+        <!--概括 end-->
+
+        <!--排位赛 start-->
+        <div class="td_pws_content td_main">
+            <!--path_one start 此处循环3：0战绩，那个img也是在循环内的-->
+            <div class="two_bg">
+                <div class="pws_head pading15">
+                    <div class="pws_headl">
+                        <img src="images/wait-for@2x.png" class="icon_img_left"/>
+                        <div class="pws_headl_word"><p class="size14 pub_Beyhid">等待应战者</p></div>
+                        <div class="pws_headl_img"><img src="images/clothes-red@2x.png" class="rotate_clothes"/></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="pws_headc">
+                        <p class="size24_blue padtop15 pub_Beyhid font_w">0:3</p>
+                        <p class="size12_hui pading20 pub_Beyhid">站点获得</p>
+                    </div>
+                    <div class="pws_headr">
+                        <img src="images/wait-for@2x.png" class="icon_img_left"/>
+                        <div class="pws_headl_word"><p class="size14 pub_Beyhid">等待应战者</p></div>
+                        <div class="pws_headl_img"><img src="images/clothes-red@2x.png" class="rotate_clothes"/></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="pws_baifenbi">
+                        <div class="pws_baifenbil">+0</div>
+                        <div class="pws_baifenbic">
+                            <div class="baifentiao_l"></div>
+                            <div class="baifentiao_r"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="pws_baifenbir">+0</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img src="images/Separation-line1@2x.png" class="img_shadow"/>
+            </div>
+            <!--path_one end-->
+        </div>
+        <!--排位赛 end-->
+        <!--赛事 start-->
+        <div class="td_ss_content td_main">
+            <div class="two_bg">
+                <div class="pws_head pading15">
+                    <div class="pws_headl">
+                        <img src="images/wait-for@2x.png" class="icon_img_left"/>
+                        <div class="pws_headl_word"><p class="size14 pub_Beyhid">等待应战者</p></div>
+                        <div class="pws_headl_img"><img src="images/clothes-red@2x.png" class="rotate_clothes"/></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="pws_headc">
+                        <p class="size24_blue padtop15 pub_Beyhid font_w">0:3</p>
+                        <p class="size12_hui pading20 pub_Beyhid">站点获得</p>
+                    </div>
+                    <div class="pws_headr">
+                        <img src="images/wait-for@2x.png" class="icon_img_left"/>
+                        <div class="pws_headl_word"><p class="size14 pub_Beyhid">等待应战者</p></div>
+                        <div class="pws_headl_img"><img src="images/clothes-red@2x.png" class="rotate_clothes"/></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="pws_baifenbi">
+                        <div class="pws_baifenbil">+0</div>
+                        <div class="pws_baifenbic">
+                            <div class="baifentiao_l"></div>
+                            <div class="baifentiao_r"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="pws_baifenbir">+0</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <img src="images/Separation-line1@2x.png" class="img_shadow"/>
+            </div>
+            <!--path_one end-->
+        </div>
+        <!--赛事 end-->
+    </div>
+    <div class="zhan_foot"></div>
+    <!--悬浮框二维码 start-->
+    <div class="foot_erweima"></div>
+    <div class="erweima_content">
+        <div class="erweima_contentl"><img src="images/zhaopian.png"/></div>
+        <div class="erweima_contentr">
+            <P>创建你的球队 称霸你的主场</P>
+            <P class="line_di">一站式球队服务专项平台</P>
+            <P class="padtop5">长按二维码下载APP</P>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--悬浮框二维码 end-->
+
+    <script type="text/javascript" src="../../public/js/main.js"></script>
+</body>
+</html>

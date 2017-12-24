@@ -1,0 +1,149 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="renderer" content="webkit")
+		meta(http-equiv="Cache-Control" content="no-siteapp")
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="telephone=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/add_team_detail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		title 详情页面
+	body(style="padding-bottom:46pt;")
+	//统计开始
+	div( class="con team-content common-div")
+		each item in data
+			div(class="header common-div")
+				div(class="icon")
+					img(src=item.logo alt="")
+				div(class="team-info")
+					h1=item.name
+						span 劲旅三级
+					h2= item.province +'-'+ item.city + '-' + item.county
+			div(class="team-single")
+				h1= item.win_match
+				h2 胜场
+			div( class="team-single team-middle")
+				h1= item.fail_match
+				h2 负场
+			div(class="team-single")
+				h1=item.flat_match
+				h2  平场
+			div(class="team-single")
+				h1= item.goals_scored
+				h2 总进球
+			div( class="team-single team-middle")
+				h1= item.goals_against
+				h2 总失球
+			div(class="team-single")
+				h1=item.goals_scored -item.goals_against
+				h2  净胜球
+			div(class="team-single")
+				h1=item.red_card
+				h2    红牌
+			div( class="team-single team-middle")
+				h1=item.yellow_card
+				h2 黄牌
+	//统计结束
+
+	//阵容开始
+	div(class="con common-div")
+		each item in scale
+			div(class="banner")
+				div(class="mask")
+				img(src="../../../public/add_image/banner-bg.png" alt="")
+				div(class="banner-info")
+					div(class="team-left")
+						h1 劲旅三级
+						h1(style="text-align: left") 战点
+							span= item.san_score
+						h1 胜率
+							-var x=item.win_rate
+								if(x==null)
+									sapn 0%
+								else
+									span=parseFloat(x.toFixed(2,2))*100+'%'
+							//-var rate= parseFloat(item.win_rate.toFixed(2))*100;
+							//span= rate+'%'
+					div(class="team-icon")
+						img(src=item.logo alt="")
+					div(class="team-right")
+						h1 完成比赛
+							span=item.game_times
+						h1(style="text-align: right") 球队人数
+							span=item.member_num
+						h1 	排名
+							span 2
+			ul(class="team-list")
+				each item in scalelist
+					li
+						div(class="list-icon")
+							img(src=item.avatar ||"../../../public/add_image/icon.png" alt="")
+						div(class="list-info")
+							-var name=item.nickname
+							if(name==''|| name==null)
+								h1 默认名字
+							else
+								h1= item.nickname
+							h2=item.clubnumber+'号'
+								span(style="margin-left:5pt;")=item.position||'队员'
+							h2=item.age+'岁'
+								span(style="margin-left:5pt;")=item.height+'cm'
+								span(style="margin-left:5pt;")=item.weight+'kg'
+	//阵容结束
+
+	//战绩开始
+	div(class="con common-div" style="background: #061023;")
+		each item,index in scorelist
+			-var x=index+1
+			div(class="team-header")
+				h1=item.date
+				h2='第'+x+'轮'
+			div(class="team-partner")
+				div(class="top")
+					h3=item.racedate
+					h1=item.name
+				div(class="down")
+					div(class="left")
+						div(class="left-icon")
+							img(src=item.homeLogo||"../../../public/add_image/icon.png" alt="")
+						h1=item.homeName
+					div(class="mid")
+						span=item.home_goal
+						span :
+						span=item.guest_goal
+					div(class="right")
+						div(class="left-icon")
+							img(src=item.guestLogo||"../../../public/add_image/icon.png" alt="")
+						h1=item.guestName
+	//战绩结束
+
+	// footer 开始
+	div(class="footer common-div")
+		ul
+			li
+				div(class="footer-icon")
+					img(src="../../../public/add_image/tongji-light.png" alt="")
+				div(class="footer-icon2")
+					img(src="../../../public/add_image/tongji-gray.png" alt="")
+				h1 统计
+			li
+				div(class="footer-icon")
+					img(src="../../../public/add_image/zhengrong-light.png" alt="")
+				div(class="footer-icon2")
+					img(src="../../../public/add_image/zhengrong-gray.png" alt="")
+				h1 阵容
+			li
+				div(class="footer-icon")
+					img(src="../../../public/add_image/zhanji-light.png" alt="")
+				div(class="footer-icon2")
+					img(src="../../../public/add_image/zhanji-gray.png" alt="")
+				h1 战绩
+	// footer 结束
+
+	script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+	script(type="text/javascript", src="/public/js/add_basic.js")
+

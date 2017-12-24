@@ -1,0 +1,121 @@
+.bm_detail { width: 100%; background-color: #1c2b54;}
+.bm_detail_con { width: 95%; margin: 0 auto; color: #fff; padding-top: 10px; padding-bottom: 20px;}
+.bm_detail_con p { padding-top: 5px;}
+.btn_baoming { width: 287px; margin: 20px auto;}
+.btn_baoming img { width: 100%;}
+/*创建窗口*/
+.shade {
+    background: #000;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 5;
+    display: none;
+}
+.bm_chuangjian {
+    display: none;
+    width: 302px;
+    height: 158px;
+    border: 1px solid #457fed;
+    background-color: #051024;
+    background: -webkit-linear-gradient(left, #021233, #143a83,#021233);
+    background: -o-linear-gradient(right, #021233, #143a83,#021233);
+    background: -moz-linear-gradient(right, #021233, #143a83,#021233);
+    background: linear-gradient(to right, #021233, #143a83,#021233);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#021233, endColorStr=#143a83);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 6;
+    border-radius:10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-family: '微软雅黑 Light', '微软雅黑';
+}
+.bm_chuangjian_con { text-align: center; padding-top: 40px; padding-bottom: 40px;}
+.bm_chuangjian_line { width: 300px; margin: 0 auto;}
+.btn_chuangjian { width: 100%;}
+.btn_chuangjian_no { width: 50%; float: left; text-align: center;}
+.btn_chuangjian_yes { width: 50%; float: right; text-align: center;}
+.btn_chuangjian_ok { text-align: center; width: 100%;}
+
+/*创建队伍信息详情页面*/
+.bm_team_info { width: 90%; margin: 0 auto; padding-top: 20px;}
+.bm_team_info_name { height: 35px; width: 100%;}
+.bm_team_info_name span { width: 24%; float: left; color: #fff; height: 35px; line-height: 35px;}
+.bm_team_info_name input {
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    width: 74%;
+    float: left;
+    border: 1px solid #437fed;
+    background-color: #143a83;
+    background: -webkit-linear-gradient(left, #011132, #143a83,#011132);
+    background: -o-linear-gradient(right, #011132, #143a83,#011132);
+    background: -moz-linear-gradient(right, #011132, #143a83,#011132);
+    background: linear-gradient(to right, #011132, #143a83,#011132);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#011132, endColorStr=#143a83);
+    border-radius:8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    text-indent: 1em;
+    color: #fff;
+}
+.bm_team_info_tel { margin-top: 10px;}
+.bm_team_info_bg { background-color: #1c2b54; padding-bottom: 20px;}
+
+/*底部支付*/
+.bm_zhifu {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    border-top: 2px solid #0046b0;
+}
+.bm_zhiful {
+    padding-top: 6px;
+    width: 60%;
+    float: left;
+    height: 50px;
+    background-color: #143a83;
+    background: -webkit-linear-gradient(top, #012796, #00177d);
+    background: -o-linear-gradient(bottom, #012796, #00177d);
+    background: -moz-linear-gradient(bottom, #012796, #00177d);
+    background: linear-gradient(to bottom, #012796, #00177d);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#012796, endColorStr=#00177d);
+}
+.bm_zhifur {
+    width: 40%;
+    float: right;
+    text-align: center;
+    line-height: 50px;
+    background-color: #fbfbfb;
+    background: -webkit-linear-gradient(top, #fbfbfb, #b3b3b3);
+    background: -o-linear-gradient(bottom, #fbfbfb, #b3b3b3);
+    background: -moz-linear-gradient(bottom, #fbfbfb, #b3b3b3);
+    background: linear-gradient(to bottom, #fbfbfb, #b3b3b3);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#fbfbfb, endColorStr=#b3b3b3);
+    color: #01062e;
+    font-weight: bold;
+}
+.bm_zhiful p { color: #fff; padding-left: 15px;}
+.bm_zhiful_word { font-size: 12px;}
+
+
+@media only screen and (max-width:375px) {
+    .bm_team_info_name span { width: 25%;}
+    .bm_team_info_name input { width: 73%;}
+}
+
+@media only screen and (max-width:320px) {
+    .bm_team_info_name span { width: 28%;}
+    .bm_team_info_name input { width: 70%;}
+}

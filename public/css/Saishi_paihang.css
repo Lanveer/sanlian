@@ -1,0 +1,63 @@
+.jointeam_main { display: none;}
+.jcontent_now { display: block;}
+/*积分===========================================*/
+.ph_jifen { width: 100%;}
+.ph_jifen_head { width: 95%; margin:0 auto; padding-top: 15px; padding-bottom: 10px;}
+.ph_jifen_head li { float: left; font-size: 14px;}
+.ph_head_color { color: #b7b5b8;}
+.li_pms { width: 10%; text-align: left;}
+.li_dws { width: 24%; text-align: left;}
+.li_jifen1 { width: 6%; text-align: center;}
+.li_jifen2 { width: 8%; text-align: center;}
+.li_jsq { width: 14%; text-align: center;}
+.li_jf { width: 10%; text-align: center;}
+
+.ph_jifen_list { width:100%; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.ph_jifen_word { padding-bottom: 10px; padding-top: 10px; color: #59abff;}
+.ph_jifen_word_white { padding-bottom: 10px; padding-top: 10px; color: #fff;}
+.ph_list_tx { width: 17px; height: 18px; float: left;}
+.li_dws_word { width: 70%; float: left; padding-left: 4px;}
+
+/*射手=======================================*/
+.ph_sheshou { width: 100%;}
+.li_qy { width: 30%; float: left;}
+.li_qd { width: 35%; float: left;}
+.li_jqs { width: 25%; float: right; text-align: right;}
+
+.ph_sheshou_list { width: 100%; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.ph_sheshou_tx { width: 20px; height: 20px; float: left;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    overflow:hidden;
+}
+.ph_sheshou_tx img { width: 100%;height: 100%;}
+
+/*助攻======================================*/
+.jt_zhanji { width: 100%;}
+
+
+
+/*ph_foot*/
+.foot_zhanwei { width: 100%; height: 62px;}
+.foot {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    border-top: 2px solid #0046b0;
+    background: -webkit-linear-gradient(top, #002796 , #01147a);
+    background: -o-linear-gradient(bottom, #002796, #01147a);
+    background: -moz-linear-gradient(bottom, #002796, #01147a);
+    background: linear-gradient(to bottom, #002796 , #01147a);
+    filter:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#002796,endColorStr=#01147a);
+}
+:root .foot{filter:none;}
+.footul { width: 85%; margin: 0 auto;}
+.footul li { width: 33.33%; float: left; margin-top: 5px;}
+.footul li img { margin: 0 auto;}
+
+/*第二次修改的页面=======排行积分*/
+.ph_jifen_head_change { width: 95%; margin:0 auto; padding-top: 10px; color: #b7b5b8;}
+.ph_jifen_change { padding-top: 5px;}

@@ -1,0 +1,106 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="css/ss_home_jointeam.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		title 赛事-赛程
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="Saishi_home.html")
+					li
+						img(src="images/tab-shouye@3x.png")
+				a(href="Saishi_saicheng.html")
+					li
+						img(src="images/tab-saicheng-pressed@3x.png")
+				a(href="Saishi_dongtai.html")
+					li
+						img(src="images/tab-dongtai@3x.png")
+				a(href="Saishi_paihang.html")
+					li
+						img(src="images/tab-paihang@3x.png")
+				a(href="Saishi_baoming.html")
+					li
+						img(src="images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="images/nav_zhanweitu.png")
+		// nav end
+		// 参赛球队_战绩页面 start
+		.jt_zhanji
+			.clear(style="height: 5px;")
+			// 战绩列表  循环1
+			.jt_zhanji_con
+				.jt_zhanji_head
+					.jt_zhanji_time 2016年06月05日
+					.jt_zhanji_cishu 常规赛 第1轮
+					.clear
+				.ji_zhanji_list
+					.sctj_main.padtop10
+						p.sctj_word.size12_hui 06月11日 16:00 常规赛 第3轮
+						p.sctj_word.size14.padtop3 长江南岸
+						.sctj_con
+							.sctj_conl
+								img.sctj_img(src="images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid 3 : 0
+							.sctj_conr
+								img.sctj_img(src="images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.clear
+					.sctj_btn
+						.sctj_btnl
+							img(src="images/btn-Graphic-record@2x.png")
+						.sctj_btnr
+							img(src="images/btn-The-game-highlights@2x.png")
+						.clear
+			// 战绩列表  循环2
+			.jt_zhanji_con
+				.jt_zhanji_head
+					.jt_zhanji_time 2016年06月05日
+					.jt_zhanji_cishu 常规赛 第1轮
+					.clear
+				.ji_zhanji_list
+					.sctj_main.padtop10
+						p.sctj_word.size12_hui 06月11日 16:00 常规赛 第3轮
+						p.sctj_word.size14.padtop3 长江南岸
+						.sctj_con
+							.sctj_conl
+								img.sctj_img(src="images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid 3 : 0
+							.sctj_conr
+								img.sctj_img(src="images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.clear
+					.sctj_btn
+						.sctj_btnl
+							img(src="images/btn-Graphic-record@2x.png")
+						.sctj_btnr
+							img(src="images/btn-The-game-highlights@2x.png")
+						.clear
+		// 参赛球队_战绩页面 end
+		// 悬浮框二维码 start
+		.zhan_foot
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script.
+			//点击后的按钮状态
+			$(".sctj_btnl").click(function () {
+			$(this).children("img").attr("src","images/btn-Graphic-record-pressed@2x.png")
+			})
+			$(".sctj_btnr").click(function () {
+			$(this).children("img").attr("src","images/btn-The-game-highlights-pressed@2x.png")
+			})

@@ -1,0 +1,104 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_ph_zhugongdetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 赛事页面-排行-助攻详情
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-shouye@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng@3x.png")
+				a(href="posts?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-dongtai@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang-pressed@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+		// nav end
+		// 头像部分
+		.zgdetail_tx
+			.zgdetail_tx_margin
+				.zr_list_one
+					.zr_list_touxiang
+						img(src=user.avatar)
+					.zr_list_name
+						p.zr_list_name_head.pub_Beyhid #{user.nickname}
+						if (user.province||user.city||user.county)
+							p.size12_hui.pub_Beyhid #{user.province}-#{user.city}-#{user.county}
+						else
+							p.size12_hui.pub_Beyhid -
+						p.zgdetail_cion.size12_hui.pub_Beyhid
+							img.zgdetail_tx_cion(src=user.team_logo)
+							|  #{user.team_name} | #{user.clubnumber}号
+					.clear
+		// 统计列表
+		.zg_detail_list
+			.tongji_list
+				//p.tongji_list_p.pub_Beyhid
+					img(src="/public/images/time@2x.png")
+					| 2016年
+				ul.tongji_listul
+					li
+						p.tongji_number.pub_Beyhid #{user_total.goals_scored}
+						p.tongji_number_word.pub_Beyhid 进球
+					li
+						p.tongji_number.pub_Beyhid #{user_total.ast}
+						p.tongji_number_word.pub_Beyhid 助攻
+					li(style="border-right: none;")
+						p.tongji_number.pub_Beyhid.tongji_number_hui #{user_total.best_num}
+						p.tongji_number_word.pub_Beyhid 全场最佳
+					li
+						p.tongji_number.pub_Beyhid #{user_total.appearances}/#{user_total.team_race_num}
+						p.tongji_number_word.pub_Beyhid 出场
+					li
+						p.tongji_number.pub_Beyhid #{user_total.red_card}
+						p.tongji_number_word.pub_Beyhid 红牌
+					li(style="border-right: none;")
+						p.tongji_number.pub_Beyhid #{user_total.yellow_card}
+						p.tongji_number_word.pub_Beyhid 黄牌
+					.clear
+		// 助攻队员详情
+		.zg_detail_duiyuan
+			.zg_detail_con
+				.zg_detail_dyname #{user.nickname}的生涯
+				.zg_detail_quan
+					img(src="/public/images/Statistics@2x.png")
+					.zg_detail_quan_number #{user_total.appearances}
+				.zg_detail_quan_word
+					| 俱乐部 
+					span.zg_word_number #{user_total.team_num}
+					|   比赛 
+					span.zg_word_number #{user_total.team_race_num}
+				-if (teams)
+					each team in teams
+						li.zg_detail_quan_title
+							span.size16 #{team.ball_team_name}
+							|&nbsp;
+							span.zg_title_number #{team.race_num}场
+		// 悬浮框二维码 start
+		//.zhan_foot
+		//.foot_erweima
+		//.erweima_content
+		//	.erweima_contentl
+		//		img(src="/public/images/zhaopian.png")
+		//	.erweima_contentr
+		//		p 创建你的球队 称霸你的主场
+		//		p.line_di 一站式球队服务专项平台
+		//		p.padtop5 长按二维码下载APP
+		//	.clear
+		// 悬浮框二维码 end

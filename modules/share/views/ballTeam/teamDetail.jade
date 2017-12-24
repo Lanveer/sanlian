@@ -1,0 +1,337 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/index.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/TeamDetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 球队详情
+	body
+		// 排头详情
+		.pm_bg
+			img.pmbg_img(src="/public/images/background@2x.png")
+			.pm_head.padtop25
+				.pm_headl.size14
+					p.padbottom5
+						| 人数 
+						span #{ball_team.members.length}人
+					p.padbottom5.pub_Beyhid
+						| 均龄 
+						span #{Number(ball_team.avg_age).toFixed(1)}岁
+					p.padbottom5.pub_Beyhid
+						| 均高 
+						span #{Number(ball_team.avg_height).toFixed(2)}cm
+					p.pading5.pub_Beyhid
+						| 均重 
+						span #{ball_team.avg_weight.toFixed(2)}KG
+				.pm_headc
+					img.icon_img_center(src=ball_team.logo)
+					p.myteam 我的球队
+				.pm_headr.size14
+					p.pub_Beyhid
+						| 战点 
+						span #{ball_team.san_score}
+					p.pading5.pub_Beyhid
+						| 胜率 
+						span #{Number(ball_team.win_rate).toFixed(1)}%
+					p.pub_Beyhid
+						| 排名 
+						span #{ball_team.ranking}
+				.clear
+				.myteam_name.pub_Beyhid.size16 #{ball_team.name}
+		// nav start
+		.teamdetail_navbg
+			.teamdetail_nav
+				ul#teamdetailnav_ul.teamdetailnav_ul
+					li.tli_hover.tli_now
+						.tli_01
+					li
+						.tli_02
+					li
+						.tli_03
+					.clear
+		// nav end
+		// 分页内容
+		#td_content.td_content
+			// 概括 start
+			.gk_content.td_main.td_content_now
+				// 相册
+				.gk_photo
+					img.gk_photo_img(src="/public/images/album@2x.png")
+					.dingwei_more
+						img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+						a(href="#")
+							img.more_img(src="/public/images/more@2x.png")
+					// 有相册的情况下
+					.two_bg
+						.two_width
+							ul.gk_photoul
+								// 此处循环li标签，添加图片
+								each img in ball_team_img
+									li
+										img(src=img.url)
+								.clear
+					// 没有相册的情况下,此处为隐藏状态
+					.two_bg(style="display: none;")
+						.two_width
+							.team_img
+								img(src="/public/images/Team_zhaopian@2x.png")
+								| 你还没有任何的球队照片哟！
+				.clear03
+				// 所属区域
+				.gk_photo
+					img.gk_photo_img(src="/public/images/adress@2x.png")
+					.dingwei_more
+						img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+						a(href="#")
+							img.more_img(src="/public/images/more@2x.png")
+					.two_bg
+						.two_width
+							.adress_div
+								img.adress_icon(src="/public/images/icon-adress@2x.png")
+								| #{ball_team.province}-#{ball_team.city}-#{ball_team.county}
+				.clear03
+				// 球队成员
+				.gk_photo
+					img.gk_photo_img(src="/public/images/player@2x.png")
+					.dingwei_more
+						img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+						a(href="#")
+							img.more_img(src="/public/images/more@2x.png")
+					.two_bg
+						.two_width
+							ul.gk_qiuduiul
+								// 此处循环li标签，添加头像
+								-if (ball_team.members)
+									each member in ball_team.members
+										li
+											.touxiang
+												img(src=member.avatar)
+											p.touxiang_name.pub_Beyhid #{member.nickanme}
+											p.touxiang_info.pub_Beyhid #{member.clubnumber}号.#{member.type}
+
+									.clear
+				.clear03
+				// 球队活动
+				.gk_photo
+					img.gk_photo_img(src="/public/images/Team-activities@2x.png")
+					.dingwei_more
+						img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+						a(href="#")
+							img.more_img(src="/public/images/more@2x.png")
+					.two_bg
+						.two_width
+							-if (ball_team_activity)
+								-var d = new Date();
+								- d.setTime(ball_team_activity.activity_time * 1000);
+								- var type = ball_team_activity.type?"赛事":"非赛事";
+								.team_active.pading10
+									.time_active.padtop5
+										.time_yuandian
+										p.ta_p #{d.getFullYear()}年#{new Array(3-d.getMonth().toString().length).join('0').concat(d.getMonth())}月#{new Array(3-d.getDate().toString().length).join('0').concat(d.getDate())}日
+									p.ta_p.padtop5 #{ball_team_activity.name}(#{type})
+									.ta_adress.padtop5
+										img(src="/public/images/icon-adress@2x.png")
+										| #{ball_team_activity.addr}
+				.clear03
+				// 视频
+				// <div class="gk_photo">
+				// <img src="images/Team-video@2x.png" class="gk_photo_img"/>
+				// <div class="dingwei_more">
+				// <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+				// <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+				// </div>
+				// <div class="two_bg">
+				// <div class="two_width">
+				// <ul class="gk_photoul">
+				// &lt;!&ndash;此处循环li标签，添加视频&ndash;&gt;
+				// <li>
+				// <video controls="controls" class="video">
+				// <source src="movie.mp4" type="video/mp4" />
+				// <source src="movie.ogg" type="video/ogg" />
+				// <source src="movie.webm" type="video/webm" />
+				// Your browser does not support the video tag.
+				// </video>
+				// </li>
+				// <li>
+				// <video controls="controls" class="video">
+				// <source src="movie.mp4" type="video/mp4" />
+				// <source src="movie.ogg" type="video/ogg" />
+				// <source src="movie.webm" type="video/webm" />
+				// Your browser does not support the video tag.
+				// </video>
+				// </li>
+				// <li>
+				// <video controls="controls" class="video">
+				// <source src="movie.mp4" type="video/mp4" />
+				// <source src="movie.ogg" type="video/ogg" />
+				// <source src="movie.webm" type="video/webm" />
+				// Your browser does not support the video tag.
+				// </video>
+				// </li>
+				// <li>
+				// <video controls="controls" class="video">
+				// <source src="movie.mp4" type="video/mp4" />
+				// <source src="movie.ogg" type="video/ogg" />
+				// <source src="movie.webm" type="video/webm" />
+				// Your browser does not support the video tag.
+				// </video>
+				// </li>
+				// <div class="clear"></div>
+				// </ul>
+				// </div>
+				// </div>
+				// </div>
+				// <div class="clear03"></div>
+				// 球队公告
+				.gk_photo
+					img.gk_photo_img(src="/public/images/teamgonggao@2x.png")
+					.dingwei_more
+						img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+						a(href="#")
+							img.more_img(src="/public/images/more@2x.png")
+					.two_bg
+						-if (ball_team_notice)
+							.three_width.gonggao_content
+								.t_gonggao.padtop15
+									// 头像，姓名
+									.t_gonggaol
+										img(src=ball_team_notice.avatar)
+									.t_gonggaor
+										.t_gonggao_name
+											| #{ball_team_notice.nickname}
+											span.t_gonggao_span  队长 
+										.t_gonggao_time #{ball_team_notice.date}
+									.clear
+								// 文本内容
+								.t_gonggao_wenben #{ball_team_notice.content}
+								img.message_img(src="/public/images/Message@2x.png")
+				.clear03
+			// 概括 end
+			// 排位赛 start
+			.td_pws_content.td_main
+				// path_one start 此处循环3：0战绩，那个img也是在循环内的
+				.two_bg
+					each qualifying in qualifyings
+						- if (qualifying.pay_num==2&&qualifying.refund_num==0&&qualifying.status==1)
+							.pws_head.pading15
+								.pws_headl
+									img.icon_img_left(src=qualifying.home_team.logo)
+									.pws_headl_word
+										p.size14.pub_Beyhid #{qualifying.home_team.name}
+									.pws_headl_img
+										img.rotate_clothes(src='/public/images/clothes/'+qualifying.home_color+'@2x.png')
+									.clear
+								.pws_headc
+									p.size24_blue.padtop15.pub_Beyhid.font_w #{qualifying.home_goal}:#{qualifying.guest_goal}
+									p.size12_hui.pading20.pub_Beyhid 战点获得
+								.pws_headr
+									img.icon_img_left(src=qualifying.guest_team.logo)
+									.pws_headl_word
+										p.size14.pub_Beyhid #{qualifying.guest_team.name}
+									.pws_headl_img
+										img.rotate_clothes(src='/public/images/clothes/'+qualifying.guest_color+'@2x.png')
+									.clear
+								.clear
+								.pws_baifenbi
+									.pws_baifenbil #{qualifying.home_score}
+									.pws_baifenbic
+										.baifentiao_l(style="width:"+Math.abs(qualifying.home_score)/(Math.abs(qualifying.home_score)+Math.abs(qualifying.guest_score))*100+"%")
+										.baifentiao_r(style="width:"+Math.abs(qualifying.guest_score)/(Math.abs(qualifying.home_score)+Math.abs(qualifying.guest_score))*100+"%")
+										.clear
+									.pws_baifenbir #{qualifying.guest_score}
+									.clear
+							img.img_shadow(src="/public/images/Separation-line1@2x.png")
+						-else
+							<!--待响应 start-->
+							div.pws_head.two_width.pading15
+								div.pws_headl
+									img.icon_img_left(src=qualifying.home_team.logo)
+									div.pws_headl_word
+										p.size14.pub_Beyhid #{qualifying.home_team.name}
+									div.pws_headl_img
+										img.rotate_clothes(src='/public/images/clothes/' + qualifying.home_color + '@2x.png')
+									div.clear
+								- if (qualifying.pay_num==2&&qualifying.refund_num==0)
+									div.pws_headc
+										p.size14.pub_Beyhid #{qualifying.title}
+										p.size12_blue.pub_Beyhid #{qualifying.court_type}
+										p.size12_hui.pub_Beyhid= qualifying.date
+											span= qualifying.start_hour + '-' + qualifying.end_hour
+										p.size18_blue.pading5.pub_Beyhid 已达成
+										p.size12_hui.pub_Beyhid= '总价' + qualifying.fee + ' 线上'
+									div.pws_headr
+										img.icon_img_left(src=qualifying.guest_team.logo)
+										div.pws_headl_word
+											p.size14.pub_Beyhid=qualifying.guest_team.name
+										div.pws_headl_img
+											img.rotate_clothes(src='/public/images/clothes/' + qualifying.guest_color + '@2x.png')
+										div.clear
+								- else
+									div.pws_headc
+										p.size14.pub_Beyhid #{qualifying.title}
+										p.size12_blue.pub_Beyhid #{qualifying.court_type}
+										p.size12_hui.pub_Beyhid #{qualifying.date}
+											span= qualifying.start_hour + '-' + qualifying.end_hour
+										p.size18_blue.pading5.pub_Beyhid 待响应
+										p.size12_hui.pub_Beyhid= '总价' + qualifying.fee + ' 线上'
+									div.pws_headr
+										img.icon_img_left(src='/public/images/wait-for@2x.png')
+										div.pws_headl_word(style="width:100%")
+											p.size14.pub_Beyhid 等待应战者
+										div.pws_headl_img
+											//img.rotate_clothes(src='/public/images/clothes/red@2x.png')
+										div.clear
+								div.clear
+							img.img_shadow(src='/public/images/Separation-line1@2x.png')
+							<!--待响应 end-->
+				// path_one end
+			// 排位赛 end
+			// 赛事 start
+			.td_ss_content.td_main
+				.two_bg
+					.pws_head.pading15
+						.pws_headl
+							img.icon_img_left(src="/public/images/wait-for@2x.png")
+							.pws_headl_word
+								p.size14.pub_Beyhid 等待应战者
+							.pws_headl_img
+								img.rotate_clothes(src="/public/images/clothes-red@2x.png")
+							.clear
+						.pws_headc
+							p.size24_blue.padtop15.pub_Beyhid.font_w 0:3
+							p.size12_hui.pading20.pub_Beyhid 站点获得
+						.pws_headr
+							img.icon_img_left(src="/public/images/wait-for@2x.png")
+							.pws_headl_word
+								p.size14.pub_Beyhid 等待应战者
+							.pws_headl_img
+								img.rotate_clothes(src="/public/images/clothes-red@2x.png")
+							.clear
+						.clear
+						.pws_baifenbi
+							.pws_baifenbil +0
+							.pws_baifenbic
+								.baifentiao_l
+								.baifentiao_r
+								.clear
+							.pws_baifenbir +0
+							.clear
+					img.img_shadow(src="/public/images/Separation-line1@2x.png")
+				// path_one end
+			// 赛事 end
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="/public/images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script(type="text/javascript", src="/public/js/main.js")

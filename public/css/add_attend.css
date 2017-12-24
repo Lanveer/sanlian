@@ -1,0 +1,39 @@
+body{
+    width:100%;
+    height:100%;
+        background: -webkit-linear-gradient(left, #202b42 , #243b68 , #202b42); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient(right, #202b42 , #243b68 , #202b42); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient(right, #202b42 , #243b68 , #202b42); /* Firefox 3.6 - 15 */
+        background: linear-gradient(to right, #202b42 , #243b68 , #202b42); /* 标准的语法 */
+}
+.box{
+    height:auto;
+    overflow: hidden;
+    background:#243b68;
+}
+.box h1{
+    font-weight:normal;font-size: 9pt;
+    color: #f5f6f6;
+    width:95%;
+    margin:0 auto 8pt;
+}
+.box h1 span{margin-left: 5pt}
+.footer{
+    height:40pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+    text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 10pt;
+
+    line-height:40pt;
+}
+
+.over{
+    background:#999999;
+    color: #fff;
+}

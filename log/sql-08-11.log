@@ -1,0 +1,7 @@
+08-11 11:9:20  UPDATE `t_user` SET ?   WHERE `user_id`=5667  {"token":"e95bde8e-917e-440a-9a36-0e1de05ae334","device":"android","last_login_time":1502420960}
+08-11 11:9:20  UPDATE `t_user` SET hot_point=hot_point+ 3,total_hot_point=total_hot_point+ 3?   WHERE `user_id`=5667  {}
+08-11 11:9:20  INSERT INTO `t_hot_point_record` SET ?  {"user_id":5667,"hot_point":3,"type":0,"remark":"2017-08-11登录赠送","last_hot_point":54,"create_time":1502420960}
+08-11 11:9:50  UPDATE `t_user` SET ?   WHERE `user_id`=5667  {"token":"7f39512b-357e-4457-90b6-512864e90fa6","device":"ios","last_login_time":1502420990}
+08-11 11:12:13  UPDATE `t_user` SET ?   WHERE `user_id`=5667  {"token":"4db8d251-e127-41cc-b07e-cad85d430d9d","device":"ios","last_login_time":1502421133}
+08-11 11:12:17  UPDATE `t_user` SET ?   WHERE `user_id`=5667  {"token":"051c07a7-ebe4-48f8-a1c8-6e5107b81f0b","device":"ios","last_login_time":1502421137}
+08-11 11:12:26  UPDATE `t_user` SET ?   WHERE `user_id`=5667  {"token":"2a184d30-4652-473c-abb4-85c51a745880","device":"ios","last_login_time":1502421146}

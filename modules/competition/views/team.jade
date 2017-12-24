@@ -1,0 +1,129 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/duinei.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 球队
+	body(style="")
+		div(class="comdiv header")
+			h1	领取卡片
+		div(class="container")
+			each item in data
+				div(class="comdiv card")
+					p(style='display:none' class='id')=item.id
+					p(style='display:none' class='start_time1')=item.start_time1
+					h1=item.title
+						span=item.create_time
+					div(class="location")
+						span
+							img(src='../../../public/add_image/location.png')
+						p=item.address
+					div(class="location time")
+						span
+							img(src="../../../public/add_image/time.png")
+						p=item.start_time
+						p	领卡截止日期:
+							span=item.end_time
+					div(class="location")
+						span
+						if(item.race_type == 0)
+							p 5人制球赛
+						else if (item.race_type == 1)
+							p 7人制球赛
+						else if (item.race_type == 2)
+							p 9人制球赛
+						else if (item.race_type == 3)
+							p 11人制球赛
+						p 还差
+							span(style="color:#ec614a;")=item.rest_card
+							| 名球员
+						p 球队消费:
+							span=item.team_fee
+					div(class="comdiv divide")
+						div
+						h1=item.team_name
+						div
+
+			h1(class="head-title")	填写资料
+			div(class="comdiv form")
+				div(class="input-box")
+					span	姓名:
+					input(type="text" placeholder="填写队长姓名" class="name")
+				div(class="input-box input-box2")
+					span    球队名字:
+					input(type="text" placeholder="填写球队名字" class="team-name")
+				div(class="input-box input-box2")
+					span    联系方式:
+					input(type="text" placeholder="填写队长联系方式" class="tel")
+			div(class="comdiv confirm")	确认领取
+		div(class="comdiv success")
+		div(class="comdiv error")
+		div(class="sharing") 点击右上角分享
+		div(class="back") 点击返回
+
+		script(type="text/javascript", src="/public/js/add_basic.js")
+		script(type="text/javascript", src="/public/js/share.js")
+		script(type="text/javascript").
+				$('.confirm').click(function(){
+					var name=$('.name').val();
+					var team_name=$('.team-name').val();
+					var tel=$('.tel').val();
+					var id=$('.id').html();
+					var start_time1=$('.start_time1').html();
+					if(name=='' || team_name=='' || tel==''){
+						tips('请填写信息再提交','red')
+					}
+					$.ajax({
+						type:'post',
+						dataType:'json',
+						url:'http://sanlianfootball.top/competition/addTeam',
+						data:{
+								name:name,
+								team_name:team_name,
+								tel:tel,
+								id:id,
+								start_time1:start_time1
+						},
+						success:function(msg){
+										console.log(msg)
+										if (msg.code && msg.code == 200) {
+											$('.container').hide();
+											$('.success').show();
+											$('.header h1').html('领取卡片成功！')
+											var str = '';
+											str += '<h1>' + msg.msg + '</h1>' +
+												'<h1>恭喜成功领取 ' + msg.title + '卡片</h1>' +
+												' <h1>' + msg.deadline + '</h1> ';
+											$('.success').append(str);
+											$('.sharing').show();
+										} else {
+											$('.container').hide();
+											$('.header h1').html('领取失败');
+											$('.error').show();
+											var str = '';
+											str += '<h1>' + msg.msg + '</h1>';
+											$('.error').append(str);
+											$('.back').show();
+										}
+						},
+						error:function(err){
+							console.log(err)
+						}
+					})
+								$('.back').click(function () {
+									$('.container').show();
+									$('.success').hide();
+									$('.error').hide();
+									$('.sharing').hide();
+									$('.back').hide();
+								})
+					$('.name').val('');
+					$('.team-name').val('');
+					$('.tel').val('');
+				})
+
+
+

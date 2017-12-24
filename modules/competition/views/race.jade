@@ -1,0 +1,456 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_home_jointeam.css", rel="stylesheet", type="text/css")
+		link(href="/public/vendor/css-loaders/css/load6.css",rel="stylesheet",type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="/public/vendor/iscroll/build/iscroll-probe.js")
+		script(type="text/javascript",src="/public/vendor/moment/min/moment.min.js")
+		script(type="text/javascript",src="/public/vendor/moment/locale/zh-cn.js")
+		title 赛事-赛程
+		style.
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			html {
+				-ms-touch-action: none;
+			}
+
+			body {
+				overflow: hidden; /* this is important to prevent the whole page to bounce */
+			}
+
+			.wrapper {
+				position: absolute;
+				z-index: 1;
+				top: 43px;
+				bottom: 0px;
+				left: 0;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.scroller {
+				position: absolute;
+				z-index: 1;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				width: 100%;
+				min-height: 100.2%;
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-text-size-adjust: none;
+				-moz-text-size-adjust: none;
+				-ms-text-size-adjust: none;
+				-o-text-size-adjust: none;
+				text-size-adjust: none;
+			}
+
+			#pullDown {
+				width: 100%;
+				height: 40px;
+				margin-top: -40px;
+				line-height: 40px;
+				vertical-align: middle;
+				text-align: center;
+			}
+
+			#pullUp {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				vertical-align: middle;
+				text-align: center;
+				/*margin-bottom: -40px;*/
+			}
+
+			@media only screen and (max-width: 375px) {
+				.wrapper {
+					top: 43px;
+				}
+			}
+
+			@media only screen and (max-width: 320px) {
+				.wrapper {
+					top: 38.8px;
+				}
+			}
+
+			@media only screen and (min-width: 768px) {
+				.wrapper {
+					top: 84px;
+				}
+			}
+	body(onload="loaded()")
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-shouye@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng-pressed@3x.png")
+				a(href="posts?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-dongtai@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+			.clear(style="height: 10px;")
+		// nav end
+		// 参赛球队_战绩页面 start
+		#wrapper.wrapper
+			#scroller.scroller
+				#pullDown.load6
+					div.loader(style="display:none;font-size:18px;")
+					span 下拉加载
+#pullUp.load6
+	div.loader(style="display:inline-block;font-size:18px;margin:0 0.8em")
+	span 正在加载...
+
+if (competition.type == 1)
+	div(style="height:60px;width:100%")
+
+		if (competition.type==1)
+				.foot(style="z-index:1")
+					ul#footul.footul
+						a(href="javascript:group_game()")
+							li.footli_01.jli_now(style="width:50%;margin-top:10px;")
+								img(src="/public/images/race/Group-match@3x.png", style="height:40px;")
+						a(href="javascript:knockout_game()")
+							li.footli_02(style="width:50%;margin-top:10px;")
+								img(src="/public/images/race/Knockout@3x.png", style="height:40px;")
+							.clear
+		// 参赛球队_战绩页面 end
+		// 悬浮框二维码 start
+		//.zhan_foot
+		//.foot_erweima
+		//.erweima_content
+		//	.erweima_contentl
+		//		img(src="/public/images/zhaopian.png")
+		//	.erweima_contentr
+		//		p 创建你的球队 称霸你的主场
+		//		p.line_di 一站式球队服务专项平台
+		//		p.padtop5 长按二维码下载APP
+		//	.clear
+		// 悬浮框二维码 end
+		script.
+			moment.locale('zh-cn');
+			var competition_type = "#{competition.type}";
+			var base_url = "/competition/raceList?competition_id=#{competition_id}";
+			var today_str = moment().format('YYYY/MM/DD');
+			var today = moment(today_str).unix();
+			var myScroll = null;
+			var $pullDown = $('#pullDown');
+			var $pullUp = $('#pullUp');
+			var touched = false;
+			var loading = false;
+			var up_start = 0;
+			var down_start = 0;
+			var limit = 1;
+			var is_end = false;
+			var render_times = 3;		//页面填满需要的容器数
+
+			//开始请求数据渲染
+			function start_post(d) {
+				if (d) {
+					up(function (result) {
+						var length = $('.ji_zhanji_list').length;
+						if (result.length >= limit && length < render_times) {
+							start_post(1);
+						} else if (length < render_times) {
+							start_post(0);
+						}
+					});
+				} else {
+					down(function (result) {
+						var length = $('.ji_zhanji_list').length;
+						if (result.length >= limit && length < render_times) {
+							start_post(0);
+						}
+					});
+				}
+			}
+
+			function init(){
+				console.log("init");
+				touched = false;
+				loading = false;
+				up_start = 0;
+				down_start = 0;
+				limit = 1;
+				is_end = false;
+				$(".jt_zhanji_con").remove();
+
+
+				start_post(1)
+			}
+
+
+
+			function loaded() {
+				myScroll = new IScroll('#wrapper', {
+					probeType: 3,
+					click: true,
+					scrollbars: true,
+					mouseWheel: true,
+					interactiveScrollbars: true,
+					shrinkScrollbars: 'scale',
+					fadeScrollbars: true,
+					snap:''
+				});
+
+				myScroll.on('scroll', scrollEvent);
+				myScroll.on('scrollEnd', scrollEndEvent);
+			}
+
+			function scrollEvent() {
+				var y = this.y | 0;
+				var maxY = this.maxScrollY;
+				if (y > 60) {
+					touched = true;
+					$pullDown.find('span').html("松开加载");
+				}
+				if (touched && y <= 40) {
+					start = 0;
+					touched = false;
+					down(function () {
+						$pullDown.find('span').html("下拉加载");
+					})
+				}
+				if (!is_end && (!loading) && y <= maxY) {
+					up(function () {
+						console.log("end...")
+					})
+				}
+			}
+			function scrollEndEvent() {
+				//console.log(this.y);
+			}
+
+			function check_game_type(){
+				var type = competition_type|0;
+				switch (type){
+					case 0:
+						round_game();
+						break;
+					case 1:
+						group_game();
+						break;
+					case 2:
+						knockout_game();
+						break;
+					default:
+
+						break
+				}
+			}
+
+			//小组赛
+			function group_game(){
+				url = base_url + "&type=0";
+				init();
+			}
+
+			//淘汰赛
+			function knockout_game(){
+				url = base_url + "&type=1";
+				init();
+			}
+
+			//循环赛
+			function round_game(){
+				url = base_url + "&type=2";
+				init();
+			}
+
+			//下拉触发事件
+			function down(callback) {
+				if (!callback) {
+					callback = function () {
+					};
+				}
+				$pullDown.css("margin-top", "0px");
+				$pullDown.find('span').css('display', 'none');
+				$pullDown.find('.loader').css('display', 'inline-block');
+
+				if (!callback) {
+					callback = function () {
+					};
+				}
+				var query = {
+					offset: down_start,
+					limit: limit,
+					order: 'date',
+					sort: 'desc',
+					date: ['<', today]
+				};
+				var result = [];
+				$.post(url, query)
+						.success(function (data) {
+							result = data;
+							if (data.length < limit) {
+								end();
+							}
+							render(data);
+						})
+						.error(function (data) {
+							console.log(data);
+						})
+						.always(function () {
+							$pullDown.css("margin-top", "-40px");
+							$pullDown.find('span').css('display', 'inline-block');
+							$pullDown.find('.loader').css('display', 'none');
+							setTimeout(function () {
+								myScroll.refresh();
+							}, 300);
+							down_start += limit;
+							callback(result);
+						});
+
+			}
+
+			//上拉触发事件
+			function up(callback) {
+				loading = true;
+				if (!callback) {
+					callback = function () {
+					};
+				}
+				var query = {
+					offset: window.up_start,
+					limit: limit,
+					order:'date',
+					sort:'asc',
+					date:['>=',today]
+				};
+				var result = [];
+				$.post(url, query)
+						.success(function (data) {
+							result = data;
+							if (data.length < limit) {
+								end();
+							}
+							render(data);
+						})
+						.error(function (data) {
+							console.log(data);
+						})
+						.always(function () {
+							setTimeout(function () {
+								myScroll.refresh();
+							},0);
+
+							loading = false;
+							window.up_start += limit;
+							callback(result);
+						})
+			}
+
+			function render(data) {
+				$.each(data, function (index, value) {
+					var elem = render_elem(value);
+					if(value.date>=today){
+						$pullUp.before(elem);
+					}else {
+						$pullDown.after(elem);
+					}
+
+				})
+			}
+
+			function render_elem(data) {
+				var races = render_race(data['races']);
+				var elem = '<div class="jt_zhanji_con"><div class="jt_zhanji_head"><div class="jt_zhanji_time">' +
+						data.show_date +
+						'</div><div class="jt_zhanji_cishu">' +
+						data.title +
+						'</div><div class="clear"></div></div>' +
+						races +
+						'</div>';
+
+				if(!races){
+					elem = '';
+				}
+				return elem;
+			}
+
+
+			function render_race(data) {
+				var elem = '';
+				$.each(data,function (index,value) {
+					var bifen = 'V S';
+					var battle_report = '';
+					var collection = '';
+					if(value.end_time){
+						bifen = value['home_goal']+' : '+value['guest_goal'];
+					}
+					if(value.battle_report){
+						battle_report = '<a href="' +
+								value.battle_report +
+								'"><div class="sctj_btnl"><img src="/public/images/btn-Graphic-record@2x.png"></div></a>';
+					}
+					if(value.collection){
+						collection = '<a href="' +
+								value.collection +
+								'"><div class="sctj_btnr"><img src="/public/images/btn-The-game-highlights@2x.png"></div></a>';
+					}
+
+					var content = '<div class="ji_zhanji_list"><a href="' +
+							value.url +
+							'"><div class="sctj_main padtop10"><p class="sctj_word size12_hui">' +
+							value.race_start_time +
+							'</p><p class="sctj_word size14 padtop3">' +
+							value.venue_name +
+							'</p><div class="sctj_con"><div class="sctj_conl"><img src="' +
+							value.home_team_logo +
+							'" class="sctj_img"><p class="size14 padtop5">' +
+							value.home_team_name +
+							'</p></div><div class="sctj_conc size24_blue padtop15 font_w pub_Beyhid">' +
+							bifen +
+							'</div><div class="sctj_conr"><img src="' +
+							value.guest_team_logo +
+							'" class="sctj_img"><p class="size14 padtop5">' +
+							value.guest_team_name +
+							'</p></div><div class="clear"></div></div></div></a><div class="sctj_btn">' +
+							battle_report+collection +
+							'<div class="clear"></div></div></div>';
+
+					elem += content;
+				});
+				return elem;
+			}
+
+			function end() {
+				is_end = true;
+				$pullUp.css("display", "none");
+			}
+
+
+			document.addEventListener('touchmove', function (e) {
+				e.preventDefault();
+			}, false);
+
+			$(function () {
+				check_game_type();
+			});

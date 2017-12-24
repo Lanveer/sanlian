@@ -1,0 +1,27 @@
+/*活动信息===================*/
+.active_text { width: 100%; background-color: #16243e; color: #ffffff; padding-top: 5px; padding-bottom: 15px;}
+.active_with { width: 95%; margin: 0 auto;}
+.active_text_word { padding-top: 10px;}
+
+/*球队成员==============================*/
+.ad_qiuduiul { width: 100%; padding-bottom: 10px;}
+.ad_qiuduiul li { width: 56px; margin-left: 4px; margin-right: 4px; float: left; text-align: center; padding-top: 10px;}
+.ad_touxiang { width: 56px; height: 56px;
+    -moz-border-radius: 28px;
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    display: block;
+    margin: 0 auto;
+    overflow:hidden;
+}
+.ad_touxiang img { width: 100%;}
+.ad_touxiang_name { color: #ffffff; padding-top: 5px; font-size: 14px;}
+.ad_touxiang_info { color: #5e83b7; font-size: 14px;}
+
+/*我要报名*/
+.btn_baoming { display: block; width:70%; margin: 0 auto; margin-top: 20px;}
+.btn_baoming img { width: 100%;}
+
+@media only screen and (max-width:320px) {
+.active_text_word { font-size: 14px;}
+}

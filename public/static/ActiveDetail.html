@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <link href="css/n_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/TeamDetail.css" rel="stylesheet" type="text/css" />
+    <link href="css/ActiveDetail.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <title>活动详情</title>
+</head>
+<body>
+    <!--活动文本 start-->
+    <div class="active_text">
+        <div class="active_with">
+            <div class="active_text_word">活动名称：<span>庆祝某某某球员的生日</span></div>
+            <div class="active_text_word">活动类型：<span>非赛事类</span></div>
+            <div class="active_text_word">活动费用(单价)：<span>150元</span></div>
+            <div class="active_text_word">活动时间：<span>2016年6月22日</span></div>
+            <div class="active_text_word">活动人数：<span>22人</span></div>
+            <div class="active_text_word">活动描述：<span>文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本</span></div>
+            <div class="active_text_word">活动地址：<span>高新区益州大道天府五街</span></div>
+        </div>
+    </div>
+    <!--活动文本 end-->
+    <!--球队成员-->
+    <div class="gk_photo">
+        <img src="images/join_qiuyuan@2x.png" class="gk_photo_img"/>
+        <div class="dingwei_more">
+            <img src="images/zhan_img2@2x.png" class="zhan_img2"/>
+            <a href="#"><img src="images/more@2x.png" class="more_img"/></a>
+        </div>
+        <div class="two_bg">
+            <div class="two_width">
+                <ul class="ad_qiuduiul">
+                    <!--此处循环li标签，添加头像-->
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <li>
+                        <div class="ad_touxiang">
+                            <img src="images/zhaopian.png"/>
+                        </div>
+                        <p class="ad_touxiang_name pub_Beyhid">张大大</p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn_baoming"><img src="images/btn-sign-up@2x.png"/></a>
+    <div class="zhan_foot"></div>
+
+    <!--悬浮框二维码 start-->
+    <div class="foot_erweima"></div>
+    <div class="erweima_content">
+        <div class="erweima_contentl"><img src="images/zhaopian.png"/></div>
+        <div class="erweima_contentr">
+            <P>创建你的球队 称霸你的主场</P>
+            <P class="line_di">一站式球队服务专项平台</P>
+            <P class="padtop5">长按二维码下载APP</P>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--悬浮框二维码 end-->
+
+
+<script>
+    $(".btn_baoming").click(function () {
+        $(this).children("img").attr("src","images/btn-sign-up-pressed@2x.png")
+    })
+</script>
+</body>
+</html>

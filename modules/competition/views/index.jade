@@ -1,0 +1,142 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/add_index.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 赛事
+	body(style="padding-top:66px;")
+		//		content begin
+		div(class="content")
+			div(class="race con1" style="display:block")
+				div(class="search")
+					div(class="search-left")
+						div(class="search-icon")
+						input(type="text" class="" placeholder="搜索赛事")
+					div(class="search-right")
+						span 筛选
+						div(class="choose-icon")
+				div(class="adv")
+					a(href="")
+						img(src="../../../public/add_image/index-banner.png" alt="")
+				ul(class="list")
+					each list in lists
+						li(href="http://baidu.com")
+							span(style="display:none" class="hidden_id")= list.competition_id
+							span(style="display:none" class="hidden_user_id")=user_id
+							div(class="list-top")
+								div(class="left")
+									img(src=list.img alt="")
+								div(class="mid")
+									-var title= list.title.length>10?list.title.substring(0,12)+'...':list.title
+									-var location=list.address.length>5?list.address.substring(0,list.address.length)+' ':list.address
+									-var start2=list.start_time
+									-var create=list.create_time
+									-var time= new Date().toLocaleDateString()
+									//-var x=new Date(create)
+									//-var start=x.toLocaleDateString()
+									h1= title
+										span(style="margin-left:10px")
+									ol
+										li
+											span 地址:
+											span(style="margin-left:5px")= location
+										li
+											span 联赛:
+											-var type= list.type
+											if(type==0)
+												span(style="margin-left:5px") 循环赛
+											else if(type==1)
+												span(style="margin-left:5px") 杯赛
+											else
+												span(style="margin-left:5px") 淘汰赛
+										li
+											span 时间：
+												span(style="margin-left:5px")= list.start_time
+								div(class="right")
+									-var status=parseInt(list.status)
+									if(status == 0)
+										span(class="status") 比赛中
+									else if(status > 0)
+										span(class="status status2") 已结束
+									else if(status<0)
+										span(class="status status3") 报名中
+							div(class="list-down")
+								if(list.merchantImg!=null)
+									-var imgs=list.merchantImg
+									if(imgs)
+										-var x=imgs.toString()
+										-var y=x.split(',')
+										ul
+											li
+												a(href="")
+													img(src=y[0] alt="")
+											li
+												a(href="")
+													img(src=y[1] alt="")
+											li
+												a(href="")
+													img(src=y[2] alt="")
+								else
+
+
+			//	约战板块
+			div(class="fight con2" style="display:none")
+				div(class="search")
+					div(class="search-left")
+						div(class="search-icon")
+						input(type="text" class="" placeholder="搜索赛事")
+					div(class="search-right")
+						span 筛选
+						div(class="choose-icon")
+				ul
+					li
+						div(class="fight-left")
+							div(class="fight-left-icon")
+								img(src="../imgs/icon.png" alt="")
+								div(class="clothes")
+							span PRO
+						div(class="fight-mid")
+							h1
+								sapn 三联万科小布足球场
+								sapn |
+								span 1号球场
+							h2 	5人制
+							h3  16年07月03日 &nbsp;&nbsp; 20:00-22:00
+							p 待响应
+							h3 总价15.00元
+
+						div(class="fight-right")
+							div(class="fight-left-icon fight-left-icon")
+								img(src="../imgs/icon2.png" alt="")
+							span 等待迎战
+					li
+						div(class="fight-left")
+							div(class="fight-left-icon")
+								img(src="../imgs/icon.png" alt="")
+								div(class="clothes")
+							span Pro
+						div(class="fight-mid")
+							h5(class="score")
+								span 3
+								span :
+								span 0
+						div(class="fight-right")
+							div(class="fight-left-icon fight-left-icon")
+								img(src="../imgs/icon.png" alt="")
+							span 等待迎战
+			//	我的赛事
+			div(class="myRace con3" style="display:none")
+				p hhhhh
+		script(type="text/javascript", src="/public/js/add_basic.js")
+		script(type="text/javascript").
+				$('.list>li').click(function (e) {
+					var c_id=$(this).find('.hidden_id').html();
+					var user_id=$(this).find('.hidden_user_id').html();
+					e.preventDefault();
+					window.location.href="detail?competition_id=" + c_id+'&user_id='+user_id;
+				});
+
+

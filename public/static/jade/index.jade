@@ -1,0 +1,256 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/index.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="js/swiper-3.3.1.min.js")
+		title 排位赛首页
+	body
+		// 内容 start
+		.content
+			// banner start
+			.swiper-container
+				.swiper-wrapper
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+				// 分页器
+				.swiper-pagination
+			// banner end
+			.clear
+			// content_main start
+			.content_main
+				// nav start
+				.shouye_navbg
+					.shouye_nav
+						ul#nav_ul
+							li.li_hover.li_now
+								.li_01
+							li
+								.li_02
+							.clear
+				// nav end
+				// 排位赛list
+				#all_content.all_content
+					.shouye_paiweisai.all_main.content_now
+						.two_bg
+							// 待响应 start
+							.pws_head.two_width.pading15
+								.pws_headl
+									img.icon_img_left(src="images/wait-for@2x.png")
+									.pws_headl_word
+										p.size14.pub_Beyhid 等待应战者
+									.pws_headl_img
+										img.rotate_clothes(src="images/clothes-red@2x.png")
+									.clear
+								.pws_headc
+									p.size14.pub_Beyhid 三联万科小步足球工业|1号球场
+									p.size12_blue.pub_Beyhid 5人制
+									p.size12_hui.pub_Beyhid
+										| 16年06月03日
+										span 20:00-22:00
+									p.size18_blue.pading5.pub_Beyhid 待响应
+									p.size12_hui.pub_Beyhid 总价150.00 线上AA
+								.pws_headr
+									img.icon_img_left(src="images/wait-for@2x.png")
+									.pws_headl_word
+										p.size14.pub_Beyhid 等待应战者
+									.pws_headl_img
+										img.rotate_clothes(src="images/clothes-red@2x.png")
+									.clear
+								.clear
+							img.img_shadow(src="images/Separation-line1@2x.png")
+							// 待响应 end
+							// path_one start 此处循环3：0战绩，那个img也是在循环内的
+							.pws_head.pading15
+								.pws_headl
+									img.icon_img_left(src="images/wait-for@2x.png")
+									.pws_headl_word
+										p.size14.pub_Beyhid 等待应战者
+									.pws_headl_img
+										img.rotate_clothes(src="images/clothes-red@2x.png")
+									.clear
+								.pws_headc
+									p.size24_blue.padtop15.pub_Beyhid.font_w 0:3
+									p.size12_hui.pading20.pub_Beyhid 三联分获得
+								.pws_headr
+									img.icon_img_left(src="images/wait-for@2x.png")
+									.pws_headl_word
+										p.size14.pub_Beyhid 等待应战者
+									.pws_headl_img
+										img.rotate_clothes(src="images/clothes-red@2x.png")
+									.clear
+								.clear
+								.pws_baifenbi
+									.pws_baifenbil +0
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +0
+									.clear
+							img.img_shadow(src="images/Separation-line1@2x.png")
+							// path_one end
+					// 排位赛list end
+					// 排名list start
+					.shouye_paiming.all_main
+						// 排头详情
+						.pm_bg
+							img.pmbg_img(src="images/background@2x.png")
+							.pm_head.padtop25
+								.pm_headl.size14
+									p
+										| 人数 
+										span 25人
+									p.pading5.pub_Beyhid
+										| 均龄 
+										span 26.0岁
+									p.pading5.pub_Beyhid
+										| 均高 
+										span 177.3cm
+									p.pading5.pub_Beyhid
+										| 均重 
+										span 57.8KG
+								.pm_headc
+									img.icon_img_center(src="images/wait-for@2x.png")
+									p.myteam 我的球队
+								.pm_headr.size14
+									p.pub_Beyhid
+										| 战点 
+										span 50
+									p.pading5.pub_Beyhid
+										| 胜率 
+										span 55%
+								.clear
+								.myteam_name.pub_Beyhid.size16 东城兄弟俱乐部
+							.paiming_yuan
+								.pm_number 15
+								.pm_number_word 排名
+						// 豪门排名 start
+						.haomen
+							img.haomen_img(src="images/haomen_img@2x.png")
+							img.haomen_zhan(src="images/zhan_img@2x.png")
+						// haomen1 start  此处为豪门排位循环1
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contl 1st
+									.haomen_contc
+										img(src="images/wait-for@2x.png")
+									.haomen_contr
+										.haomen_contr_head.pub_Beyhid 成都胜利之王
+										ul.haomen_ul
+											li.li_one.pub_Beyhid 17场
+											li.li_one.pub_Beyhid 30胜
+											li.li_one.pub_Beyhid 21平
+											li.li_one.pub_Beyhid 26负
+											li.li_two.pub_Beyhid 三联点121
+											li.li_two.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// haomen2 start 此处为豪门排位循环2
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contl 2st
+									.haomen_contc
+										img(src="images/wait-for@2x.png")
+									.haomen_contr
+										.haomen_contr_head.pub_Beyhid 成都胜利之王
+										ul.haomen_ul
+											li.li_one.pub_Beyhid 17场
+											li.li_one.pub_Beyhid 30胜
+											li.li_one.pub_Beyhid 21平
+											li.li_one.pub_Beyhid 26负
+											li.li_two.pub_Beyhid 三联点121
+											li.li_two.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// 豪门排名 end
+						// 劲旅排名 start
+						.haomen
+							img.haomen_img(src="images/jinlv_img@2x.png")
+							img.haomen_zhan(src="images/zhan_img@2x.png")
+						// haomen1 start 此处为劲旅循环
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contl 3
+									.haomen_contc
+										img(src="images/wait-for@2x.png")
+									.haomen_contr
+										.haomen_contr_head.pub_Beyhid 成都胜利之王
+										ul.haomen_ul
+											li.li_one.pub_Beyhid 17场
+											li.li_one.pub_Beyhid 30胜
+											li.li_one.pub_Beyhid 21平
+											li.li_one.pub_Beyhid 26负
+											li.li_two.pub_Beyhid 三联点121
+											li.li_two.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// 劲旅排名 end
+						// 新贵排名 start
+						.haomen
+							img.haomen_img(src="images/xingui_img@2x.png")
+							img.haomen_zhan(src="images/zhan_img@2x.png")
+						// haomen1 start  此处为新贵循环
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contl 4
+									.haomen_contc
+										img(src="images/wait-for@2x.png")
+									.haomen_contr
+										.haomen_contr_head.pub_Beyhid 成都胜利之王
+										ul.haomen_ul
+											li.li_one.pub_Beyhid 17场
+											li.li_one.pub_Beyhid 30胜
+											li.li_one.pub_Beyhid 21平
+											li.li_one.pub_Beyhid 26负
+											li.li_two.pub_Beyhid 三联点121
+											li.li_two.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// 新贵排名 end
+					// 排名list end
+			// content_main end
+			.zhan_foot
+			// 悬浮框二维码 start
+			.foot_erweima
+			.erweima_content
+				.erweima_contentl
+					img(src="images/zhaopian.png")
+				.erweima_contentr
+					p 创建你的球队 称霸你的主场
+					p.line_di 一站式球队服务专项平台
+					p.padtop5 长按二维码下载APP
+				.clear
+			// 悬浮框二维码 end
+		// 内容 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			autoplay : 4000,
+			autoplayDisableOnInteraction : false,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			});
+		script(type="text/javascript", src="js/main.js")

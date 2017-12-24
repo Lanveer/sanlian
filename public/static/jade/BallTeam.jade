@@ -1,0 +1,200 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/index.css", rel="stylesheet", type="text/css")
+		link(href="css/BallTeam.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="js/swiper-3.3.1.min.js")
+		title 球队
+	body
+		// 内容 start
+		.content
+			// content_main start
+			.content_main
+				// 球队 start
+				.shouye_paiming
+					// 点击创建我的球队
+					.creat_team
+						img(src="images/Create-team@2x.png")
+					// 我已经点击创建了后，此处隐藏了--我的球队
+					.pm_bg(style="display: none;")
+						img.pmbg_img(src="images/background@2x.png")
+						.pm_head.padtop25
+							.pm_headl.size14
+								p.pading5.pub_Beyhid
+									| 人数 
+									span 25人
+								p.pading5.pub_Beyhid
+									| 均龄 
+									span 26.0岁
+								p.pading5.pub_Beyhid
+									| 均高 
+									span 177.3cm
+								p.pading5.pub_Beyhid
+									| 均重 
+									span 57.8KG
+							.pm_headc
+								img.icon_img_center(src="images/wait-for@2x.png")
+								p.myteam 我的球队
+							.pm_headr.size14
+								p.pading5.pub_Beyhid
+									| 战点 
+									span 50
+								p.pading5.pub_Beyhid
+									| 胜率 
+									span 55%
+								p.pading5.pub_Beyhid
+									| 排名 
+									span -
+							.clear
+							.myteam_name.pub_Beyhid.size16 东城兄弟俱乐部
+					// 加入的球队 start
+					.join_team
+						.haomen
+							img.haomen_img(src="images/Join-the-team@2x.png")
+							img.haomen_zhan(src="images/zhan_img2@2x.png")
+						// 加入球队列表 start  此处为循环1
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contc.join_teaml
+										img(src="images/wait-for@2x.png")
+									.haomen_contr.join_teamr
+										.haomen_contr_head
+											.jt_headl.pub_Beyhid 成都胜利之王
+											.jt_headr
+												ul
+													li.jt_01.pub_Beyhid 1人
+													li.jt_02.pub_Beyhid 均龄25岁
+													li.jt_03.pub_Beyhid 豪门
+													.clear
+											.clear
+										ul.haomen_ul
+											li.li_one.li_jt_one.pub_Beyhid 均高155cm
+											li.li_one.li_jt_one.pub_Beyhid 均重50.0kg
+											li.li_two.li_jt_two.pub_Beyhid 站点12
+											li.li_two.li_jt_two.pub_Beyhid 排名12
+											li.li_two.li_jt_three.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// 循环1结束
+						// 加入球队列表  此处为循环2
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contc.join_teaml
+										img(src="images/wait-for@2x.png")
+									.haomen_contr.join_teamr
+										.haomen_contr_head
+											.jt_headl.pub_Beyhid 成都胜利之王
+											.jt_headr
+												ul
+													li.jt_01.pub_Beyhid 1人
+													li.jt_02.pub_Beyhid 均龄25岁
+													li.jt_03.pub_Beyhid 豪门
+													.clear
+											.clear
+										ul.haomen_ul
+											li.li_one.li_jt_one.pub_Beyhid 均高155cm
+											li.li_one.li_jt_one.pub_Beyhid 均重50.0kg
+											li.li_two.li_jt_two.pub_Beyhid 站点12
+											li.li_two.li_jt_two.pub_Beyhid 排名12
+											li.li_two.li_jt_three.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+							// 循环2结束
+					// 加入的球队 end
+					// 推荐的球队 start
+					.join_team
+						.haomen
+							img.haomen_img(src="images/Recommended-team@2x.png")
+							img.haomen_zhan(src="images/zhan_img2@2x.png")
+						// 推荐球队列表 start  此处为循环1
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contc.join_teaml
+										img(src="images/wait-for@2x.png")
+									.haomen_contr.join_teamr
+										.haomen_contr_head
+											.jt_headl.pub_Beyhid 成都胜利之王
+											.jt_headr
+												ul
+													li.jt_01.pub_Beyhid 1人
+													li.jt_02.pub_Beyhid 均龄25岁
+													li.jt_03.pub_Beyhid 豪门
+													.clear
+											.clear
+										ul.haomen_ul
+											li.li_one.li_jt_one.pub_Beyhid 均高155cm
+											li.li_one.li_jt_one.pub_Beyhid 均重50.0kg
+											li.li_two.li_jt_two.pub_Beyhid 站点12
+											li.li_two.li_jt_two.pub_Beyhid 排名12
+											li.li_two.li_jt_three.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+						// 循环1结束
+						// 推荐球队列表  此处为循环2
+						.two_bg
+							.haomen_cont
+								.two_width
+									.haomen_contc.join_teaml
+										img(src="images/wait-for@2x.png")
+									.haomen_contr.join_teamr
+										.haomen_contr_head
+											.jt_headl.pub_Beyhid 成都胜利之王
+											.jt_headr
+												ul
+													li.jt_01.pub_Beyhid 1人
+													li.jt_02.pub_Beyhid 均龄25岁
+													li.jt_03.pub_Beyhid 豪门
+													.clear
+											.clear
+										ul.haomen_ul
+											li.li_one.li_jt_one.pub_Beyhid 均高155cm
+											li.li_one.li_jt_one.pub_Beyhid 均重50.0kg
+											li.li_two.li_jt_two.pub_Beyhid 站点12
+											li.li_two.li_jt_two.pub_Beyhid 排名12
+											li.li_two.li_jt_three.pub_Beyhid 胜率47.7%
+											.clear.pub_Beyhid
+									.clear
+								// 此图标为那个左上角战字的小旗标
+								img.icon_zhan(src="images/Bannerol-Challenge@2x.png")
+							// 循环2结束
+					// 推荐的球队 end
+				// 球队 end
+			// content_main end
+			.zhan_foot
+			// 悬浮框二维码 start
+			.foot_erweima
+			.erweima_content
+				.erweima_contentl
+					img(src="images/zhaopian.png")
+				.erweima_contentr
+					p 创建你的球队 称霸你的主场
+					p.line_di 一站式球队服务专项平台
+					p.padtop5 长按二维码下载APP
+				.clear
+			// 悬浮框二维码 end
+		// 内容 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			autoplay : 4000,
+			autoplayDisableOnInteraction : false,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			})
+		script(type="text/javascript", src="js/main.js")

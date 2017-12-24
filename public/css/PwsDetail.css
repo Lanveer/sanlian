@@ -1,0 +1,52 @@
+/*nav*/
+.pwsdetail_navbg { width: 100%; height: 46px; background-color: #051024;}
+.pwsdetail_nav { width: 80%; height: 46px; margin: 0 auto;}
+.pwsdetailnav_ul { width: 100%;}
+.pwsdetailnav_ul li { width: 33.3333%; float: left; list-style: none; padding-top: 5px;}
+.pli_01 { height:35px; background: url("../images/gaikuang_pressed@2x.png") left center no-repeat; background-size: 100%;}
+.pli_02 { height:35px; background: url("../images/zr_pressed@2x.png") left center no-repeat; background-size: 100%;}
+.pli_03 { height:35px; background: url("../images/zd_pressed@2x.png") left center no-repeat; background-size: 100%;}
+.pli_hover .pli_01{ background-image:url(../images/gaikuang@2x.png)}
+.pli_hover .pli_02{ background-image:url(../images/zhengrong@2x.png)}
+.pli_hover .pli_03{ background-image:url(../images/zhandian@2x.png)}
+.pd_main { display: none;}
+.pd_content_now {display: block}
+
+
+/*概况=========================================*/
+.pws_info { width: 100%; padding-top: 5px; padding-bottom: 15px;}
+.pws_info_with { width: 90%; margin: 0 auto;}
+.pws_info_word { width: 100%; padding-top: 5px; color: #ffffff; font-size: 14px;}
+.pws_info_word img { display: inline; width: 18px; position: relative; top: 5px; right: 6px;}
+/*双方阵容========================================*/
+.both_zr { width: 100%; color: #ffffff; font-size: 14px;}
+.both_zrl { float: left; width: 50%;}
+.both_zrr { float: left; width: 50%;}
+
+.both_zrl_main1 { width: 100%; padding-top: 15px;}
+.both_touxiang {
+    float: left;
+    width: 60px;
+    height: 60px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    overflow:hidden;
+}
+.both_touxiang img { width: 100%; height: 60px;}
+.both_name { float: left; padding-top: 10px; padding-left: 10px; width: 45%;}
+/*战点统计=============================*/
+/*无战点css*/
+.zhandian_info_none { padding-top: 50px; padding-bottom: 50px; color: #ffffff;}
+.zhandian_info_none p { text-align: center;}
+/*有战点css*/
+.zhandian_info { padding-bottom: 10px;}
+.hszd { padding-top: 10px;}
+.hszd p { text-align: center; color: #ffffff; font-size: 14px;}
+.hszd_sl { padding-right: 10px;}
+.hszd_sr { padding-left: 10px;}
+
+
+@media only screen and (min-width:375px) {
+    .both_name { width: 55%;}
+}

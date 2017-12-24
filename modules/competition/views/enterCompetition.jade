@@ -1,0 +1,99 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_baoming.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_attend.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="/public/js/swiper-3.3.1.min.js")
+		title 赛事-报名
+	body
+		div( class="box common-div")
+			h1(style="margin-top: 10pt") 比赛名称：
+				span=competition.title
+			h1(style="margin-top: 10pt") 比赛时间：
+				span=competition.show_time
+			h1 比赛地点:
+				span=competition.address
+			h1 比赛奖品:
+				span=competition.award.replace(/[\n,\r,\r\n]/g,'<br>').replace(/ /g,'&nbsp;')
+			//h1 比赛费用:
+				span='￥'+competition.fee
+			h1 保证金:
+				span ￥45
+			h1 报名费:
+				span ￥78
+			h1 赛事规则:
+				span!{competition.rule.replace(/[\n,\r,\r\n]/g, '<br>').replace(/ /g, '&nbsp;')}
+			//h1 test
+			//	span=competition.fee_time
+		// btn_baoming
+		-var now_time = new Date();
+		- now_time = (now_time/1000)|0;
+		-var is_end = 0;
+		-if(now_time>(competition.start_time|0)) is_end=1;else if(now_time<(competition.start_time|0)) is_end=0
+	if (is_end)
+		div(class="footer common-div over")
+			a(href="#" class="") 报名结束
+	else if (!competition.ball_team_num||team_num<competition.ball_team_num)
+		div(class="footer common-div")
+			a(href="baoming://#{competition_id}&#{competition.fee}") 立即报名
+	else if(team_num>=competition.ball_team_num)
+		div(class="footer common-div over")
+			a(href="#") 报名人数已满
+	else
+			div(class="footer common-div over")
+				a(href="#" ) 报名都结束了
+		// 是否创建球队
+		#shade.shade
+		#bm_chuangjian.bm_chuangjian
+			.bm_chuangjian_con 你还没有创建球队，是否立即创建？
+			img.bm_chuangjian_line(src="/public/images/Separation-line1@2x.png")
+			.btn_chuangjian
+				.btn_chuangjian_no 否
+				a(href="ss_baoming_detail.html")
+					.btn_chuangjian_yes 是
+		// 悬浮框二维码 start
+		//.zhan_foot
+		//.foot_erweima
+		//.erweima_content
+			.erweima_contentl
+				img(src="/public/images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+				direction: 'horizontal',
+				loop: true,
+				autoplay : 4000,
+				autoplayDisableOnInteraction : false,
+				// 如果需要分页器
+				pagination: '.swiper-pagination',
+			});
+		script.
+			$(".btn_baoming").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-Sign-up-at-once-pressed@2x.png");
+
+			});
+			$('.btn_baoming').mouseup(function(){
+			$(this).children('img').attr('src','/public/images/btn-Sign-up-at-once@2x.png')
+			})
+		script.
+			$(".btn_chuangjian_no").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});
+			$(".shade").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});

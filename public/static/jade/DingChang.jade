@@ -1,0 +1,149 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/index.css", rel="stylesheet", type="text/css")
+		link(href="css/DingChang.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="js/swiper-3.3.1.min.js")
+		title 订场
+	body
+		// 订场内容 start
+		.dc_content
+			// banner start
+			.swiper-container
+				.swiper-wrapper
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+					.swiper-slide
+						img.banner_img(src="images/banner@2x.png")
+				// 分页器
+				.swiper-pagination
+			// banner end
+			.clear
+			// 页面内容 start
+			.dc_main
+				// 三张展示图,请传高度为92像素的图片
+				.dc_img
+					ul
+						a(href="#")
+							li
+								img(src="images/zhanshitu.png")
+						a(href="#")
+							li
+								img(src="images/zhanshitu.png")
+						a(href="#")
+							li
+								img(src="images/zhanshitu.png")
+						.clear
+				.clear(style="height: 5px;")
+				// 球场列表
+				.haomen
+					img.haomen_img(src="images/qiuchang_list@2x.png")
+					img.haomen_zhan(src="images/zhan_img3@2x.png")
+				// 球场列表内容start 图片宽度为69px    此处为循环1
+				.two_bg
+					.haomen_cont.qclb_list
+						.two_width
+							.qclb_l
+								img(src="images/qclb_tu.png")
+							.qclb_c
+								.qclb_cl.size16.pub_Beyhid 三联万科小步足球公园
+								.qclb_cc.padtop3
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star_@2x.png")
+									.clear
+								.qclb_cr.padtop3.pub_Beyhid
+									img(src="images/icon-adress@2x.png")
+									| 成华区跳蹬河街道中央
+								.clear
+							.qclb_r.pub_Beyhid 152.6km
+							.clear
+						.dibu_icon
+							ul
+								a(href="#")
+									li
+										img(src="images/icon_park@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_rest@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_whistle@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_camera@2x.png")
+								.clear
+						// 此图标为那个左上角战字的小旗标
+						img.icon_zhan.icon_zhan_qclb(src="images/icon_sale@2x.png")
+				// 球场列表内容start 图片宽度为69px  此处为循环2
+				.two_bg
+					.haomen_cont.qclb_list
+						.two_width
+							.qclb_l
+								img(src="images/qclb_tu.png")
+							.qclb_c
+								.qclb_cl.size16.pub_Beyhid 三联万科小步足球公园
+								.qclb_cc.padtop3
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star@2x.png")
+									img(src="images/icon_star_@2x.png")
+									.clear
+								.qclb_cr.padtop3.pub_Beyhid
+									img(src="images/icon-adress@2x.png")
+									| 成华区跳蹬河街道中央
+								.clear
+							.qclb_r.pub_Beyhid 152.6km
+							.clear
+						.dibu_icon
+							ul
+								a(href="#")
+									li
+										img(src="images/icon_park@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_rest@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_whistle@2x.png")
+								a(href="#")
+									li
+										img(src="images/icon_camera@2x.png")
+								.clear
+						// 此图标为那个左上角战字的小旗标
+						img.icon_zhan.icon_zhan_qclb(src="images/icon_sale@2x.png")
+			// 页面内容 end
+		// 订场内容 end
+		// content_main end
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			autoplay : 4000,
+			autoplayDisableOnInteraction : false,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			})

@@ -1,0 +1,143 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/duinei.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 队内
+	body(style="")
+		div(class="comdiv header")
+			h1	领取卡片
+		div(class="container")
+			each item in data
+				div(class="comdiv card")
+					p(style='display:none' class='id')=item.id
+					p(style='display:none' class="limit")=item.limit
+					p(style='display:none' class="start_time1")=item.start_time1
+					img(src="../../../public/add_image/duinei.png" class="flag" alt="")
+					h1=item.title
+						span=item.create_time
+					div(class="location")
+						span
+							img(src="../../../public/add_image/location.png" alt="")
+						p=item.address
+					div(class="location time")
+						span
+							img(src="../../../public/add_image/time.png" alt="")
+						p=item.start_time
+						p 领卡截止日期:
+							span=item.end_time
+					div(class="location")
+						span
+						if(item.race_type == 0)
+							p 5人制球赛
+						else if (item.race_type == 1)
+							p 7人制球赛
+						else if (item.race_type == 2)
+							p 9人制球赛
+						else if (item.race_type == 3)
+							p 11人制球赛
+						p 还差
+							span(style="font-size: 9pt;color:#ec614a;margin-left:0;")=item.rest_card
+							| 名球员
+						p 人均消费:
+							span=item.person_fee
+					div(class="getcard") 领取卡片
+			h1(class="head-title")	填写资料
+			div(class="comdiv form")
+				div(class="input-box")
+					span	姓名:
+					input(type="text" placeholder="填写个人姓名" class="name")
+				div(class="input-box input-box2")
+					span    联系方式:
+					input(type="text" placeholder="填写个人联系方式" class="tel")
+				div(class="input-box input-box3")
+					span    选择加入球队:
+					div(class="choose-team")
+						span	选择球队 >
+					div(class="hide-box")
+						each item in data
+							ul
+								li(data="1") 主队:
+									span=item.home_name
+								li(data="2") 客队:
+									span=item.guest_name
+					p(style='display:none; color:#fff;' class="t_f")
+			div(class="comdiv confirm")	确认领取
+		div(class="comdiv success")
+		div(class="comdiv error")
+		div(class="sharing") 点击右上角分享
+		div(class="back") 点击返回
+		script(type="text/javascript", src="/public/js/add_basic.js")
+		script(type="text/javascript", src="/public/js/share.js")
+		script(type="text/javascript").
+			$('.hide-box ul li span').click(function(){
+			var flag=$(this).parent().attr('data');
+			$('.t_f').html(flag)
+			});
+			$('.confirm').click(function(){
+				var team_flag=$('.t_f').html();
+				var name=$('.name').val();
+				var tel=$('.tel').val();
+				var id = $('.id').html();
+				var limit = $('.limit').html();
+				var start_time = $('.start_time1').html();
+				if(name=='' || tel==''||team_flag==''){
+				tips('请填写信息再提交','red');
+				}
+			$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'http://sanlianfootball.top/competition/addDuinei',
+					data:{
+						team_flag:team_flag,
+						name:name,
+						tel:tel,
+						id:id,
+						limit:limit,
+						start_time:start_time
+					},
+					success:function(msg){
+						console.log(msg);
+						if(msg.code && msg.code==200){
+						    $('.container').hide();
+						    $('.success').show();
+						    $('.header h1').html('领取卡片成功！')
+						    var str='';
+						    str+='<h1>'+msg.msg+'</h1>' +
+								'<h1>恭喜成功领取 '+msg.title+'卡片</h1>' +
+								' <h1>'+msg.deadline+'</h1> ' +
+								'<h1>还剩下 <span style="color:red;margin: 0 5pt 0 5pt;">'+msg.restnum+'</span>张球卡</h1> ' +
+								'';
+						    $('.success').append(str);
+						    $('.sharing').show();
+						}else{
+						    $('.container').hide();
+						    $('.header h1').html('领取失败');
+						    $('.error').show();
+						    var str='';
+						    str+='<h1>'+msg.msg+'</h1>';
+						    $('.error').append(str);
+						    $('.back').show();
+						}
+					},
+					error:function(err){
+						console.log(err)
+					}
+				})
+					$('.back').click(function(){
+					$('.container').show();
+					$('.success').hide();
+					$('.error').hide();
+					$('.sharing').hide();
+					$('.back').hide();
+					})
+				$('.name').val('');
+				$('.tel').val('');
+				$('.choose-team span').html('选择球队 >')
+			})
+
+
+

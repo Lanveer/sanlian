@@ -1,0 +1,34 @@
+modules  主要的功能代码
+
+api---包括主要的接口
+  index--入口文件
+  route--路由文件
+  middlewares--中间件文件
+  controller--- 控制器文件，主要处理前端的业务需求
+  
+common---公共的函数以及处理数据的方法
+   model---所有的业务逻辑放在这里
+   
+   
+conpetition---赛事模块的静态页面和模板引擎+业务逻辑处理代码
+share--分享模块的静态页面以及业务逻辑代码。
+
+
+
+
+
+bin----项目的启动文件
+db_server----数据库的配置文件
+lib----运用的库文件
+node_modules---node的依赖库文件
+public---静态资源缓存
+route---总的路由（项目生成的）
+view----模板引擎文件存放低点
+
+
+app--启动文件 （）根目录（）
+bower---包管理工具的所有清单
+config---短信以及其他的配置文件
+package.json---项目所依赖的包的配置名单
+
+

@@ -1,0 +1,349 @@
+body{
+    background: #061023;
+}
+
+.header{
+    height:80pt;
+    background: #233256;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align:middle;
+    border-bottom: 1px solid #000;
+}
+
+.icon{
+    width:50pt;
+    height:50pt;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+.icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.team-info h1{
+    font-size: 11pt;
+    color: #d6d7dc;
+    font-weight: normal;
+    margin-left: 10px;
+}
+.team-info h1 span{
+    font-size: 9pt;
+    color:#7289c4;
+   margin-left: 5px;
+}
+.team-info h2{
+    font-size: 9pt;
+    color: #d6d7dc;
+    font-weight: normal;
+    margin:6pt 0 0 10pt;
+}
+
+.team-content{
+    height:auto;
+    overflow: hidden;
+    background: #233153;
+}
+
+.team-single{
+    margin: 5% 0 5% 0;
+    width:33%;
+    height:30pt;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+
+.team-single h1{
+    font-weight:normal;
+    font-size: 10pt;
+    color:#c0cbe8;
+}
+
+.team-single h2{
+    font-weight:normal;
+    font-size: 10pt;
+    color:#d6d7dc;
+}
+
+.team-middle{
+    border-left: 1px solid #0c1b40;
+    border-right: 1px solid #0c1b40;
+}
+
+
+.con{
+    display: none;
+}
+/*以上是统计的样式代码*/
+
+
+
+
+
+/*阵容开始*/
+
+.banner{
+    height:160pt;
+    overflow: hidden;
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+.banner-info{
+    width:100%;
+    height:160pt;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:44;
+}
+.mask{
+    height:160pt!important;
+}
+.team-left{
+    width:30%;
+    height:120pt;
+    position: absolute;
+    left:6%;
+    top:20pt;
+}
+
+.team-right{
+    width:30%;
+    height:120pt;
+    position: absolute;
+    right:6%;
+    top:20pt;
+}
+.team-left h1,.team-right h1{
+    font-weight: normal;
+    font-size: 10pt;
+    color: #ccced3;
+    clear: both;
+    line-height:300%;
+    text-align: center;
+}
+
+.team-icon{
+    width:75pt;
+    height:75pt;
+    border-radius: 50%;
+    position: absolute;
+    top:20pt;
+    left:50%;
+    margin-left: -45pt;
+}
+.team-icon img{
+    border-radius: 50%;
+    width:100%;
+    height:100%;
+}
+.team-list{
+}
+.team-list li{
+    height:70pt;
+    display: flex;flex-direction: row;align-items: center;vertical-align: middle;
+    border-bottom: 1px solid #0d1e47;overflow: hidden;
+}
+
+.list-icon{
+    width:40pt;
+    height:40pt;border-radius: 50%;
+    background: #000;
+    margin: 0pt 0 0 20pt;
+}
+
+.list-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.list-info{margin-left: 10pt;}
+
+.list-info h1{
+    font-weight: normal;font-size: 10pt;
+    color: #ccced3;margin-bottom: 5pt;
+}
+
+.list-info h2{
+    font-weight: normal;font-size: 9pt;
+    color: #52719f;
+    line-height:150%;
+}
+
+/*阵容结束*/
+
+
+
+
+
+
+/*战绩开始*/
+.team-header{
+    height:25pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content:space-between;
+}
+.team-header h1{
+    font-weight: normal;
+    font-size: 10pt;
+    color: #999999;
+    margin-left: 2.5%;
+}
+
+.team-header h2{
+    font-weight: normal;
+    font-size: 10pt;
+    color: #999999;
+    margin-right: 2.5%;
+}
+.team-partner{
+    width:95%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    margin:5pt auto 10pt;
+    background: #263458;
+}
+
+.top{
+    text-align: center;
+}
+.top h3{
+    font-weight: normal;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 15pt;
+}
+
+.top h1{
+    font-weight: normal;
+    font-size: 10pt;
+    color:#ccced3;
+    margin-top: 5pt;
+}
+.down{
+    margin-top: 10pt;
+    padding-bottom:10pt;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.left{
+    width:35%;
+    height:90pt;
+}
+.left-icon {
+    width:60pt;
+    height:60pt;
+    margin:5pt auto 0;
+    border-radius: 50%;
+}
+.left-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.left h1,.right h1{
+    font-size: 10pt;
+    color: #c0c1c5;
+    text-align: center;
+    margin-top: 5pt;
+}
+.mid{
+    width:30%;
+    height:90pt;
+    text-align: center;
+    line-height:90pt;
+}
+.mid span{
+    text-align: center;
+    font-size: 25pt;
+    /*font-weight:bold;*/
+    color:#58abff;
+    padding-right:10pt;
+}
+
+.right{
+    width:35%;
+    height:90pt;
+}
+
+/*战绩结束*/
+
+
+
+
+
+
+
+
+
+
+.footer{
+    height:45pt;
+    background: #00227a;
+    position: fixed;
+    bottom:0;
+}
+
+.footer ul{
+    display: flex;
+    flex-direction:row;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer ul li{
+    width:33%;
+    height:35pt;
+    margin-top: 10pt;
+    text-align: center;
+}
+.footer-icon{
+    width:14pt;
+    height:14pt;
+    margin:auto;
+    display: none;
+}
+
+.footer-icon img{
+    width:100%;
+    height:100%;
+}
+.footer-icon2{
+    width:14pt;
+    height:14pt;
+    margin:auto;
+    display: block;
+}
+
+.footer-icon2 img{
+    width:100%;
+    height:100%;
+}
+
+.footer ul li h1{
+    color: #fff;
+    font-weight: normal;
+    font-size: 10pt;
+    margin-top: 5px;
+}
+.footer-icon img{
+    width:100%;
+    height:100%;
+}

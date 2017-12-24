@@ -1,0 +1,442 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="css/Saishi_paihang.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		title 赛事页面-排行
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="Saishi_home.html")
+					li
+						img(src="images/tab-shouye@3x.png")
+				a(href="Saishi_saicheng.html")
+					li
+						img(src="images/tab-saicheng@3x.png")
+				a(href="Saishi_dongtai.html")
+					li
+						img(src="images/tab-dongtai@3x.png")
+				a(href="Saishi_paihang.html")
+					li
+						img(src="images/tab-paihang-pressed@3x.png")
+				a(href="Saishi_baoming.html")
+					li
+						img(src="images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="images/nav_zhanweitu.png")
+		// nav end
+		#jointeam_content.jointeam_content
+			// 排行_积分页面 start
+			.ph_jifen.jointeam_main.jcontent_now
+				// 状态一
+				.state_one
+					ul.ph_jifen_head.ph_head_color
+						li.li_pms.pub_Beyhid 排名
+						li.li_dws.pub_Beyhid 队伍
+						li.li_jifen1.pub_Beyhid 赛
+						li.li_jifen1.pub_Beyhid 胜
+						li.li_jifen1.pub_Beyhid 平
+						li.li_jifen1.pub_Beyhid 负
+						li.li_jifen2.pub_Beyhid 得
+						li.li_jifen2.pub_Beyhid 失
+						li.li_jsq.pub_Beyhid 净胜球
+						li.li_jf.pub_Beyhid 积分
+						.clear
+					// 积分列表    注意从第七个开始字体为白色字体   循环1
+					.ph_jifen_list
+						ul.ph_jifen_head.ph_jifen_word
+							li.li_pms.pub_Beyhid 1
+							li.li_dws.pub_Beyhid
+								img.ph_list_tx(src="images/sctj_demo_img.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_jifen1.pub_Beyhid 12
+							li.li_jifen1.pub_Beyhid 9
+							li.li_jifen1.pub_Beyhid 1
+							li.li_jifen1.pub_Beyhid 2
+							li.li_jifen2.pub_Beyhid 63
+							li.li_jifen2.pub_Beyhid 20
+							li.li_jsq.pub_Beyhid 15
+							li.li_jf.pub_Beyhid 28
+							.clear
+					// 积分列表  循环2
+					.ph_jifen_list
+						ul.ph_jifen_head.ph_jifen_word
+							li.li_pms.pub_Beyhid 2
+							li.li_dws.pub_Beyhid
+								img.ph_list_tx(src="images/sctj_demo_img.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_jifen1.pub_Beyhid 12
+							li.li_jifen1.pub_Beyhid 9
+							li.li_jifen1.pub_Beyhid 1
+							li.li_jifen1.pub_Beyhid 2
+							li.li_jifen2.pub_Beyhid 63
+							li.li_jifen2.pub_Beyhid 20
+							li.li_jsq.pub_Beyhid 15
+							li.li_jf.pub_Beyhid 28
+							.clear
+					// 积分列表  循环3
+					.ph_jifen_list
+						ul.ph_jifen_head.ph_jifen_word
+							li.li_pms.pub_Beyhid 3
+							li.li_dws.pub_Beyhid
+								img.ph_list_tx(src="images/sctj_demo_img.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_jifen1.pub_Beyhid 12
+							li.li_jifen1.pub_Beyhid 9
+							li.li_jifen1.pub_Beyhid 1
+							li.li_jifen1.pub_Beyhid 2
+							li.li_jifen2.pub_Beyhid 63
+							li.li_jifen2.pub_Beyhid 20
+							li.li_jsq.pub_Beyhid 15
+							li.li_jf.pub_Beyhid 28
+							.clear
+					// 积分列表  循环7
+					.ph_jifen_list
+						ul.ph_jifen_head.ph_jifen_word_white
+							li.li_pms.pub_Beyhid 7
+							li.li_dws.pub_Beyhid
+								img.ph_list_tx(src="images/sctj_demo_img.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_jifen1.pub_Beyhid 12
+							li.li_jifen1.pub_Beyhid 9
+							li.li_jifen1.pub_Beyhid 1
+							li.li_jifen1.pub_Beyhid 2
+							li.li_jifen2.pub_Beyhid 63
+							li.li_jifen2.pub_Beyhid 20
+							li.li_jsq.pub_Beyhid 15
+							li.li_jf.pub_Beyhid 28
+							.clear
+				// 状态二  目前为隐藏状态
+				.state_two(style="display: none;")
+					// 积分排行A组内容
+					.ph_azu
+						.ph_jifen_head_change A组排名
+						ul.ph_jifen_head.ph_head_color.ph_jifen_change
+							li.li_pms.pub_Beyhid 排名
+							li.li_dws.pub_Beyhid 队伍
+							li.li_jifen1.pub_Beyhid 赛
+							li.li_jifen1.pub_Beyhid 胜
+							li.li_jifen1.pub_Beyhid 平
+							li.li_jifen1.pub_Beyhid 负
+							li.li_jifen2.pub_Beyhid 得
+							li.li_jifen2.pub_Beyhid 失
+							li.li_jsq.pub_Beyhid 净胜球
+							li.li_jf.pub_Beyhid 积分
+							.clear
+						// 积分列表    注意从第七个开始字体为白色字体   循环1
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 1
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+						// 积分列表  循环2
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 2
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+						// 积分列表  循环3
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 3
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+					// 积分排行B组内容
+					.ph_bzu
+						.ph_jifen_head_change B组排名
+						ul.ph_jifen_head.ph_head_color.ph_jifen_change
+							li.li_pms.pub_Beyhid 排名
+							li.li_dws.pub_Beyhid 队伍
+							li.li_jifen1.pub_Beyhid 赛
+							li.li_jifen1.pub_Beyhid 胜
+							li.li_jifen1.pub_Beyhid 平
+							li.li_jifen1.pub_Beyhid 负
+							li.li_jifen2.pub_Beyhid 得
+							li.li_jifen2.pub_Beyhid 失
+							li.li_jsq.pub_Beyhid 净胜球
+							li.li_jf.pub_Beyhid 积分
+							.clear
+						// 积分列表    注意从第七个开始字体为白色字体   循环1
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 1
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+						// 积分列表  循环2
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 2
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+						// 积分列表  循环3
+						.ph_jifen_list
+							ul.ph_jifen_head.ph_jifen_word
+								li.li_pms.pub_Beyhid 3
+								li.li_dws.pub_Beyhid
+									img.ph_list_tx(src="images/sctj_demo_img.png")
+									.li_dws_word.pub_Beyhid 蓝宝FC
+									.clear
+								li.li_jifen1.pub_Beyhid 12
+								li.li_jifen1.pub_Beyhid 9
+								li.li_jifen1.pub_Beyhid 1
+								li.li_jifen1.pub_Beyhid 2
+								li.li_jifen2.pub_Beyhid 63
+								li.li_jifen2.pub_Beyhid 20
+								li.li_jsq.pub_Beyhid 15
+								li.li_jf.pub_Beyhid 28
+								.clear
+			// 排行_积分页面 end
+			// 排行_射手页面 start
+			.ph_sheshou.jointeam_main
+				ul.ph_jifen_head.ph_head_color
+					li.li_pms.pub_Beyhid 排名
+					li.li_qy.pub_Beyhid 球员
+					li.li_qd.pub_Beyhid 球队
+					li.li_jqs.pub_Beyhid 进球数
+					.clear
+				// 射手页面循环1    注意从第四个开始字体为白色字体    start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word
+						li.li_pms.pub_Beyhid 1
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 23(0)
+						.clear
+				// 射手页面循环2   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word
+						li.li_pms.pub_Beyhid 2
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 23(0)
+						.clear
+				// 射手页面循环3   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word
+						li.li_pms.pub_Beyhid 3
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 23(0)
+						.clear
+				// 射手页面循环4   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word_white
+						li.li_pms.pub_Beyhid 4
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 23(0)
+						.clear
+			// 排行_射手页面 end
+			// 排行_助攻页面 start
+			.jt_zhanji.jointeam_main
+				ul.ph_jifen_head.ph_head_color
+					li.li_pms.pub_Beyhid 排名
+					li.li_qy.pub_Beyhid 球员
+					li.li_qd.pub_Beyhid 球队
+					li.li_jqs.pub_Beyhid 助攻数
+					.clear
+				// 射手页面循环1  注意从第四个开始字体为白色字体  start
+				a(href="ss_ph_zhugongdetail.html")
+					.ph_sheshou_list
+						ul.ph_jifen_head.ph_jifen_word
+							li.li_pms.pub_Beyhid 1
+							li.li_qy.pub_Beyhid
+								.ph_sheshou_tx
+									img(src="images/zhaopian.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_qd.pub_Beyhid
+								img.ph_list_tx(src="images/sctj_demo_img.png")
+								.li_dws_word.pub_Beyhid 蓝宝FC
+								.clear
+							li.li_jqs.pub_Beyhid 18
+							.clear
+				// 射手页面循环2   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word
+						li.li_pms.pub_Beyhid 2
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 10
+						.clear
+				// 射手页面循环3   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word
+						li.li_pms.pub_Beyhid 3
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 10
+						.clear
+				// 射手页面循环4   start
+				.ph_sheshou_list
+					ul.ph_jifen_head.ph_jifen_word_white
+						li.li_pms.pub_Beyhid 4
+						li.li_qy.pub_Beyhid
+							.ph_sheshou_tx
+								img(src="images/zhaopian.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_qd.pub_Beyhid
+							img.ph_list_tx(src="images/sctj_demo_img.png")
+							.li_dws_word.pub_Beyhid 蓝宝FC
+							.clear
+						li.li_jqs.pub_Beyhid 10
+						.clear
+			// 排行_助攻页面 end
+		// 悬浮框二维码 start
+		.zhan_foot
+		.foot_erweima.foot_erweima2
+		.erweima_content.erweima_content2
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		// foot zhanwei
+		.foot_zhanwei
+		// foot start
+		.foot
+			ul#footul.footul
+				li.footli_01.jli_now
+					img(src="images/icon-integral-pressed@2x.png", style="width:26px;")
+				li.footli_02
+					img(src="images/icon-shooter@2x.png", style="width:26px;")
+				li.footli_03
+					img(src="images/icon-Assists@2x.png", style="width: 26px;")
+				.clear
+		// foot end
+		script.
+			//ss_home_jointeam_nav
+			$("#footul li").each(function(i){
+			$(this).click(function(){
+			var $this=$(this);
+			$this.addClass('jli_now').siblings().removeClass('jli_now');
+			$('#jointeam_content .jointeam_main').removeClass('jcontent_now');
+			$('#jointeam_content .jointeam_main').eq(i).addClass('jcontent_now');
+			})
+			})
+			//foot_nav
+			$(".footli_01").click(function () {
+			$(this).children().attr('src','images/icon-integral-pressed@2x.png');
+			$(".footli_02 img").attr('src','images/icon-shooter@2x.png');
+			$(".footli_03 img").attr('src','images/icon-Assists@2x.png');
+			})
+			$(".footli_02").click(function () {
+			$(this).children().attr('src','images/icon-shooter-pressed@2x.png');
+			$(".footli_01 img").attr('src','images/icon-integral@2x.png');
+			$(".footli_03 img").attr('src','images/icon-Assists@2x.png');
+			})
+			$(".footli_03").click(function () {
+			$(this).children().attr('src','images/icon-Assists-pressed@2x.png');
+			$(".footli_01 img").attr('src','images/icon-integral@2x.png');
+			$(".footli_02 img").attr('src','images/icon-shooter@2x.png');
+			})

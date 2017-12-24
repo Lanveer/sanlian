@@ -1,0 +1,129 @@
+body { background-color: #051024;}
+.content { width: 100%;}
+.banner_img { width: 100%;}
+/*nav*/
+.content_main { width: 100%;}
+.shouye_navbg { width: 100%; height: 46px; background-color: #051024}
+.shouye_nav { width: 80%; height: 46px; margin: 0 auto;}
+.shouye_nav ul li { width: 50%; float: left; list-style: none; padding-top: 5px;}
+.li_01 { height:35px; background: url("../images/btn-Qualifying-pressed@2x.png") left center no-repeat; background-size: 100%;}
+.li_02 { height:35px; background: url("../images/btn-ranking-pressed@2x.png") left center no-repeat; background-size: 100%;}
+.li_hover .li_01{ background-image:url(../images/btn-Qualifying@2x.png)}
+.li_hover .li_02{ background-image:url(../images/btn-ranking@2x.png)}
+.all_main { display: none;}
+.content_now {display: block}
+
+/*排位赛页面_head*/
+/*.shouye_paiweisai { display: none;}*/
+.pws_headl { float: left; width: 25%; text-align: center;}
+.pws_headc { float: left; width: 50%; text-align: center;}
+.pws_headr { float: left; width: 25%; text-align: center;}
+.icon_img_left { width: 65px; height:65px; margin: 0 auto;}
+.rotate_clothes { width: 18px; position: relative; padding-top: 5px;}
+
+.pws_headl_word { width: 80%; float: left; padding-top: 5px;}
+.pws_headl_img { width: 20%; float: right;}
+.img_shadow { width: 100%;}
+
+/*排位赛页面_path_one*/
+.pws_baifenbi { width: 98%;}
+.pws_baifenbil { float: left; width: 10%; color: #ff4546;}
+.pws_baifenbic { float: left; width: 80%; height: 6px; margin-top: 8px;}
+.pws_baifenbir { float: left; width: 10%; color: #55a1ed; text-align: right;}
+.baifentiao_l { width: 50%; background-color: #ff4546; height: 6px; float: left;}
+.baifentiao_r { width: 50%; background-color: #55a1ed; height: 6px; float: right;}
+
+
+/*排名页面*/
+.pm_bg { width: 100%; position: relative;}
+.paiming_yuan {
+    width: 58px;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+    z-index: 2;
+}
+
+.pm_number_word {
+    text-align: center;
+    color: #8bb2e9;
+    font-size: 14px;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(10, 56, 154, 1)), to(rgba(251, 252, 255, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+.pm_number {
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: bold;
+    background: url("../images/yuan@2x.png") left center no-repeat;
+    width: 58px;
+    height: 58px;
+    background-size: 100%;
+    text-align: center;
+    line-height: 58px;
+}
+.pmbg_img { width: 100%;}
+.pm_head { width: 80%; position: absolute; top: 0; left: 10%; z-index: 2;}
+.pm_headl { width: 30%; float: left;}
+.pm_headc { width: 40%; float: left; text-align: center;}
+.pm_headr { width: 30%; float: left;}
+.icon_img_center { width: 86px; height: 86px; margin: 0 auto;}
+.myteam {
+    display: inline-block;
+    font-size: 14px;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(10, 56, 154, 1)), to(rgba(251, 252, 255, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    color: #8bb2e9;
+}
+.myteam_name { width: 100%; text-align: center;}
+
+
+/*豪门css*/
+.zhan_bg { height: 35px; margin-top:10px;}
+.haomen { width: 100%; position: relative;}
+.haomen_img { position: absolute; width: 100%; left: 0; top: 0;}
+.haomen_cont { width: 100%; border-bottom: 1px solid #1d4779; height: 90px; position: relative;}
+.haomen_zhan { width: 100%;}
+.haomen_contl { float: left; width: 10%; color: #ff4546; line-height: 90px; text-align: center;}
+.haomen_contc { float: left; width: 20%; padding-top: 12px;}
+.haomen_contr { float: left; width: 70%; padding-top: 22px;}
+
+.haomen_contc img { width: 65px;height: 65px;}
+.haomen_contr_head { color: #ffffff;}
+.haomen_ul { width: 100%;}
+.haomen_ul li { float: left; font-size: 12px; color: #ffffff; margin-right: 1%; margin-top: 5px; text-align: center; line-height: 16px;}
+.li_one { width: 12%; background-color: #59abff;}
+.li_two { width: 23%; background-color: #ff7072;}
+
+.icon_zhan { width: 32px; top: 0; right: 0; position: absolute; z-index: 1;}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:375px) {
+    .pm_head { padding-top: 10px;}
+    .pm_headl { font-size: 12px;}
+    .pm_headr { font-size: 12px;}
+}
+
+@media only screen and (max-width:320px) {
+    .pm_head { padding-top: 5px;}
+    .myteam { font-size: 12px;}
+    .myteam_name { font-size: 14px;}
+    .haomen_contr_head { padding-left: 10px;}
+    .haomen_ul { padding-left: 10px;}
+    .li_two { width: 21%;}
+}
+
+
+
+

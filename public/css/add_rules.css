@@ -1,0 +1,14 @@
+.bg{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    background: #1f293c;
+}
+.bg p{
+    font-size: 10pt;
+    color: #fff;
+    line-height:160%;
+    width:95%;
+    margin:auto;
+}

@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Microsoft yahei";
+}
+
+ul li{
+    list-style:none;
+}
+/*basic style  over*/
+
+
+
+/*main header 开始*/
+.main-header{
+    width:100%;
+    height:40pt;
+    overflow: hidden;
+    background: linear-gradient(#00278a, #001960)
+}
+.main-header p{
+    text-align: center;
+    line-height:40pt;
+    color: #fff;
+    letter-spacing: 10px;
+}
+.main-header ul{
+    display: flex;
+    height:50pt;
+    flex-direction:row;
+    align-items:center;
+    margin-top: 18pt;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+.main-header ul li{
+    height:50pt;
+    display: block;
+    width:33%;
+    text-align: center;
+    color:#999999;
+    line-height:48pt;
+    font-size: 14pt;
+
+}
+
+.main-header-on{
+    color: #ffffff!important;
+    border-bottom: 4pt solid #fff;
+}
+
+
+/*main header 结束*/
+
+.content{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+
+
+.search{
+    width:100%;
+    /*height:100pt;*/
+    background: #061126;
+    position: fixed;
+    top:0;
+    z-index:99;
+}
+
+/*公共部分的央视代码开始*/
+.common-div{
+    max-width:800px;
+    width:100%;
+    overflow: hidden;
+    margin:auto;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.mask{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background: #000;
+    opacity:.6;
+    z-index:33;
+}
+/*公共部分的央视代码结束*/
+
+
+/*通用部分的弹出窗开始*/
+
+#bigMask{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:50%;
+    margin-left: -50%;
+}
+#mask{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    background: #000;
+    z-index:99;
+    opacity:.6;
+}
+#win{
+    width:85%;
+    height:160pt;
+    border:1px solid #457fed;
+    border-radius:5px;
+    position: fixed;
+    left:50%;
+    margin-left:-42.5%;
+    top:50%;
+    margin-top: -80pt;
+    z-index:999;
+    background: #143b84;
+    background: -webkit-linear-gradient(left, #202b42 , #243b68 , #202b42); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #202b42 , #243b68 , #202b42); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #202b42 , #243b68 , #202b42); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #202b42 , #243b68 , #202b42); /* 标准的语法 */
+}
+
+#win h1{
+    font-weight:normal;
+    font-size: 12pt;
+    color:#e0e3ea;
+    text-align: center;
+    margin-top: 15%;
+}
+#confirm{
+    width:80%;
+    height:80pt;
+    margin:15% auto 0;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+    border-top: 2px solid #2d61ba;
+}
+#confirm a{
+    width: 40%;
+    height:15pt;
+    text-align: center;
+    color:#e0e3ea;
+    font-size: 12pt;
+    padding-bottom:20pt;
+}
+.red{
+    color: red!important;
+}
+.nomal{
+    color:#e0e3ea;
+}
+
+/*通用部分的弹出窗结束*/

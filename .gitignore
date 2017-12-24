@@ -1,0 +1,8 @@
+.idea/
+node_modules/
+
+modules/api/cache/
+msgList.js
+modules/common/cache/
+public/uploads/
+public/vendor/

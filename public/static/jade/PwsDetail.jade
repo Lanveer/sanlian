@@ -1,0 +1,305 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/index.css", rel="stylesheet", type="text/css")
+		link(href="css/TeamDetail.css", rel="stylesheet", type="text/css")
+		link(href="css/PwsDetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		title 排位赛详情
+	body
+		.three_bg.padtop5
+			// 待响应的情况 start
+			.pws_head.two_width.pading15
+				.pws_headl
+					img.icon_img_left(src="images/wait-for@2x.png")
+					.pws_headl_word
+						p.size14.pub_Beyhid 等待应战者
+					.pws_headl_img
+						img.rotate_clothes(src="images/clothes-red@2x.png")
+					.clear
+				.pws_headc
+					p.size14.pub_Beyhid 三联万科小步足球工业|1号球场
+					p.size12_blue.pub_Beyhid 5人制
+					p.size12_hui.pub_Beyhid
+						| 16年06月03日
+						span 20:00-22:00
+					p.size18_blue.pading5.pub_Beyhid 待响应
+					p.size12_hui.pub_Beyhid 总价150.00 线上AA
+				.pws_headr
+					img.icon_img_left(src="images/wait-for@2x.png")
+					.pws_headl_word
+						p.size14.pub_Beyhid 等待应战者
+					.pws_headl_img
+						img.rotate_clothes(src="images/clothes-red@2x.png")
+					.clear
+				.clear
+			// 待响应 end
+			// 3：0战绩的情况，此处被yincang这个类隐藏了，那个img也是在循环内的
+			.pws_head.pading15.yincang
+				.pws_headl
+					img.icon_img_left(src="images/wait-for@2x.png")
+					.pws_headl_word
+						p.size14.pub_Beyhid 等待应战者
+					.pws_headl_img
+						img.rotate_clothes(src="images/clothes-red@2x.png")
+					.clear
+				.pws_headc
+					p.size24_blue.padtop15.pub_Beyhid.font_w 0:3
+					p.size12_hui.pading20.pub_Beyhid 三联分获得
+				.pws_headr
+					img.icon_img_left(src="images/wait-for@2x.png")
+					.pws_headl_word
+						p.size14.pub_Beyhid 等待应战者
+					.pws_headl_img
+						img.rotate_clothes(src="images/clothes-red@2x.png")
+					.clear
+				.clear
+				.pws_baifenbi
+					.pws_baifenbil  
+					.pws_baifenbic
+						.baifentiao_l
+						.baifentiao_r
+						.clear
+					.pws_baifenbir  
+					.clear
+			// 3：0战绩 end
+		// nav start
+		.pwsdetail_navbg.padtop5
+			.pwsdetail_nav
+				ul#pwsdetailnav_ul.pwsdetailnav_ul
+					li.pli_hover.pli_now
+						.pli_01
+					li
+						.pli_02
+					li
+						.pli_03
+					.clear
+		// nav end
+		#pd_content.pd_content
+			// 排位赛信息
+			.gk_photo.pd_main.pd_content_now
+				img.gk_photo_img(src="images/pws_info_img@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="images/zhan_img2@2x.png")
+				.two_bg
+					.two_width
+						.pws_info
+							.pws_info_with
+								.pws_info_word
+									img(src="images/adressed@2x.png")
+									| 三联万科小步足球公园
+								.pws_info_word
+									img(src="images/adressed2@2x.png")
+									| 成华区跳蹬河街道中央
+								.pws_info_word
+									img(src="images/referee@2x.png")
+									| 裁判：二星级裁判(三)
+								.pws_info_word
+									img(src="images/Photography@2x.png")
+									| 拍摄：二星级拍摄(三)
+								.pws_info_word
+									img(src="images/tiame@2x.png")
+									| 16年03月06日
+								.pws_info_word
+									img(src="images/pay@2x.png")
+									| 线上AA 500元
+			// 双方阵容
+			.gk_photo.pd_main
+				img.gk_photo_img(src="images/both_zr@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="images/zhan_img2@2x.png")
+				.two_bg
+					.three_width
+						.both_zr.pading15
+							// 主队
+							.both_zrl
+								.both_zrl_head 主队
+								.both_zrl_main
+									// 此处为主队信息循环1
+									.both_zrl_main1
+										.both_touxiang
+											img(src="images/zhaopian.png")
+										.both_name
+											p.pub_Beyhid 张萌萌
+											p.size12_sbule.pub_Beyhid 25号 门卫
+										.clear
+									// 此处为主队信息循环2
+									.both_zrl_main1
+										.both_touxiang
+											img(src="images/zhaopian.png")
+										.both_name
+											p.pub_Beyhid 张萌萌
+											p.size12_sbule.pub_Beyhid 25号 门卫
+										.clear
+							// 客队
+							.both_zrr
+								.both_zrl_head 客队
+								.both_zrl_main
+									// 此处为客队信息循环1
+									.both_zrl_main1
+										.both_touxiang
+											img(src="images/zhaopian.png")
+										.both_name
+											p.pub_Beyhid 张萌萌
+											p.size12_sbule.pub_Beyhid 25号 门卫
+										.clear
+									// 此处为客队信息循环2
+									.both_zrl_main1
+										.both_touxiang
+											img(src="images/zhaopian.png")
+										.both_name
+											p.pub_Beyhid 张萌萌
+											p.size12_sbule.pub_Beyhid 25号 门卫
+										.clear
+							.clear
+			// 战点统计
+			.gk_photo.pd_main
+				img.gk_photo_img(src="images/zhandiantj@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="images/zhan_img2@2x.png")
+				.two_bg
+					.two_width
+						// 没有战点统计的情况 此处被yincang这个类隐藏
+						.zhandian_info_none.yincang
+							p 暂无战点统计
+						// 有战点统计的情况
+						.zhandian_info.three_width
+							// 合算战点
+							.hszd
+								p 合算战点
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 赛果
+							.hszd
+								p
+									span.hszd_sl 平
+									| 赛果
+									span.hszd_sr 平
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 进球数
+							.hszd
+								p
+									span.hszd_sl 0
+									| 进球数
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 失球数
+							.hszd
+								p
+									span.hszd_sl 0
+									| 失球数
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 黄牌
+							.hszd
+								p
+									span.hszd_sl 0
+									| 黄牌
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 红牌
+							.hszd
+								p
+									span.hszd_sl 0
+									| 红牌
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 连胜
+							.hszd
+								p
+									span.hszd_sl 0
+									| 连胜
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 连败
+							.hszd
+								p
+									span.hszd_sl 0
+									| 连败
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+							// 场次数
+							.hszd
+								p
+									span.hszd_sl 0
+									| 场次数
+									span.hszd_sr 0
+								.pws_baifenbi
+									.pws_baifenbil +1
+									.pws_baifenbic
+										.baifentiao_l
+										.baifentiao_r
+										.clear
+									.pws_baifenbir +1
+									.clear
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script(type="text/javascript", src="js/main.js")

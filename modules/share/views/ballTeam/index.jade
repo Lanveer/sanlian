@@ -1,0 +1,155 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+        title 球队
+        link(href="/public/css/swiper-3.3.1.min.css",rel="stylesheet",type="text/css")
+        link(href="/public/css/n_common.css",rel="stylesheet",type="text/css")
+        link(href="/public/css/index.css",rel="stylesheet",type="text/css")
+        link(href="/public/css/BallTeam.css",rel="stylesheet",type="text/css")
+        script(src="/public/js/jquery-1.7.2.min.js")
+        script(src="/public/js/swiper-3.3.1.min.js")
+    body
+        div.content
+            div.content_main
+                div.shouye_paiming
+                    - if (!my_team.uid)
+                        <!--点击创建我的球队-->
+                        div.creat_team
+                            img(src='/public/images/Create-team@2x.png')
+                    - else
+                        <!--我已经点击创建了后，此处隐藏了--我的球队-->
+                        div.pm_bg(style='')
+                            img.pmbg_img(src='/public/images/background@2x.png')
+                            div.pm_head.padtop25
+                                div.pm_headl.size14
+                                    p.pading5.pub_Beyhid 人数
+                                        span  #{my_team.members.length}人
+                                    p.pading5.pub_Beyhid 均龄
+                                        span  #{my_team.avg_age}岁
+                                    p.pading5.pub_Beyhid 均高
+                                        span  #{my_team.avg_height}cm
+                                    p.pading5.pub_Beyhid 均重
+                                        span  #{my_team.avg_weight}KG
+                                div.pm_headc
+                                    img.icon_img_center(src=my_team.logo)
+                                    p.myteam 我的球队
+                                div.pm_headr.size14
+                                    p.pading5.pub_Beyhid 战点
+                                        span  #{my_team.san_score}
+                                    p.pading5.pub_Beyhid 胜率
+                                        span  #{Number(my_team.win_rate).toFixed(1)}%
+                                    p.pading5.pub_Beyhid 排名
+                                        span  #{my_team.ranking}
+                                div.clear
+                                div.myteam_name.pub_Beyhid.size16= my_team.name
+
+                    <!--加入的球队 start-->
+                    div.join_team
+                        div.haomen
+                            img.haomen_img(src='/public/images/Join-the-team@2x.png')
+                            img.haomen_zhan(src='/public/images/zhan_img2@2x.png')
+                        <!--加入球队列表 start  此处为循环1-->
+                        each team in joined_team
+                            div.two_bg
+                                div.haomen_cont
+                                    div.two_width
+                                        div.haomen_contc.join_teaml
+                                            img(src=team.logo)
+                                        div.haomen_contr.join_teamr
+                                            div.haomen_contr_head
+                                                div.jt_headl.pub_Beyhid #{team.name}
+                                                div.jt_headr
+                                                    ul
+                                                        li.jt_01.pub_Beyhid #{team.members.length}人
+                                                        li.jt_02.pub_Beyhid 均龄#{team.avg_age}岁
+                                                        - var title="";
+                                                        - rules.forEach(function(rule) {
+                                                            - if(team.san_score>=rule['min']){
+                                                            -   title=rule['title'];
+                                                            -   return false;
+                                                            - }
+                                                        - })
+                                                        li.jt_03.pub_Beyhid #{title}
+                                                        div.clear
+                                                div.clear
+                                            ul.haomen_ul
+                                                li.li_one.li_jt_one.pub_Beyhid 均高#{team.avg_height}cm
+                                                li.li_one.li_jt_one.pub_Beyhid 均重#{team.avg_weight}kg
+                                                li.li_two.li_jt_two.pub_Beyhid 战点#{team.san_score}
+                                                li.li_two.li_jt_two.pub_Beyhid 排名#{team.ranking}
+                                                li.li_two.li_jt_three.pub_Beyhid 胜率#{Number(team.win_rate).toFixed(1)}%
+                                         div.clear
+                                    if team.is_qualifying
+                                        img.icon_zhan(src='/public/images/Bannerol-Challenge@2x.png')
+                        <!--循环1结束-->
+                    <!--加入的球队 end-->
+
+                    <!--推荐的球队 start-->
+                    div.join_team
+                        div.haomen
+                            img.haomen_img(src='/public/images/Recommended-team@2x.png')
+                            img.haomen_zhan(src='/public/images/zhan_img2@2x.png')
+                        <!--推荐球队列表 start  此处为循环1-->
+                        each team in recommend_team
+                            div.two_bg
+                                div.haomen_cont
+                                    div.two_width
+                                        div.haomen_contc.join_teaml
+                                            img(src=team.logo)
+                                        div.haomen_contr.join_teamr
+                                            div.haomen_contr_head
+                                                div.jt_headl.pub_Beyhid #{team.name}
+                                                div.jt_headr
+                                                    ul
+                                                        li.jt_01.pub_Beyhid #{team.members.length}人
+                                                        li.jt_02.pub_Beyhid 均龄#{team.avg_age}岁
+                                                        - var title="";
+                                                            - rules.forEach(function(rule) {
+                                                            - if(team.san_score>=rule['min']){
+                                                            -   title=rule['title'];
+                                                            -   return false;
+                                                            - }
+                                                            - })
+                                                        li.jt_03.pub_Beyhid #{title}
+                                                        div.clear
+                                                div.clear
+                                            ul.haomen_ul
+                                                li.li_one.li_jt_one.pub_Beyhid 均高#{team.avg_height}cm
+                                                li.li_one.li_jt_one.pub_Beyhid 均重#{team.avg_weight}kg
+                                                li.li_two.li_jt_two.pub_Beyhid 战点#{team.san_score}
+                                                li.li_two.li_jt_two.pub_Beyhid 排名#{team.ranking}
+                                                li.li_two.li_jt_three.pub_Beyhid 胜率#{Number(team.win_rate).toFixed(1)}%
+                                        div.clear
+                                    <!--此图标为那个左上角战字的小旗标-->
+                                    if team.is_qualifying
+                                        img.icon_zhan(src='/public/images/Bannerol-Challenge@2x.png')
+                        <!--循环1结束-->
+                        <!--推荐的球队 end-->
+                <!--球队 end-->
+            <!--content_main end-->
+            div.zhan_foot
+            <!--悬浮框二维码 start-->
+            div.foot_erweima
+            div.erweima_content
+                div.erweima_contentl
+                    img(src='/public/images/zhaopian.png')
+                div.erweima_contentr
+                    p 创建你的球队 称霸你的主场
+                    p.line_di 一站式球队服务专项平台
+                    p.padtop5 长按二维码下载APP
+                div.clear
+
+
+    script.
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay : 4000,
+            autoplayDisableOnInteraction : false,
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            });
+    script(type='text/javascript' src='/public/js/main.js')
+

@@ -1,0 +1,153 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_baoming.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="/public/js/swiper-3.3.1.min.js")
+		title 赛事-报名
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-shouye@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng@3x.png")
+				a(href="posts?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-dongtai@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming-pressed@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+		// nav end
+		// banner start
+		.swiper-container
+			.swiper-wrapper
+				if (banners)
+					each banner in banners
+						.swiper-slide
+							a(href=banner.url)
+								img.banner_img(src=banner.img)
+
+			// 分页器
+			.swiper-pagination
+		// banner end
+		// 报名详情
+		.bm_detail
+			.bm_detail_con
+				p.pub_Beyhid
+					| 比赛时间：
+					span #{competition.show_time}
+				p
+					span 比赛地点：
+					span #{competition.address}
+				p
+					| 比赛奖励：
+					span !{competition.award.replace(/[\n,\r,\r\n]/g,'<br>').replace(/ /g,'&nbsp;')}
+				p
+					| 比赛规则：
+					span !{competition.rule.replace(/[\n,\r,\r\n]/g,'<br>').replace(/ /g,'&nbsp;')}
+				p
+					-var num = competition.ball_team_num;
+					-if (!num) num = "无限制";
+					| 球队限制数量：
+					span #{num}
+				p
+					| 报名截止时间：
+					span #{competition.show_fee_time}
+				if competition.explain
+					p
+						| 赛事说明：
+						span !{competition.explain.replace(/[\n]/g,'<br>').replace(/ /g,'&nbsp;')}
+		// btn_baoming
+		-var now_time = new Date();
+		- now_time = (now_time/1000)|0;
+		-var is_end = 0;
+		-if(now_time>(competition.fee_time|0)) is_end=1;
+		if (is_end)
+			a(href="#")
+				.btn_baoming
+					img(src="/public/images/btn-end@2x.png")
+		else if (!competition.ball_team_num||team_num<competition.ball_team_num)
+			a(href="baoming://#{competition_id}&#{competition.fee}")
+				.btn_baoming
+					img(src="/public/images/btn-Sign-up-at-once@2x.png")
+		else if(team_num>=competition.ball_team_num)
+			a(href="#")
+				.btn_baoming
+					img(src="/public/images/btn-man@2x.png")
+		else
+			a(href="#")
+				.btn_baoming
+					img(src="/public/images/btn-end@2x.png")
+		// 是否创建球队
+		#shade.shade
+		#bm_chuangjian.bm_chuangjian
+			.bm_chuangjian_con 你还没有创建球队，是否立即创建？
+			img.bm_chuangjian_line(src="/public/images/Separation-line1@2x.png")
+			.btn_chuangjian
+				.btn_chuangjian_no 否
+				a(href="ss_baoming_detail.html")
+					.btn_chuangjian_yes 是
+		// 悬浮框二维码 start
+		//.zhan_foot
+		//.foot_erweima
+		//.erweima_content
+			.erweima_contentl
+				img(src="/public/images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+				direction: 'horizontal',
+				loop: true,
+				autoplay : 4000,
+				autoplayDisableOnInteraction : false,
+				// 如果需要分页器
+				pagination: '.swiper-pagination',
+			});
+		script.
+			$(".btn_baoming").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-Sign-up-at-once-pressed@2x.png");
+
+
+				//        if(有创建的情况){
+				//
+				//        }
+				//        else{
+				//var shade = document.getElementById("shade");
+				//shade.style.width = window.screen.width + 'px';
+				//shade.style.height = window.screen.height + 'px';
+				//$("#shade").show();
+				//$("#bm_chuangjian").show();
+			//        }
+			});
+			$(".btn_baoming").mouseup(function () {
+				$(this).children("img").attr("src","/public/images/btn-Sign-up-at-once@2x.png");
+			}
+		script.
+			$(".btn_chuangjian_no").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});
+			$(".shade").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});

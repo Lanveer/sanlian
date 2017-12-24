@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <link href="css/n_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/Saishi_home.css" rel="stylesheet" type="text/css" />
+    <link href="css/Saishi_paihang.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <title>赛事页面-排行</title>
+</head>
+<body>
+<!--nav start-->
+<div class="ss_detail_nav">
+    <ul class="ss_dul">
+        <a href="Saishi_home.html"><li><img src="images/tab-shouye@3x.png"></li></a>
+        <a href="Saishi_saicheng.html"><li><img src="images/tab-saicheng@3x.png"></li></a>
+        <a href="Saishi_dongtai.html"><li><img src="images/tab-dongtai@3x.png"></li></a>
+        <a href="Saishi_paihang.html"><li><img src="images/tab-paihang-pressed@3x.png"></li></a>
+        <a href="Saishi_baoming.html"><li><img src="images/tab-baoming@3x.png"></li></a>
+        <div class="clear"></div>
+    </ul>
+    <img src="images/nav_zhanweitu.png" class="nav_zhanweitu">
+</div>
+<!--nav end-->
+<div class="jointeam_content" id="jointeam_content">
+    <!--排行_积分页面 start-->
+    <div class="ph_jifen jointeam_main jcontent_now">
+        <!--状态一-->
+        <div class="state_one">
+            <ul class="ph_jifen_head ph_head_color">
+                <li class="li_pms pub_Beyhid">排名</li>
+                <li class="li_dws pub_Beyhid">队伍</li>
+                <li class="li_jifen1 pub_Beyhid">赛</li>
+                <li class="li_jifen1 pub_Beyhid">胜</li>
+                <li class="li_jifen1 pub_Beyhid">平</li>
+                <li class="li_jifen1 pub_Beyhid">负</li>
+                <li class="li_jifen2 pub_Beyhid">得</li>
+                <li class="li_jifen2 pub_Beyhid">失</li>
+                <li class="li_jsq pub_Beyhid">净胜球</li>
+                <li class="li_jf pub_Beyhid">积分</li>
+                <div class="clear"></div>
+            </ul>
+            <!--积分列表    注意从第七个开始字体为白色字体   循环1-->
+            <div class="ph_jifen_list">
+                <ul class="ph_jifen_head ph_jifen_word">
+                    <li class="li_pms pub_Beyhid">1</li>
+                    <li class="li_dws pub_Beyhid">
+                        <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                        <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li_jifen1 pub_Beyhid">12</li>
+                    <li class="li_jifen1 pub_Beyhid">9</li>
+                    <li class="li_jifen1 pub_Beyhid">1</li>
+                    <li class="li_jifen1 pub_Beyhid">2</li>
+                    <li class="li_jifen2 pub_Beyhid">63</li>
+                    <li class="li_jifen2 pub_Beyhid">20</li>
+                    <li class="li_jsq pub_Beyhid">15</li>
+                    <li class="li_jf pub_Beyhid">28</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--积分列表  循环2-->
+            <div class="ph_jifen_list">
+                <ul class="ph_jifen_head ph_jifen_word">
+                    <li class="li_pms pub_Beyhid">2</li>
+                    <li class="li_dws pub_Beyhid">
+                        <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                        <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li_jifen1 pub_Beyhid">12</li>
+                    <li class="li_jifen1 pub_Beyhid">9</li>
+                    <li class="li_jifen1 pub_Beyhid">1</li>
+                    <li class="li_jifen1 pub_Beyhid">2</li>
+                    <li class="li_jifen2 pub_Beyhid">63</li>
+                    <li class="li_jifen2 pub_Beyhid">20</li>
+                    <li class="li_jsq pub_Beyhid">15</li>
+                    <li class="li_jf pub_Beyhid">28</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--积分列表  循环3-->
+            <div class="ph_jifen_list">
+                <ul class="ph_jifen_head ph_jifen_word">
+                    <li class="li_pms pub_Beyhid">3</li>
+                    <li class="li_dws pub_Beyhid">
+                        <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                        <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li_jifen1 pub_Beyhid">12</li>
+                    <li class="li_jifen1 pub_Beyhid">9</li>
+                    <li class="li_jifen1 pub_Beyhid">1</li>
+                    <li class="li_jifen1 pub_Beyhid">2</li>
+                    <li class="li_jifen2 pub_Beyhid">63</li>
+                    <li class="li_jifen2 pub_Beyhid">20</li>
+                    <li class="li_jsq pub_Beyhid">15</li>
+                    <li class="li_jf pub_Beyhid">28</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--积分列表  循环7-->
+            <div class="ph_jifen_list">
+                <ul class="ph_jifen_head ph_jifen_word_white">
+                    <li class="li_pms pub_Beyhid">7</li>
+                    <li class="li_dws pub_Beyhid">
+                        <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                        <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li_jifen1 pub_Beyhid">12</li>
+                    <li class="li_jifen1 pub_Beyhid">9</li>
+                    <li class="li_jifen1 pub_Beyhid">1</li>
+                    <li class="li_jifen1 pub_Beyhid">2</li>
+                    <li class="li_jifen2 pub_Beyhid">63</li>
+                    <li class="li_jifen2 pub_Beyhid">20</li>
+                    <li class="li_jsq pub_Beyhid">15</li>
+                    <li class="li_jf pub_Beyhid">28</li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+        <!--状态二  目前为隐藏状态-->
+        <div class="state_two" style="display: none;">
+            <!--积分排行A组内容-->
+            <div class="ph_azu">
+                <div class="ph_jifen_head_change">A组排名</div>
+                <ul class="ph_jifen_head ph_head_color ph_jifen_change">
+                    <li class="li_pms pub_Beyhid">排名</li>
+                    <li class="li_dws pub_Beyhid">队伍</li>
+                    <li class="li_jifen1 pub_Beyhid">赛</li>
+                    <li class="li_jifen1 pub_Beyhid">胜</li>
+                    <li class="li_jifen1 pub_Beyhid">平</li>
+                    <li class="li_jifen1 pub_Beyhid">负</li>
+                    <li class="li_jifen2 pub_Beyhid">得</li>
+                    <li class="li_jifen2 pub_Beyhid">失</li>
+                    <li class="li_jsq pub_Beyhid">净胜球</li>
+                    <li class="li_jf pub_Beyhid">积分</li>
+                    <div class="clear"></div>
+                </ul>
+                <!--积分列表    注意从第七个开始字体为白色字体   循环1-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">1</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <!--积分列表  循环2-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">2</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <!--积分列表  循环3-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">3</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <!--积分排行B组内容-->
+            <div class="ph_bzu">
+                <div class="ph_jifen_head_change">B组排名</div>
+                <ul class="ph_jifen_head ph_head_color ph_jifen_change">
+                    <li class="li_pms pub_Beyhid">排名</li>
+                    <li class="li_dws pub_Beyhid">队伍</li>
+                    <li class="li_jifen1 pub_Beyhid">赛</li>
+                    <li class="li_jifen1 pub_Beyhid">胜</li>
+                    <li class="li_jifen1 pub_Beyhid">平</li>
+                    <li class="li_jifen1 pub_Beyhid">负</li>
+                    <li class="li_jifen2 pub_Beyhid">得</li>
+                    <li class="li_jifen2 pub_Beyhid">失</li>
+                    <li class="li_jsq pub_Beyhid">净胜球</li>
+                    <li class="li_jf pub_Beyhid">积分</li>
+                    <div class="clear"></div>
+                </ul>
+                <!--积分列表    注意从第七个开始字体为白色字体   循环1-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">1</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <!--积分列表  循环2-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">2</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <!--积分列表  循环3-->
+                <div class="ph_jifen_list">
+                    <ul class="ph_jifen_head ph_jifen_word">
+                        <li class="li_pms pub_Beyhid">3</li>
+                        <li class="li_dws pub_Beyhid">
+                            <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                            <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                            <div class="clear"></div>
+                        </li>
+                        <li class="li_jifen1 pub_Beyhid">12</li>
+                        <li class="li_jifen1 pub_Beyhid">9</li>
+                        <li class="li_jifen1 pub_Beyhid">1</li>
+                        <li class="li_jifen1 pub_Beyhid">2</li>
+                        <li class="li_jifen2 pub_Beyhid">63</li>
+                        <li class="li_jifen2 pub_Beyhid">20</li>
+                        <li class="li_jsq pub_Beyhid">15</li>
+                        <li class="li_jf pub_Beyhid">28</li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--排行_积分页面 end-->
+
+    <!--排行_射手页面 start-->
+    <div class="ph_sheshou jointeam_main">
+        <ul class="ph_jifen_head ph_head_color">
+            <li class="li_pms pub_Beyhid">排名</li>
+            <li class="li_qy pub_Beyhid">球员</li>
+            <li class="li_qd pub_Beyhid">球队</li>
+            <li class="li_jqs pub_Beyhid">进球数</li>
+            <div class="clear"></div>
+        </ul>
+        <!--射手页面循环1    注意从第四个开始字体为白色字体    start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">1</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">23(0)</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--射手页面循环2   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">2</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">23(0)</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--射手页面循环3   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">3</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">23(0)</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--射手页面循环4   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word_white">
+                <li class="li_pms pub_Beyhid">4</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">23(0)</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <!--排行_射手页面 end-->
+
+    <!--排行_助攻页面 start-->
+    <div class="jt_zhanji jointeam_main">
+        <ul class="ph_jifen_head ph_head_color">
+            <li class="li_pms pub_Beyhid">排名</li>
+            <li class="li_qy pub_Beyhid">球员</li>
+            <li class="li_qd pub_Beyhid">球队</li>
+            <li class="li_jqs pub_Beyhid">助攻数</li>
+            <div class="clear"></div>
+        </ul>
+        <!--射手页面循环1  注意从第四个开始字体为白色字体  start-->
+        <a href="ss_ph_zhugongdetail.html">
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">1</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">18</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        </a>
+        <!--射手页面循环2   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">2</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">10</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--射手页面循环3   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word">
+                <li class="li_pms pub_Beyhid">3</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">10</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <!--射手页面循环4   start-->
+        <div class="ph_sheshou_list">
+            <ul class="ph_jifen_head ph_jifen_word_white">
+                <li class="li_pms pub_Beyhid">4</li>
+                <li class="li_qy pub_Beyhid">
+                    <div class="ph_sheshou_tx">
+                        <img src="images/zhaopian.png">
+                    </div>
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_qd pub_Beyhid">
+                    <img src="images/sctj_demo_img.png" class="ph_list_tx">
+                    <div class="li_dws_word pub_Beyhid">蓝宝FC</div>
+                    <div class="clear"></div>
+                </li>
+                <li class="li_jqs pub_Beyhid">10</li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <!--排行_助攻页面 end-->
+</div>
+
+<!--悬浮框二维码 start-->
+<div class="zhan_foot"></div>
+<div class="foot_erweima foot_erweima2"></div>
+<div class="erweima_content erweima_content2">
+    <div class="erweima_contentl"><img src="images/zhaopian.png"/></div>
+    <div class="erweima_contentr">
+        <P>创建你的球队 称霸你的主场</P>
+        <P class="line_di">一站式球队服务专项平台</P>
+        <P class="padtop5">长按二维码下载APP</P>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--悬浮框二维码 end-->
+
+<!--foot zhanwei-->
+<div class="foot_zhanwei"></div>
+<!--foot start-->
+<div class="foot">
+    <ul class="footul" id="footul">
+        <li class="footli_01 jli_now"><img src="images/icon-integral-pressed@2x.png" style="width:26px;"></li>
+        <li class="footli_02"><img src="images/icon-shooter@2x.png" style="width:26px;"></li>
+        <li class="footli_03"><img src="images/icon-Assists@2x.png" style="width: 26px;"></li>
+        <div class="clear"></div>
+    </ul>
+</div>
+<!--foot end-->
+<script>
+    //ss_home_jointeam_nav
+    $("#footul li").each(function(i){
+        $(this).click(function(){
+            var $this=$(this);
+            $this.addClass('jli_now').siblings().removeClass('jli_now');
+            $('#jointeam_content .jointeam_main').removeClass('jcontent_now');
+            $('#jointeam_content .jointeam_main').eq(i).addClass('jcontent_now');
+        })
+
+    })
+    //foot_nav
+    $(".footli_01").click(function () {
+        $(this).children().attr('src','images/icon-integral-pressed@2x.png');
+        $(".footli_02 img").attr('src','images/icon-shooter@2x.png');
+        $(".footli_03 img").attr('src','images/icon-Assists@2x.png');
+    })
+    $(".footli_02").click(function () {
+        $(this).children().attr('src','images/icon-shooter-pressed@2x.png');
+        $(".footli_01 img").attr('src','images/icon-integral@2x.png');
+        $(".footli_03 img").attr('src','images/icon-Assists@2x.png');
+    })
+    $(".footli_03").click(function () {
+        $(this).children().attr('src','images/icon-Assists-pressed@2x.png');
+        $(".footli_01 img").attr('src','images/icon-integral@2x.png');
+        $(".footli_02 img").attr('src','images/icon-shooter@2x.png');
+    })
+</script>
+
+</body>
+</html>

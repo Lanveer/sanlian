@@ -1,0 +1,6 @@
+新增hot_point_record表
+修改user表 hot_point,total_hot_point
+修改ball_team表 hot_point,total_hot_point
+新增commodity,commodity_order,commodity_banner表
+adver表location新增4-商城 show_type新增2-特殊 新增data字段
+qualify表新增court_price,referee_price字段

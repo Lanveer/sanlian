@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/index.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/SaishiIndex.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 赛事
+	body
+		// nav start
+		.teamdetail_navbg
+			.teamdetail_nav
+				ul#teamdetailnav_ul.teamdetailnav_ul
+					li.tli_hover.tli_now
+						.tli_01
+					li
+						.tli_02
+					li
+						.tli_03
+					.clear
+		// nav end
+		// 分页内容
+		-var now = new Date();
+		- now = now.getTime()/1000|0;
+		#td_content.td_content
+			// 赛事 start
+			.ss_content.td_main.td_content_now
+				// 赛事展示图1  循环1
+				each competition in competitions
+					.ss_img
+						img.ss_banner_img(src="#{competition.img}")
+						if (now<competition.start_time)
+							img.zhanqi_img(src="/public/images/Bannerol-Challenge@2x.png")
+						.ss_banner_word
+							p.ss_banner_word_p.pub_Beyhid #{competition.title}
+			// 赛事 end
+			// 活动 start
+			.td_pws_content.td_main
+				// 活动展示图1 循环1
+				each activity in activitys
+					.ss_img
+						img.ss_banner_img(src="#{activity.logo}")
+						.ss_banner_word
+							p.ss_banner_word_p.pub_Beyhid #{activity.title}
+
+			// 活动 end
+			// 咨询 start
+			.td_ss_content.td_main
+				// 咨询内容，此处请上传宽度190的图片，与列图相同，循环1
+				each post in posts
+					.zixun_bg
+						.zixun(style='position:relative')
+							.zixunl
+								img(src="#{post.img}")
+							.zixunr
+								- var title = post.title;
+								- title = title.substring(0,30);
+								- if(title.length>=30){title += '...'}
+								p.zixunr_word #{title}
+								p.zixunr_time.pub_Beyhid(style='position:absolute;bottom:10px') #{post.show_time}
+							.clear
+
+			// 咨询 end
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="/public/images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script(type="text/javascript", src="/public/js/main.js")

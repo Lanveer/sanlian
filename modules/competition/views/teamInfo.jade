@@ -1,0 +1,228 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_home_jointeam.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="/public/js/swiper-3.3.1.min.js")
+		title 赛事页面-首页-参赛球队
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-shouye-pressed@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng@3x.png")
+				a(href="posts?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-dongtai@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+		// nav end
+		#jointeam_content.jointeam_content
+			// 参赛球队_统计页面 start
+			.jt_tongji.jointeam_main.jcontent_now
+				.jt_tongji_head
+					.jt_tongji_headl
+						// 请上传98*104的图片
+						img(src=team.logo)
+					.jt_tongji_headr
+						p.size16.pub_Beyhid #{team.name}
+						p.tongji_haed_word.size12_hui.pub_Beyhid
+							img(src="/public/images/adress_ico@2x.png")
+							|  #{team.province}-#{team.city}-#{team.county}
+					.clear
+				// 统计列表
+				.tongji_list
+					//p.tongji_list_p.pub_Beyhid
+					//	img(src="/public/images/time@2x.png")
+					//	| 2016年
+					ul.tongji_listul
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.win_match}
+							p.tongji_number_word.pub_Beyhid 胜场
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.flat_match}
+							p.tongji_number_word.pub_Beyhid 平场
+						li(style="border-right: none;")
+							p.tongji_number.pub_Beyhid #{competition_team.fail_match}
+							p.tongji_number_word.pub_Beyhid 负场
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.goals_scored}
+							p.tongji_number_word.pub_Beyhid 总进球
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.goals_against}
+							p.tongji_number_word.pub_Beyhid 总失球
+						li(style="border-right: none;")
+							p.tongji_number.pub_Beyhid #{competition_team.goals_scored-competition_team.goals_against}
+							p.tongji_number_word.pub_Beyhid 净胜球
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.red_card}
+							p.tongji_number_word.pub_Beyhid 红牌
+						li
+							p.tongji_number.pub_Beyhid #{competition_team.yellow_card}
+							p.tongji_number_word.pub_Beyhid 黄牌
+						.clear
+			// 参赛球队_统计页面 end
+			// 参赛球队_阵容页面 start
+			.jt_zhenrong.jointeam_main
+				// 排头详情
+				.pm_bg
+					img.pmbg_img(src="/public/images/background@2x.png")
+					.pm_head.padtop25
+						.pm_headl.size14
+							p.padbottom5.pub_Beyhid
+								| 人数 
+								span #{team.members.length}人
+							p.padbottom5.pub_Beyhid
+								| 均龄 
+								span #{Number(team.avg_age).toFixed(1)}岁
+							p.padbottom5.pub_Beyhid
+								| 均高 
+								span #{Number(team.avg_height).toFixed(1)}cm
+							p.pub_Beyhid
+								| 均重 
+								span #{Number(team.avg_weight).toFixed(1)}KG
+						.pm_headc
+							img.icon_img_center(src=team.logo)
+							// <p class="myteam">我的球队</p>
+						.pm_headr.size14
+							p.pub_Beyhid
+								| 战点 
+								span #{team.san_score}
+							p.pading5.pub_Beyhid
+								| 胜率 
+								span #{Number(team.win_rate).toFixed(1)}%
+							p.pub_Beyhid
+								| 排名 
+								span #{Number(team.ranking).toFixed(0)}
+						.clear
+						.myteam_name.pub_Beyhid.size16 #{team.name}
+				// 队员列表
+				.zr_team_list
+					.zr_list_con
+						// 此处为主队信息循环1
+						- if (team.members)
+							each member in team.members
+								.zr_list_one
+									.zr_list_touxiang
+										img(src=member.avatar)
+									.zr_list_name
+										p.zr_list_name_head.pub_Beyhid #{member.nickname}
+										p.size12_sbule.pub_Beyhid #{member.clubnumber}号 #{member.type}
+										p.size12_sbule.pub_Beyhid #{member.age}岁.#{member.height}cm.#{member.weight}kg
+									.clear
+
+			// 参赛球队_阵容页面 end
+			// 参赛球队_战绩页面 start
+			.jt_zhanji.jointeam_main
+				.clear(style="height: 5px;")
+				// 战绩列表  循环1
+				-if (rounds)
+					each round in rounds
+						.jt_zhanji_con
+							.jt_zhanji_head
+								.jt_zhanji_time #{round[0].round_date}
+								.jt_zhanji_cishu #{round[0].round_title}
+								.clear
+							each race in round
+								.ji_zhanji_list
+									a(href=race.url)
+										.sctj_main.padtop10
+											p.sctj_word.size12_hui #{race.race_start_time}
+											p.sctj_word.size14.padtop3 #{race.venue_name}
+											.sctj_con
+												.sctj_conl
+													img.sctj_img(src=race.home_team_logo)
+													p.size14.padtop5 #{race.home_team_name}
+												-var bifen = "V S";
+												-if(race.end_time){bifen = race.home_goal+" : "+race.guest_goal}
+												.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid=bifen
+												.sctj_conr
+													img.sctj_img(src=race.guest_team_logo)
+													p.size14.padtop5 #{race.guest_team_name}
+												.clear
+									.sctj_btn
+										-if (race.battle_report)
+											.sctj_btnl
+												a(href=race.battle_report)
+													img(src="/public/images/btn-Graphic-record@2x.png")
+										-if (race.collection)
+											.sctj_btnr
+												a(href=race.collection)
+													img(src="/public/images/btn-The-game-highlights@2x.png")
+										.clear
+
+			// 参赛球队_战绩页面 end
+		// 悬浮框二维码 start
+		.zhan_foot
+		//.foot_erweima.foot_erweima2
+		//.erweima_content.erweima_content2
+		//	.erweima_contentl
+		//		img(src="/public/images/zhaopian.png")
+		//	.erweima_contentr
+		//		p 创建你的球队 称霸你的主场
+		//		p.line_di 一站式球队服务专项平台
+		//		p.padtop5 长按二维码下载APP
+		//	.clear
+		// 悬浮框二维码 end
+		// foot zhanwei
+		//.foot_zhanwei
+		// foot start
+		.foot
+			ul#footul.footul
+				li.footli_01.jli_now
+					img(src="/public/images/btn-Statistics-pressed@2x.png", style="width:27px; margin-top: 2px;")
+				li.footli_02
+					img(src="/public/images/btn-lineup@2x.png", style="width:26px;")
+				li.footli_03
+					img(src="/public/images/btn-Record@2x.png", style="width: 26px; margin-top: 2px;")
+				.clear
+		// foot end
+		script.
+			//ss_home_jointeam_nav
+			$("#footul li").each(function(i){
+				$(this).click(function(){
+					var $this=$(this);
+					$this.addClass('jli_now').siblings().removeClass('jli_now');
+					$('#jointeam_content .jointeam_main').removeClass('jcontent_now');
+					$('#jointeam_content .jointeam_main').eq(i).addClass('jcontent_now');
+				})
+			});
+			//foot_nav
+			$(".footli_01").click(function () {
+			$(this).children().attr('src','/public/images/btn-Statistics-pressed@2x.png');
+				$(".footli_02 img").attr('src','/public/images/btn-lineup@2x.png');
+				$(".footli_03 img").attr('src','/public/images/btn-Record@2x.png');
+			});
+			$(".footli_02").click(function () {
+				$(this).children().attr('src','/public/images/btn-lineup-pressed@2x.png');
+				$(".footli_01 img").attr('src','/public/images/btn-Statistics@2x.png');
+				$(".footli_03 img").attr('src','/public/images/btn-Record@2x.png');
+			});
+			$(".footli_03").click(function () {
+				$(this).children().attr('src','/public/images/btn-Record-pressed@2x.png');
+				$(".footli_01 img").attr('src','/public/images/btn-Statistics@2x.png');
+				$(".footli_02 img").attr('src','/public/images/btn-lineup@2x.png');
+			});
+		script.
+			//点击后的按钮状态
+			$(".sctj_btnl").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-Graphic-record-pressed@2x.png")
+			});
+			$(".sctj_btnr").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-The-game-highlights-pressed@2x.png")
+			});

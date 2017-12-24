@@ -1,0 +1,308 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family:"Microsoft yahei";
+    background: -webkit-linear-gradient(left, #061024 , #243b68 , #061024); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #061024 , #243b68 , #061024); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #061024 , #243b68 , #061024); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #061024 , #243b68 , #061024); /* 标准的语法 */
+}
+.comdiv{
+    max-width:800px;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+}
+
+.header{
+    height:40pt;
+    background:#002178;
+    text-align: center;
+}
+.header h1{
+    font-weight:normal;
+    font-size: 11pt;
+    color: #fff;
+    line-height:40pt;
+}
+
+.card{
+    width:95%;
+    height:115pt;
+    margin-top: 10pt;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+/*球队开始*/
+.divide{
+    display: flex;
+    height:20pt;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-around;
+}
+.divide div{
+    width:30%;
+    height:1px;
+    background:#e5e5e5;
+}
+.divide h1{
+    font-size: 9pt;
+    color:#7a7a7a;
+    font-weight:normal;
+}
+/*球队结束*/
+
+.flag{
+    position: absolute;
+    right:0;
+    top:0;
+    width:35pt;
+}
+.card>h1{
+    font-weight:normal;
+    font-size: 12pt;
+    color: #55a5f6;
+    margin:5pt 0 15pt 5pt;
+}
+.card h1 span{
+    font-size: 8pt;
+    color: #333;
+    margin-left: 5pt;
+}
+.location{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    margin:5pt 0 5pt 5pt;
+}
+.location span{
+    width:8pt;
+    height:11pt;
+}
+.time span{
+    width:10pt;
+    height:10pt;
+}
+.location span img{
+    width:100%;
+    height:100%;
+}
+.location p{
+    font-size: 9pt;
+    color: #333;
+    margin-left: 5pt;
+}
+.location p span{
+    font-size: 9pt;
+    color: #333;
+    margin-left: 5pt;
+}
+.getcard{
+    width:50pt;
+    height:17pt;
+    border-radius: 10px;
+    background:#55a5f6;
+    color: #fff;
+    text-align: center;
+    line-height:17pt;
+    font-size: 9pt;
+    position: absolute;
+    right:5pt;
+    top:50%;
+    margin-top: -9pt;
+}
+
+/*表单开始*/
+
+.head-title{
+    margin:15pt 0 10pt 8pt;
+    font-weight:normal;
+    font-size: 10pt;
+    color: #fff;
+}
+
+.form{
+    height:auto;
+    width:95%;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left, #1f283c , #243b68 , #1f293d); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #1f283c , #243b68 , #1f293d);
+}
+.input-box{
+    width:100%;
+    height:50pt;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+.input-box>span{
+    font-size: 10pt;
+    color: #fff;
+    position: absolute;
+    width:10%;
+    line-height:50pt;
+    text-align: center;
+}
+.input-box input{
+    position: absolute;
+    left:10%;
+    width:85%;
+    height:100%;
+    outline:none;
+    border:none;
+    background: transparent;
+}
+
+input::placeholder{text-align: right}
+input{
+    color: #fff;
+    font-size: 9pt;
+}
+.input-box2 span{
+    width:20%;
+}
+.input-box2 input{
+    width: 75%;
+    left:20%;
+}
+.input-box3{
+    height:50pt;
+    border:none;
+}
+.input-box3 span{
+    width:25%;
+}
+.input-box3 input{
+    width: 70%;
+    left:20%;
+}
+
+.choose-team{
+    position: absolute;
+    right:10pt;
+    width:80pt;
+    height:100%;
+    line-height:50pt;
+    font-size: 9pt;
+    color: #fff;
+    text-align: right;
+}
+
+.hide-box{
+    width:80pt;
+    height:60pt;
+    background: #fff;
+    position: absolute;
+    bottom:0;
+    right:5%;
+    display: none;
+}
+.hide-box ul{
+    list-style: none;
+}
+.hide-box ul li{
+    width:100%;
+    height:20pt;
+    font-size: 9pt;
+    display: block;
+    color: #333;
+    padding-top:10pt;
+    text-align: center;
+}
+
+.on{
+    color:#55a5f6!important;
+}
+
+.confirm{
+    width:65%;
+    height:40pt;
+    margin:20pt auto;
+    border-radius: 15px;
+    background:#002789;
+    font-size: 12pt;
+    text-align: center;
+    line-height:40pt;
+    color: #fff;
+}
+
+.container{
+    /*display: none;*/
+}
+.success{
+    display: none;
+    background: url("../../public/add_image/bg.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    height:140pt;
+}
+.success h1{
+    font-size: 10pt;
+    color: #fff;
+    margin:10pt 0 5pt 5%;
+    font-weight:normal;
+}
+
+
+.error{
+    display: none;
+    background: url("../../public/add_image/bg.png");
+    background-repeat:no-repeat;
+    background-size: contain;
+    height:130pt;
+}
+.error h1{
+    font-size: 10pt;
+    color:red;
+    text-align: center;
+    line-height:100pt;
+    font-weight:normal;
+}
+
+
+.sharing{
+    display: none;
+    width:140pt;
+    height:30pt;
+    margin:10pt auto 0;
+    border-radius: 5px;
+    font-size: 11pt;
+    color: #fff;
+    text-align: center;
+    line-height:30pt;
+    border:1px solid #243b68;
+    background: -webkit-linear-gradient(left, #1f283c , #243b68 , #1f293d); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #1f283c , #243b68 , #1f293d);
+    cursor: pointer;
+}
+.back{
+    display: none;
+    width:140pt;
+    height:30pt;
+    margin:10pt auto 0;
+    border-radius: 5px;
+    font-size: 11pt;
+    color: #fff;
+    text-align: center;
+    line-height:30pt;
+    border:1px solid #243b68;
+    background: -webkit-linear-gradient(left, #1f283c , #243b68 , #1f293d); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #1f283c , #243b68 , #1f293d); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #1f283c , #243b68 , #1f293d);
+    cursor: pointer;
+}
+

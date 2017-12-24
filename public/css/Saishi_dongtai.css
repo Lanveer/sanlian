@@ -1,0 +1,83 @@
+.dt_con { width: 100%;}
+.dt_con_time { width: 92%; margin: 0 auto; padding-top: 15px; padding-bottom: 10px; color: #6182b5;}
+.dt_con_text { width: 100%; background-color: #1c2b54;}
+
+/*赛事动态*/
+.zixun_bg { width:100%; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.zixun { width: 92%; margin: 0 auto; padding: 10px 0;}
+.zixunl { float: left; width:100px;}
+.zixunl img { width: 100%; height: 72px;}
+.zixunr { float: left; width: 70%;}
+.zixunr p {  padding-left: 10px;}
+.zixunr_word { color: #fff; font-size: 14px; padding-bottom: 10px;}
+.zixunr_time { color: #6182b5; font-size: 12px;}
+
+@media only screen and (max-width:360px) {
+    .zixunr { width: 60%;}
+}
+
+/*动态详情页面，发表评论*/
+.dt_detail_bottomline { width: 100%; border-bottom: 1px solid #1c4678;}
+.dt_detail_con { width: 92%; margin: 10px auto;}
+.dt_detail_img { width: 100%; margin-top: 10px;}
+.dt_detail_img img { width: 100%;}
+.dt_detail_pinglun { width: 96%; margin-left: 4%; border-bottom: 1px solid #1c4678; padding: 10px 0;}
+
+.dt_detail_fbpl { width: 92%; margin: 10px auto;}
+.dt_fbpl_name { width: 100%; margin-top: 10px;}
+.dt_fbpl_name span { width: 15%; height:35px; line-height:35px; float: left;}
+.dt_fbpl_name input {
+    height: 35px;
+    line-height: 35px;
+    width: 83%;
+    float: left;
+    border: 1px solid #437fed;
+    background-color: #143a83;
+    background: -webkit-linear-gradient(left, #011132, #143a83,#011132);
+    background: -o-linear-gradient(right, #011132, #143a83,#011132);
+    background: -moz-linear-gradient(right, #011132, #143a83,#011132);
+    background: linear-gradient(to right, #011132, #143a83,#011132);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#011132, endColorStr=#143a83);
+    border-radius:8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.dt_fbpl_text { width: 100%; margin-top: 10px;}
+.dt_fbpl_text span { width: 15%; float: left;}
+.dt_fbpl_text textarea {
+    height: 119px;
+    width: 83%;
+    float: left;
+    border: 1px solid #437fed;
+    background-color: #143a83;
+    background: -webkit-linear-gradient(left, #011132, #143a83,#011132);
+    background: -o-linear-gradient(right, #011132, #143a83,#011132);
+    background: -moz-linear-gradient(right, #011132, #143a83,#011132);
+    background: linear-gradient(to right, #011132, #143a83,#011132);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#011132, endColorStr=#143a83);
+    border-radius:8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.btn_qrpl_margin { width: 83%; margin-left: 15%;}
+.btn_qrpl { width: 287px; margin: 15px auto 20px;}
+.btn_qrpl img { width: 100%;}
+
+@media only screen and (max-width:360px) {
+    .btn_qrpl { width: 250px;}
+}
+
+@media only screen and (max-width:320px) {
+    .dt_fbpl_name span { width: 20%;}
+    .dt_fbpl_name input { width: 78%;}
+    .dt_fbpl_text span { width: 20%;}
+    .dt_fbpl_text textarea { width: 78%;}
+    .btn_qrpl_margin { width: 78%; margin-left: 20%;}
+    .btn_qrpl { width: 200px;}
+}

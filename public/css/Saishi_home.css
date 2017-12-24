@@ -1,0 +1,70 @@
+/*nav*/
+.ss_detail_nav { width: 100%; margin-top: 2px; position: relative;}
+.ss_dul { width: 100%; position: fixed; top: 0; left: 0; z-index: 4;}
+.ss_dul li { float: left; width: 20%; list-style: none;}
+.ss_dul li img { width: 100%;}
+.nav_zhanweitu { width: 100%;}
+/*banner*/
+.banner_img { width: 100%;height: 135px;}
+.sd_right { text-align: right;}
+
+/*赛事首页1=========*/
+/*赛程推荐*/
+.gk_photo { width: 100%; position: relative; margin-bottom: 5px;}
+.gk_photo_img { width: 100%; position: absolute; top: 0; left: 0; z-index: 1;}
+.dingwei_more { width: 100%; position: relative;}
+.zhan_img2 { width: 100%;}
+
+.sctj_main { width: 90%; margin: 0 auto; padding-bottom: 10px;}
+.sctj_con { width: 100%;}
+.sctj_word { text-align: center;}
+.sctj_conl { float: left; width: 40%; text-align: center;}
+.sctj_conc { left: 40%; width: 20%; text-align: center;position: absolute}
+.sctj_conr { float: right; width: 40%; text-align: center;}
+.sctj_img { width: 50px; height:52px; margin: 0 auto;border-radius: 50%;}
+
+.sctj_btn { width: 95%; margin: 0 auto 10px;}
+.sctj_btnl { width: 160px; float: left;}
+.sctj_btnl img { width: 100%;}
+.sctj_btnr { width: 160px; float: right;}
+.sctj_btnr img { width: 100%;}
+
+.img_shadow { width: 100%;}
+
+/*参赛球队*/
+.csqt_main { width: 90%; margin: 0 auto; padding-top: 15px;}
+.csqt_mainli { width: 50px; float: left; margin-left: 5%; margin-right: 5%; margin-bottom: 15px; text-align: center; font-size: 12px; color: #fff;}
+.csqt_mainli img { width: 50px; height: 52px;border-radius: 50%;}
+
+/*赛事动态*/
+.zixun_bg { width:100%; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.zixun { width: 92%; margin: 0 auto; padding: 10px 0;}
+.zixunl { float: left; width:100px;}
+.zixunl img { width: 100%; height: 72px;}
+.zixunr { float: left; width: 69%;}
+.zixunr p {  padding-left: 10px;}
+.zixunr_word { color: #fff; font-size: 14px; padding-bottom: 10px;}
+.zixunr_time { color: #6182b5; font-size: 12px;}
+
+
+
+@media only screen and (max-width:375px) {
+    .sctj_btnl { width: 140px;}
+    .sctj_btnr { width: 140px;}
+    .csqt_mainli { margin-left: 4.5%; margin-right: 4.5%;}
+}
+
+@media only screen and (max-width:360px) {
+    .zixunr { width: 60%;}
+}
+
+@media only screen and (max-width:320px) {
+    .sctj_btnl { width: 120px;}
+    .sctj_btnr { width: 120px;}
+    .csqt_mainli { margin-left: 3%; margin-right: 3%;}
+}
+
+@media only screen and (min-width:600px) {
+    .sctj_btnl { width: 160px; margin-left: 40px;}
+    .sctj_btnr { width: 160px; margin-right: 40px;}
+}

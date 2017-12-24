@@ -1,0 +1,38 @@
+
+/*teamdetail_nav*/
+.teamdetail_navbg { width: 100%; height: 46px; background-color: #051024;}
+.teamdetail_nav { width: 80%; height: 46px; margin: 5px auto;}
+.teamdetailnav_ul { width: 100%;}
+.teamdetailnav_ul li { width: 33.3333%; float: left; list-style: none; padding-top: 5px;}
+.tli_01 { height:35px; background: url("../images/tab-saishi@2x.png") left center no-repeat; background-size: 100%;}
+.tli_02 { height:35px; background: url("../images/yab-huodong@2x.png") left center no-repeat; background-size: 100%;}
+.tli_03 { height:35px; background: url("../images/tab-zixun@2x.png") left center no-repeat; background-size: 100%;}
+.tli_hover .tli_01{ background-image:url(../images/tab-saishi-pressed@2x.png)}
+.tli_hover .tli_02{ background-image:url(../images/yab-huodong-pressed@2x.png)}
+.tli_hover .tli_03{ background-image:url(../images/tab-zixun-pressed@2x.png)}
+.td_main { display: none;}
+.td_content_now {display: block}
+
+/*赛事和活动css===========================================*/
+.ss_content { width: 100%;}
+.ss_img { width: 100%; position: relative; margin-bottom: 6px;}
+.ss_banner_img { width: 100%; height: 122px;}
+.zhanqi_img { width: 32px; position: absolute; top: 0; right: 0; z-index: 1;}
+.ss_banner_word { position: absolute; bottom: 7px; z-index: 1; color: #fff; width: 100%;}
+.ss_banner_word_p { text-align: center; width: 80%; margin: 0 auto;}
+
+
+/*咨询css=========================*/
+.zixun_bg { width:100%; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.zixun { width: 92%; margin: 0 auto; padding: 10px 0;}
+.zixunl { float: left; width:100px;}
+.zixunl img { width: 100%; height: 72px;}
+.zixunr { float: left; width: 70%;}
+.zixunr p {  padding-left: 10px;}
+.zixunr_word { color: #fff; font-size: 14px; padding-bottom: 10px;}
+.zixunr_time { color: #6182b5; font-size: 12px;}
+
+
+@media only screen and (max-width:360px) {
+.zixunr { width: 60%;}
+}

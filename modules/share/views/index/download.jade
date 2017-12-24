@@ -1,0 +1,23 @@
+//
+   Created by walter on 2016/8/29.
+
+doctype html
+
+html
+    head
+        title 下载
+    body
+
+        script.
+            (function () {
+                var userAgent = navigator.userAgent.toLowerCase();
+                var ios_pat = new RegExp('iphone');
+                var android_pat = new RegExp('android');
+                if(ios_pat.test(userAgent)){
+                    console.log("is iphone");
+                    location.href="https://itunes.apple.com/us/app/san-lian-qiu-zhan/id1013818840?l=zh&ls=1&mt=8";
+                }else if(android_pat.test(userAgent)){
+                    console.log("is android");
+                    location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.xbcx.qiuchang#opened";
+                }
+            })();

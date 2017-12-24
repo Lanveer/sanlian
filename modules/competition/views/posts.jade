@@ -1,0 +1,313 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_dongtai.css", rel="stylesheet", type="text/css")
+		link(href="/public/vendor/css-loaders/css/load6.css",rel="stylesheet",type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="/public/vendor/iscroll/build/iscroll-probe.js")
+
+		title 赛事-动态
+		style.
+
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			html {
+				-ms-touch-action: none;
+			}
+
+			body {
+				overflow: hidden; /* this is important to prevent the whole page to bounce */
+			}
+
+			.wrapper {
+				position: absolute;
+				z-index: 1;
+				top: 43px;
+				bottom: 0px;
+				left: 0;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.scroller {
+				position: absolute;
+				z-index: 1;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+				width: 100%;
+				min-height: 100.1%;
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-text-size-adjust: none;
+				-moz-text-size-adjust: none;
+				-ms-text-size-adjust: none;
+				-o-text-size-adjust: none;
+				text-size-adjust: none;
+			}
+
+			#footer {
+				position: absolute;
+				z-index: 2;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: #444;
+				padding: 0;
+				border-top: 1px solid #444;
+			}
+
+			#pullDown {
+				width: 100%;
+				height: 40px;
+				margin-top: -40px;
+				line-height: 40px;
+				vertical-align: middle;
+				text-align: center;
+			}
+
+			#pullUp {
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				vertical-align: middle;
+				text-align: center;
+				/*margin-bottom: -40px;*/
+			}
+
+			@media only screen and (max-width: 375px) {
+				.wrapper{
+					top: 43px;
+				}
+			}
+
+			@media only screen and (max-width: 320px) {
+				.wrapper{
+					top: 38.8px;
+				}
+			}
+
+			@media only screen and (min-width: 768px) {
+				.wrapper {
+					top: 84px;
+				}
+			}
+
+	body(onload="loaded()")
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id="+competition_id)
+					li
+						img(src="/public/images/tab-shouye@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng@3x.png")
+				a(href="")
+					li
+						img(src="/public/images/tab-dongtai-pressed@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+			.clear(style="height: 10px;")
+		// nav end
+		// 动态内容  大列表循环1
+		#wrapper.wrapper
+			#scroller.scroller
+				#pullDown.load6
+					div.loader(style="display:none;font-size:18px;")
+					span 下拉刷新
+
+				#pullUp.load6
+					div.loader(style="display:inline-block;font-size:18px;margin:0 0.8em")
+					span 正在加载...
+		//#footer
+		// 悬浮框二维码 start
+		//.zhan_foot
+		//.foot_erweima
+		//.erweima_content
+		//	.erweima_contentl
+		//		img(src="/public/images/zhaopian.png")
+		//	.erweima_contentr
+		//		p 创建你的球队 称霸你的主场
+		//		p.line_di 一站式球队服务专项平台
+		//		p.padtop5 长按二维码下载APP
+		//	.clear
+		// 悬浮框二维码 end
+	script.
+		var url = "/competition/postsList?competition_id=#{competition_id}";
+		var myScroll = null;
+		var $pullDown = $('#pullDown');
+		var $pullUp = $('#pullUp');
+		var touched = false;
+		var loading = false;
+		var start = 0;
+		var limit = 10;
+		var last_date = 0;
+		var is_end = false;
+		function loaded() {
+			myScroll = new IScroll('#wrapper', {
+				probeType:3,
+				click: true,
+				scrollbars: true,
+				mouseWheel: true,
+				interactiveScrollbars: true,
+				shrinkScrollbars: 'scale',
+				fadeScrollbars: true
+			});
+
+			myScroll.on('scroll',scrollEvent);
+			myScroll.on('scrollEnd',scrollEndEvent);
+		}
+
+		function scrollEvent(){
+			var y = this.y |0;
+			var maxY = this.maxScrollY;
+			if(y>60){
+				touched = true;
+				$pullDown.find('span').html("松开刷新");
+			}
+			if(touched&&y<=40){
+				start = 0;
+				touched = false;
+				down(function () {
+					$pullDown.find('span').html("下拉刷新");
+				})
+			}
+			if(!is_end&&(!loading)&&y<=maxY){
+				up(function () {
+					console.log("end...")
+				})
+			}
+		}
+
+		function scrollEndEvent(){
+			//console.log(this.y);
+
+		}
+
+		//下拉触发事件
+		function down(callback){
+			if (!callback) {
+				callback = function () {
+				};
+			}
+			$pullDown.css("margin-top","0px");
+			$pullDown.find('span').css('display','none');
+			$pullDown.find('.loader').css('display','inline-block');
+			$('.dt_con').remove();
+			up(function () {
+				$pullDown.css("margin-top","-40px");
+				$pullDown.find('span').css('display','inline-block');
+				$pullDown.find('.loader').css('display','none');
+				setTimeout(function () {
+					myScroll.refresh();
+				}, 0);
+				callback();
+			})
+		}
+
+		//上拉触发事件
+		function up(callback){
+			loading = true;
+			if(!callback) {
+				callback = function () {
+				};
+			}
+			var query = {
+				offset:start,
+				limit:limit
+			};
+			$.post(url,query)
+					.success(function (data) {
+						if(data.length<limit){
+							end();
+						}
+						render(data);
+					})
+					.error(function (data) {
+						console.log(data);
+					})
+					.always(function () {
+						setTimeout(function () {
+							myScroll.refresh();
+						}, 0);
+						loading = false;
+						start+=limit;
+						callback();
+					})
+		}
+
+		function render(data){
+			$.each(data,function (index,value) {
+				if(value.create_date==last_date){
+					render_append(value);
+				}else {
+					render_elem(value);
+				}
+				last_date = value['create_date'];
+			})
+		}
+
+		function render_elem(data){
+			var content = render_content(data);
+			var elem = '<div class="dt_con"><div class="dt_con_time">' +
+					data.date_show +
+					'</div><div class = "dt_con_text" >' +
+					content +
+					'</div></div>';
+			$pullUp.before(elem);
+		}
+
+		function render_append(data){
+			var $container = $(".dt_con:last");
+			var content = render_content(data);
+			$container.find('.dt_con_text').append(content);
+		}
+
+		function render_content(data){
+			var title = data.title;
+			if (title.length > 50) {
+				title = title.substring(0, 50) + '...';
+			}
+			var content = '<a href="postsInfo?competition_id=#{competition_id}&posts_id='+
+					data.id+
+					'"><div class ="zixun_bg" ><div class="zixun"><div class ="zixunl"><img src="' +
+					data.img +
+					'"></div><div class="zixunr"><p class="zixunr_word" >' +
+					title +
+					'</p></div><div class="clear"></div></div></div></a>';
+			return content;
+		}
+
+		function end(){
+			is_end = true;
+			$pullUp.css("display","none");
+		}
+
+
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+		$(function () {
+			up();
+		});

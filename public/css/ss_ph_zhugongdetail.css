@@ -1,0 +1,55 @@
+.zgdetail_tx { width: 100%; padding-top: 10px; padding-bottom: 15px; background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.zgdetail_tx_margin { width: 95%; margin: 0 auto;}
+/*排头头像*/
+.zr_list_one { width: 100%; padding-top: 15px;}
+.zr_list_touxiang {
+    float: left;
+    width: 60px;
+    height: 60px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    overflow:hidden;
+}
+.zr_list_touxiang img { width: 100%; height: 60px;}
+.zr_list_name { float: left; padding-left: 10px; width: 70%; padding-top: 1px;}
+.zr_list_name_head { color: #fff; font-size: 14px; padding-bottom: 3px;}
+.zgdetail_tx_cion { width: 17px; display: inline; position: relative; top: 4px;}
+/*统计列表*/
+.zg_detail_list {  background-color: #1c2b54; border-bottom: 1px solid #1c4579;}
+.tongji_list { width: 95%; margin-left: 5%; padding-top: 15px; padding-bottom: 15px;}
+.tongji_list_p { color: #b3b3b3; font-size: 14px;}
+.tongji_list_p img { width: 15px; display: inline; position: relative; top: 2px; right: 4px; padding-left: 4px;}
+
+.tongji_number { font-size: 18px; color: #3693f0; font-weight: bold;}
+.tongji_number_hui { color: #b3b3b3;}
+.tongji_number_word { font-size: 14px; color: #b3b3b3;}
+.tongji_listul { width: 100%;}
+.tongji_listul li { width: 33%; border-right:1px solid #1c4579; float: left; text-align: center; margin-bottom: 10px; margin-top: 5px;}
+/*助攻详情-队员资料*/
+.zg_detail_duiyuan { width: 100%; background-color: #1c2b54; padding-top: 15px; padding-bottom: 15px;}
+.zg_detail_con { width: 90%; margin: 0 auto;}
+.zg_detail_dyname { width: 100%; font-size: 14px; color: #b3b3b3;}
+.zg_detail_quan { width: 100%; position: relative;}
+.zg_detail_quan img { margin: 0 auto; width: 90px;}
+.zg_detail_quan_number {
+    position: absolute;
+    /*left: 50%;*/
+    top: 50%;
+    /*margin-left: -10px;*/
+    margin-top: -10px;
+    font-size: 18px;
+    font-weight: bold;
+    /*display: block;*/
+    font-family: '微软雅黑';
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(39, 211, 151, 1)), to(rgba(49, 109, 223, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color:#2ea2b9;
+    text-align: center;
+    width: 100%;
+}
+.zg_detail_quan_word { width: 100%; text-align: center; font-size: 14px; color: #fff; padding-top: 5px;}
+.zg_word_number { color: #56abfe;}
+.zg_detail_quan_title { width: 100%; text-align: center; font-size: 16px; color: #56abfe; padding-top: 10px; list-style: disc;}
+.zg_title_number { color: #b3b3b3; font-size: 14px;}

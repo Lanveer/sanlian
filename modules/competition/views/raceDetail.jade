@@ -1,0 +1,284 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_home_jointeam.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/PwsDetail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_baoming.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_saicheng_detail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 赛事-赛程详情页
+	body
+		.clear(style="height: 5px;")
+		// 赛程排头 start
+		.jt_zhanji_con
+			// 已结束状态  start
+			.ji_zhanji_list
+				.sctj_main.padtop10
+					p.sctj_word.size12_hui #{race.race_start_time} #{race.round_title}
+					p.sctj_word.size14.padtop3 #{race.venue_name}
+					.sctj_con
+						.sctj_conl
+							img.sctj_img(src="#{race.home_team_logo}")
+							p.size14.padtop5 #{race.home_team_name}
+						-var bifen = 'V S';
+						- if(race.end_time){bifen = race.home_goal+" : "+race.guest_goal}
+						.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid #{bifen}
+						.sctj_conr
+							img.sctj_img(src="#{race.guest_team_logo}")
+							p.size14.padtop5 #{race.guest_team_name}
+						.clear
+				.sctj_btn
+					if (race.battle_report)
+						a(href=race.battle_report)
+							.sctj_btnl
+								img(src="/public/images/btn-Graphic-record@2x.png")
+					//if (race.collection)
+						a(href=race.collection)
+							.sctj_btnr
+								img(src="/public/images/btn-The-game-highlights@2x.png")
+					.clear
+				// 点赞部分
+				.ss_sc_dianzan
+					// 左,隐藏图标为没有点赞的情况
+					.ss_sc_dianzanl
+						//img.unbtn_dianzan(src="/public/images/click-a-like-pressed@2x.png")
+						img.unbtn_dianzan(src="/public/images/click-a-like@2x.png")
+						// <img src="/public/images/click-a-like@2x.png" class="unbtn_dianzan">
+						span.ss_dianzanl 1
+						.clear
+					// 中
+					.ss_sc_dianzanc
+						.ss_sc_dianzanc_l
+						.ss_sc_dianzanc_r
+						.clear
+					// 右，隐藏图标为没有点赞的情况
+					.ss_sc_dianzanr
+						span.ss_dianzanr 1
+						//img.unbtn_dianzan(src="/public/images/click-a-like1-pressed@2x.png")
+						img.unbtn_dianzan(src="/public/images/click-a-like1@2x.png")
+						// <img src="/public/images/click-a-like1@2x.png" class="unbtn_dianzan">
+						.clear
+					.clear
+			// 已结束状态  end
+		// 赛程排头 end
+		.clear(style="height: 5px;")
+		// 队员列表
+		.two_bg.ss_sc_teamlist
+			.three_width
+				.both_zr.pading15
+					// 主队
+					.both_zrl
+						.both_zrl_head.ss_sc_tlhead 主队阵容
+						.both_zrl_main
+							// 此处为主队信息循环1
+							if (home_team_member)
+								each member in home_team_member
+									.both_zrl_main1
+										p(style="display:none;" class="ball_team_id")=member.ball_team_id
+										p(style="display:none;" class="user_id")=member.user_id
+										.both_touxiang
+											img(src="#{member.avatar}")
+										.both_name.ss_sc_tlword
+											p.pub_Beyhid #{member.nickname}
+											p.size12_sbule.pub_Beyhid #{member.clubnumber}号 #{member.type}
+											p.size12_sbule.pub_Beyhid #{member.age}岁 #{member.height}cm #{member.weight}kg
+										.clear
+
+					// 客队
+					.both_zrr
+						.both_zrl_head.ss_sc_tlhead 客队阵容
+						.both_zrl_main
+							// 此处为客队信息循环1
+							if (guest_team_member)
+								each member in guest_team_member
+									.both_zrl_main1
+										p(style="display:none;" class="ball_team_id")=member.ball_team_id
+										p(style="display:none;" class="user_id")=member.user_id
+										.both_touxiang
+											img(src="#{member.avatar}")
+										.both_name.ss_sc_tlword
+											p.pub_Beyhid #{member.nickname}
+											p.size12_sbule.pub_Beyhid #{member.clubnumber}号 #{member.type}
+											p.size12_sbule.pub_Beyhid #{member.age}岁 #{member.height}cm #{member.weight}kg
+										.clear
+
+					.clear
+		// 无法点赞窗口
+		#shade.shade
+		#bm_chuangjian.bm_chuangjian
+			.bm_chuangjian_con 本场比赛已结束，不能继续点赞！
+			img.bm_chuangjian_line(src="/public/images/Separation-line1@2x.png")
+			.btn_chuangjian
+				.btn_chuangjian_ok 好的
+		// 添加参赛证展示窗口
+		div(class="big-mask")
+		script.
+			//点击后的按钮状态
+			$(".sctj_btnl").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-Graphic-record-pressed@2x.png")
+			});
+			$(".sctj_btnr").click(function () {
+				$(this).children("img").attr("src","/public/images/btn-The-game-highlights-pressed@2x.png")
+			});
+		script.
+
+			var end_time = #{race.end_time};
+			var home_support = #{race.home_support};
+			var guest_support = #{race.guest_support};
+
+			//调整支持数
+			function adjust_support(){
+				var left = home_support/(home_support+guest_support)*100;
+				var right = 100-left;
+				$('.ss_sc_dianzanc_l').css("width",left+"%");
+				$('.ss_sc_dianzanc_r').css("width",right+"%");
+				$('.ss_dianzanl').html(home_support);
+				$('.ss_dianzanr').html(guest_support);
+			}
+
+			if(end_time){
+				//已结束状态后不能点赞
+				$(".unbtn_dianzan").click(function () {
+					var shade = document.getElementById("shade");
+					shade.style.width = window.screen.width + 'px';
+					shade.style.height = window.screen.height + 'px';
+					$("#shade").show();
+					$("#bm_chuangjian").show();
+				});
+			}
+
+			$('.ss_sc_dianzanl').click(function () {
+				if(end_time) return 0;
+				var url = "/competition/supportHome?competition_id=#{competition_id}&race_id=#{race_id}";
+				var query = {};
+				var is_supported = $('.supported').length;
+				var support = $('.ss_sc_dianzanl.supported').length;
+				if(!is_supported){
+					query['is_support'] = 1;
+				}else if(is_supported&&support){
+					query['is_support'] = 0;
+				}else {
+					return 0;
+				}
+				$.post(url,query)
+						.success(function () {
+							if(query['is_support']){
+								$('.ss_sc_dianzanl').addClass('supported');
+								$('.ss_sc_dianzanl img')[0].src = '/public/images/click-a-like-pressed@2x.png';
+								home_support +=1;
+								adjust_support();
+							}else {
+								$('.ss_sc_dianzanl').removeClass('supported');
+								$('.ss_sc_dianzanl img')[0].src = '/public/images/click-a-like@2x.png';
+
+								home_support -= 1;
+								adjust_support();
+							}
+						})
+						.error(function () {
+							alert("网络出错")
+						})
+						.always(function () {
+
+						});
+			});
+
+			$('.ss_sc_dianzanr').click(function () {
+				if(end_time) return 0;
+				var url = "/competition/supportGuest?competition_id=#{competition_id}&race_id=#{race_id}";
+				var query = {};
+				var is_supported = $('.supported').length;
+				var support = $('.ss_sc_dianzanr.supported').length;
+				if (!is_supported) {
+					query['is_support'] = 1;
+				} else if (is_supported && support) {
+					query['is_support'] = 0;
+				} else {
+					return 0;
+				}
+				$.post(url, query)
+						.success(function () {
+							if (query['is_support']) {
+								$('.ss_sc_dianzanr').addClass('supported');
+								$('.ss_sc_dianzanr img')[0].src = '/public/images/click-a-like1-pressed@2x.png';
+								guest_support += 1;
+								adjust_support();
+							} else {
+								$('.ss_sc_dianzanr').removeClass('supported');
+								$('.ss_sc_dianzanr img')[0].src = '/public/images/click-a-like1@2x.png';
+								guest_support -= 1;
+								adjust_support();
+							}
+						})
+						.error(function () {
+							alert("网络出错")
+						})
+						.always(function () {
+
+						});
+			});
+
+			$(".btn_chuangjian_ok").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});
+			$(".shade").click(function () {
+				$("#shade").hide();
+				$("#bm_chuangjian").hide();
+			});
+
+			$(function () {
+				adjust_support();
+			});
+			$('.both_zrl_main1').click(function(){
+				//$('.jt_zhanji_con').hide();
+				//$('.two_bg').hide();
+				var user_id= $(this).find('.user_id').text();
+				var ball_team_id=$(this).find('.ball_team_id').text();
+				$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'http://sanlianfootball.top/competition/card',
+					data:{user_id:user_id,ball_team_id:ball_team_id},
+					success:function(msg){
+						console.log(msg);
+						var data=msg.data;
+						var str='';
+						$.each(data,function (index,item) {
+						    var num=item.clubnumber;
+						    var number=num>10?num:'0'+num;
+								str += '<div class="mask"></div>' +
+									'<div class="con">' +
+									'<span class="close" onclick="close()">X</span>' +
+									'<h1>'+item.title+'</h1> ' +
+									'<div class="con-icon"><img src="'+item.head_pic+'" alt="">' +
+									'</div>' +
+									//'<p><span class="one">姓名</span><span class="two">'+item.nickname+'</span></p>' +
+									//'<p><span class="one">号码</span><span class="two">'+number+'</span></p>' +
+									//'<p><span class="one">球队</span><span class="two">'+item.name+'</span></p>' +
+									'<div class="item"><div class="i-l">姓名 :</div><div class="i-r">'+item.nickname+'</div></div>'+
+									'<div class="item"><div class="i-l">号码 :</div><div class="i-r">'+number+'</div></div>'+
+									'<div class="item"><div class="i-l">球队 :</div><div class="i-r">'+item.name+'</div></div>'+
+									'</div>';
+						})
+					    $('.big-mask').show();
+					    $('.big-mask').append(str);
+					    close()
+					},
+					error:function(err){
+						console.log(err)
+					}
+				})
+			});
+			function close(){
+			    $('.con').click(function(){
+			        $('.big-mask').hide()
+					$('.mask,.con').hide();
+					$('.jt_zhanji_con').show();
+					$('.two_bg').show();
+				})
+			}

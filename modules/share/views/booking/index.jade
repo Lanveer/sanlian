@@ -1,0 +1,116 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no')
+        title 订场首页
+        link(href='/public/css/swiper-3.3.1.min.css' rel='stylesheet' type='text/css')
+        link(href='/public/css/n_common.css' rel='stylesheet' type='text/css')
+        link(href='/public/css/index.css' rel='stylesheet' type='text/css')
+        link(href='/public/css/DingChang.css' rel='stylesheet' type='text/css')
+        script(type='text/javascript' src='/public/js/jquery-1.7.2.min.js')
+        script(type='text/javascript' src='/public/js/swiper-3.3.1.min.js')
+
+    body
+        <!--订场内容 start-->
+        div.dc_content
+            <!--banner start-->
+            div.swiper-container
+                div.swiper-wrapper
+                    each banner in banners.top
+                        div.swiper-slide
+                            img.banner_img(src=banner.imagepath)
+                <!-- 分页器 -->
+                div.swiper-pagination
+            <!--banner end-->
+            div.clear
+            <!--页面内容 start-->
+            div.dc_main
+                <!--三张展示图,请传高度为92像素的图片-->
+                div.dc_img
+                    ul
+                        each banner in banners.bottom
+                            a(href='#')
+                                li
+                                    img(src=banner.imagepath)
+                        div.clear
+                div.clear(style='height:5px;')
+                <!--球场列表-->
+                div.haomen
+                    img.haomen_img(src='/public/images/qiuchang_list@2x.png')
+                    img.haomen_zhan(src='/public/images/zhan_img3@2x.png')
+                <!--球场列表内容start 图片宽度为69px    此处为循环1-->
+                each venue in venues
+                    div.two_bg
+                        div.haomen_cont.qclb_list
+                            div.two_width
+                                div.qclb_l
+                                    img(src=venue.image_thumb)
+                                div.qclb_c
+                                    div.qclb_cl.size16.pub_Beyhid #{venue.name}
+                                    div.qclb_cc.padtop3
+                                        -var appraise = Math.round(venue.appraise);
+                                        - for(var i=0;i<5;i++){
+                                            - if (appraise>i){
+                                                img(src='/public/images/icon_star@2x.png')
+                                            - }else {
+                                                img(src='/public/images/icon_star_@2x.png')
+                                            - }
+                                        -}
+                                        div.clear
+                                    div.qclb_cr.padtop3.pub_Beyhid
+                                        img(src='/public/images/icon-adress@2x.png')
+                                        =venue.address
+                                    div.clear
+                                div.qclb_r.pub_Beyhid #{(venue.distance/1000).toFixed(1)}km
+                                div.clear
+                            div.dibu_icon
+                                ul
+                                    if venue.is_park
+                                        a(href='#')
+                                            li
+                                                img(src='/public/images/icon_park@2x.png')
+                                    if venue.is_rest
+                                        a(href='#')
+                                            li
+                                                img(src='/public/images/icon_rest@2x.png')
+                                    if venue.is_referee
+                                        a(href='#')
+                                            li
+                                                img(src='/public/images/icon_whistle@2x.png')
+                                    if venue.is_camera
+                                        a(href='#')
+                                            li
+                                                img(src='/public/images/icon_camera@2x.png')
+                                    div.clear
+
+                            <!--此图标为那个左上角战字的小旗标-->
+                            if venue.is_discount
+                                img.icon_zhan.icon_zhan_qclb(src='/public/images/icon_sale@2x.png')
+                <!--球场列表内容start 图片宽度为69px  此处为循环2-->
+            <!--页面内容 end-->
+        <!--订场内容 end-->
+        <!--content_main end-->
+        div.zhan_foot
+        <!--悬浮框二维码 start-->
+        div.foot_erweima
+        div.erweima_content
+            div.erweima_contentl
+                img(src='/public/images/zhaopian.png')
+            div.erweima_contentr
+                p 创建你的球队 称霸你的主场
+                p.line_di 一站式球队服务专项平台
+                p.padtop5 长按二维码下载APP
+            div.clear
+        <!--悬浮框二维码 end-->
+    <!--首页轮播-->
+    script.
+
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: 4000,
+            autoplayDisableOnInteraction: false,
+            // 如果需要分页器
+            pagination: '.swiper-pagination'
+        });

@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="renderer" content="webkit")
+		meta(http-equiv="Cache-Control" content="no-siteapp")
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="telephone=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/add_detail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		title 详情页面
+	body
+		p(style="color:#a4a9b6;padding:10pt 3% 5pt 3%") 比赛规则:
+		p(style="color:#a4a9b6;padding:10pt 3% 10pt 3%")=x.replace(/[\n,\r,\r\n]/g, '<br>').replace(/ /g, '')
+
+	script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+	script(type="text/javascript", src="/public/js/add_basic.js")

@@ -1,0 +1,165 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+        link(href="/public/css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+        link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+        link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+        script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+        script(type="text/javascript", src="/public/js/swiper-3.3.1.min.js")
+        title 赛事页面-首页详情
+    body
+        // nav start
+        .ss_detail_nav
+            ul.ss_dul
+                a(href="home?competition_id=#{competition_id}")
+                    li
+                        img(src="/public/images/tab-shouye-pressed@3x.png")
+                a(href="race?competition_id=#{competition_id}")
+                    li
+                        img(src="/public/images/tab-saicheng@3x.png")
+                a(href="posts?competition_id="+competition_id)
+                    li
+                        img(src="/public/images/tab-dongtai@3x.png")
+                a(href="ranking?competition_id=#{competition_id}")
+                    li
+                        img(src="/public/images/tab-paihang@3x.png")
+                a(href="enterCompetition?competition_id=#{competition_id}")
+                    li
+                        img(src="/public/images/tab-baoming@3x.png")
+                .clear
+            img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+        // nav end
+        .clear(style="height: 15px;")
+        // 赛事首页1 start
+        // banner start
+        .swiper-container
+            .swiper-wrapper
+                - if(banners)
+                    each banner in banners
+                        .swiper-slide
+                            a(href=banner.url)
+                                img.banner_img(src=banner.img)
+            // 分页器
+            .swiper-pagination
+        // banner end
+        // 赛程推荐 start
+        .gk_photo
+            img.gk_photo_img(src="/public/images/sctj_img@2x.png")
+            .dingwei_more
+                img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+            .two_bg(style="height: 15px;")
+            // 赛程推荐内容 有比分的 循环1 start  请上传98*104的图片
+            -if (races)
+                each race,index in races
+                    .two_bg
+                        a(href=race.url)
+                            .sctj_main.padtop10
+                                p.sctj_word.size12_hui.pub_Beyhid #{race.race_start_time} #{race.round_title}
+                                p.sctj_word.size14.padtop3.pub_Beyhid #{race.venue_name}
+                                .sctj_con
+
+                                    .sctj_conl
+                                        img.sctj_img(src=race.home_team_logo)
+                                        p.size14.padtop5.pub_Beyhid #{race.home_team_name}
+                                    - var bifen = 'V S';
+                                    - if (race.end_time) bifen = race.home_goal + " : " + race.guest_goal;
+                                    .sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid=bifen
+                                    .sctj_conr
+                                        img.sctj_img(src=race.guest_team_logo)
+                                        p.size14.padtop5.pub_Beyhid #{race.guest_team_name}
+                                    .clear
+                        .sctj_btn
+                            - if (race.battle_report)
+                                .sctj_btnl
+                                    a(href=race.battle_report)
+                                        img(src="/public/images/btn-Graphic-record@2x.png")
+                            - if (race.collection)
+                                .sctj_btnr
+                                    a(href=race.collection)
+                                        img(src="/public/images/btn-The-game-highlights@2x.png")
+                            .clear
+                        unless index == (races.length - 1)
+                            img.img_shadow(src="/public/images/Separation-line1@2x.png")
+            // 赛程推荐内容  循环1 end
+        // 赛程推荐 end
+        // 参赛球队 start
+        .gk_photo
+            img.gk_photo_img(src="/public/images/csqd_img@2x.png")
+            .dingwei_more
+                img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+            // 参赛球队内容start
+            .two_bg
+                ul.csqt_main
+                    // 请上传98*104的图片
+                    - if (ball_teams)
+                        each ball_team in ball_teams
+                            a(href="/competition/teamInfo?competition_id=" + ball_team.competition_id + "&ball_team_id=" + ball_team.ball_team_id)
+                                li.csqt_mainli.pub_Beyhid
+                                    img(src=ball_team.logo)
+                                    | #{ball_team.name}
+                    .clear
+        // 参赛球队 end
+        // 赛事动态 start
+        .gk_photo
+            img.gk_photo_img(src="/public/images/ssdt_img@2x.png")
+            .dingwei_more
+                img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+            .two_bg
+                // 赛事动态内容，此处请上传190*143的图片，与列图相同，循环1
+                - if(posts)
+                    each post in posts
+                        a(href=post.url)
+                            .zixun_bg
+                                .zixun(style='position:relative')
+                                    .zixunl
+                                        img(src=post.img)
+                                    .zixunr
+                                        - var title = post.title;
+                                        - title = title.substring(0,30);
+                                        - if(title.length>=30){title += '...'}
+                                        p.zixunr_word #{title}
+                                        p.zixunr_time.pub_Beyhid(style='position:absolute;bottom:10px') #{post.show_time}
+                                    .clear
+                // 赛事动态内容，此处请上传190*143的图片，与列图相同，循环2
+                //.zixun_bg
+                //	.zixun
+                //		.zixunl
+                //			img(src="/public/images/zixun_demo_img.png")
+                //		.zixunr
+                //			p.zixunr_word.pub_Beyhid 标题标题标题标题标题标题标题标题
+                //			p.zixunr_word.pub_Beyhid 标题标题标题标题
+                //			p.zixunr_time.pub_Beyhid 2016-05-22 18:25:00
+                //		.clear
+        // 赛事动态 end
+        // content_main end
+        //.zhan_foot
+        // 悬浮框二维码 start
+        //.foot_erweima
+        //.erweima_content
+        //	.erweima_contentl
+        //		img(src="/public/images/zhaopian.png")
+        //	.erweima_contentr
+        //		p 创建你的球队 称霸你的主场
+        //		p.line_di 一站式球队服务专项平台
+        //		p.padtop5 长按二维码下载APP
+        //	.clear
+        // 悬浮框二维码 end
+        // 首页轮播
+        script.
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal',
+                loop: true,
+                autoplay: 4000,
+                autoplayDisableOnInteraction: false,
+                // 如果需要分页器
+                pagination: '.swiper-pagination'
+            });
+        script.
+            $(".sctj_btnl").click(function () {
+                $(this).children("img").attr("src", "/public/images/btn-Graphic-record-pressed@2x.png")
+            });
+            $(".sctj_btnr").click(function () {
+                $(this).children("img").attr("src", "/public/images/btn-The-game-highlights-pressed@2x.png")
+            });

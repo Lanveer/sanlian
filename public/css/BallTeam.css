@@ -1,0 +1,26 @@
+.creat_team { width: 95%; margin: 10px auto;}
+.creat_team img { width: 100%;}
+
+.join_teaml { width: 25%;}
+.join_teaml img { margin: 0 auto;}
+.join_teamr { width: 75%;}
+
+.li_jt_one { width: 24%;}
+.li_jt_two { width: 13%;}
+.li_jt_three { width: 21%;}
+
+.jt_headl { width: 35%; float: left;}
+.jt_headr { width: 65%; float: left;}
+
+/*标题*/
+.jt_headr ul { width: 100%;}
+.jt_headr ul li { float: left; font-size: 12px; color: #ffffff; margin-right: 1%; text-align: center; line-height: 16px; margin-top: 3px;}
+.jt_01 { width: 15%; background-color: #3088e1;}
+.jt_02 { width: 28%; background-color: #3088e1;}
+.jt_03 { width: 15%; background-color: #e4c131;}
+
+
+@media only screen and (max-width:320px) {
+    .li_jt_one { width: 22%;}
+    .li_jt_three { width: 18%;}
+}

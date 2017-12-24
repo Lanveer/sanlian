@@ -1,0 +1,490 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="renderer" content="webkit")
+		meta(http-equiv="Cache-Control" content="no-siteapp")
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="telephone=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/add_detail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		title 详情页面
+	body()
+	//定义隐藏域存放一些变量
+	// header begin
+	div(class= "header common-div")
+		div(class="header-top")
+			div(class="mask")
+			img(src=bannerIcon alt="")
+			div(class="header-content")
+				div(class="header-icon")
+					img(src=bannerIcon alt="")
+				-var title=	bannerTitle.length>26?bannerTitle.substring(0,24)+'...':bannerTitle
+				p=title
+				div(class="header-race")
+					p 参赛队
+						span= teamNums
+					p 进球
+						span=goals
+		div(class="header-down")
+			div(class="zan")
+						each img in banner
+							if(img.merchantImg==null)
+								p(style='color:#999; font-size:10pt; margin:10pt 0 15pt 0;') 暂时没有赞助商
+							else
+								-var x=img.merchantImg
+								-var y=x.split(',')
+								img(src=y[0] alt="")
+								img(src=y[1] alt="")
+								img(src=y[2] alt="")
+			ul(class="nav")
+				li(class="nav-on")
+					a(href="#" style="color:#0233ae;") 首页
+				li
+					a(href="#") 赛程
+				li
+					a(href="#" onclick='trans()') 积分榜
+				li
+					a(href="#") 动态
+	//header over
+
+	//headers  begin
+	div( class="headers common-div")
+		ul
+			li 首页
+			li 赛程
+			li(onclick='trans()') 积分榜
+			li 动态
+
+	//headers over
+
+	//首页开始
+	div(class="con")
+		//赛事详情开始
+		div(class="raceInfo")
+			each item in raceDetail
+				div(class="raceInfo-top")
+					p 地点：
+						span= item.address
+					p 场地：
+						span= item.address + '球场'
+					p 时间：
+						span= item.start_time
+					p 赛制：
+						-var raceType =parseInt(item.type)
+						if(raceType==0)
+							span 循环赛
+						else if(raceType==1)
+							span 杯赛
+						else
+							span 淘汰赛
+					p 主办方：
+						span 三联球场
+					p(id="comp_id" style="display:none;")= item.competition_id
+				div(class="raceInfo-down")
+					a(href="rules?competition_id=" + item.competition_id) 更多信息
+		//赛事详情结束
+
+		//参赛球队开始
+		div(class="team")
+			p 参赛球队:
+				span(style="margin-left:5pt;")= attendTeam
+				span(style="margin-left:5pt; display:none;" class='c_id')= competition_id
+			ul(class="team-ul")
+				each item in teamList
+					li
+						span(class="ball_team_id" style="display:none;")=item.ball_team_id
+						span(class="competition_id" style="display:	none;")=item.competition_id
+						div(class="icon")
+							img(src=item.logo alt="")
+						div(class="info")
+							h1=item.name
+							span 劲旅三级
+							span= item.city
+							span= item.city +'-'+ item.county
+						div(class="arrow")
+							img(src="../../../public/add_image/arrow.png" alt="")
+		//参赛球队结束
+		//立即报名开始
+		div(class="attend common-div")
+			//each item in teamList
+				//a(href="enterCompetition?competition_id="+ item.competition_id) 报名
+			a(href="#" class="baoming") 报名
+		//立即报名结束
+
+	//首页结束
+
+
+
+	//赛程开始
+	div(class="con common-div saicheng" style="padding-top:5%;")
+		each item in firstData
+			a(href="raceDetail?competition_id=" + item.competition_id + '&race_id=' + item.race_id)
+				//div(class="race-header")
+				//	h1=item.date
+				//	h1=item.title.substring(0,5)+''
+				div(class="race-content")
+					div(class="top")
+						h1=item.date2 + '  '+ item.title
+						h1=item.address
+					div(class="down")
+						div(class="left")
+							div(class="left-icon")
+								img(src=item.homeLogo||"../../../public/add_image/icon.png" alt="")
+							h1=item.homeName
+						div(class="mid")
+							span=item.homeGoal
+							span :
+							span=item.guestGoal
+						div(class="right")
+							div(class="left-icon")
+								img(src=item.guestLogo||"../../../public/add_image/icon.png" alt="")
+							h1=item.guestName
+		div(class="race-footer")
+			each  item in lunshuNum
+				-var x= item.turn
+				-for(var i=0;i<x;i++)
+					div(class="slide-item")='第'+ parseInt(i+1)+'轮'
+						span(style="display:none" class="slide-item-number")= i+1
+						span(style="display:none" class="comp_id" id="comp_id")= item.competition_id
+
+	//赛程结束
+
+	//积分榜开始
+	div(class="con")
+		//积分开始
+		div(class="s-con score")
+			table(class="table" id='score_table' cellpadding="0" cellspacing="0")
+		//积分结束
+
+		//射手开始
+		div(class="s-con shoot")
+			table(class="table" cellpadding="0" cellspacing="0")
+				tr(class="score-title")
+					td 排名
+					td 球员
+					td 球队
+					td 进球数
+				each item,index in otherData
+					-var idx= index+1
+					if(idx<=3)
+						tr(class="score-info score-info-especial")
+							td=idx
+							td(class="hybird2")
+								img(src=item.avatar||"../../../public/add_image/user-small-icon.png" alt="")
+								span=item.nickname
+							td(class="hybird2")
+								img(src=item.teamLogo||"../../../public/add_image/small-icon.png" alt="")
+								span=item.name
+							td=item.goals_scored+'(0)'
+					else
+						tr(class="score-info")
+							td=idx
+							td(class="hybird2")
+								img(src=item.avatar || "../../../public/add_image/user-small-icon.png" alt="")
+								span=item.nickname
+							td(class="hybird2")
+								img(src=item.teamLogo || "../../../public/add_image/small-icon.png" alt="")
+								span=item.name
+							td=item.goals_scored+'(0)'
+		//射手结束
+
+		//助攻开始
+		div(class="s-con help")
+			table(class="table" cellpadding="0" cellspacing="0")
+				tr(class="score-title")
+					td 排名
+					td 球员
+					td 球队
+					td 助攻数
+				each item,index in otherData
+					-var idx= index+1
+					if(item.zhugong!==0)
+						if(idx <= 3)
+							tr(class="score-info score-info-especial")
+								td=idx
+								td(class="hybird2")
+									img(src=item.avatar || "../../../public/add_image/user-small-icon.png" alt="")
+									span=item.nickname
+								td(class="hybird2")
+									img(src=item.teamLogo || "../../../public/add_image/small-icon.png" alt="")
+									span=item.name
+								td=item.zhugong
+						else
+							tr(class="score-info")
+								td=idx
+								td(class="hybird2")
+									img(src=item.avatar || "../../../public/add_image/user-small-icon.png" alt="")
+									span=item.nickname
+								td(class="hybird2")
+									img(src=item.teamLogo || "../../../public/add_image/small-icon.png" alt="")
+									span=item.name
+								td=item.zhugong
+					else
+						p(style="color：#fff") 暂时没有数据
+
+
+		//助攻结束
+
+		//红黄牌开始
+		div(class="s-con card")
+			table(class="table" cellpadding="0" cellspacing="0")
+				tr(class="score-title")
+					td 排名
+					td 球员
+					td 球队
+					td 红/黄牌
+				each item,index in 	otherData
+					-var idx=index+1
+					if(item.red_card!==0||item.yellow_card!==0 )
+						if(idx <= 3)
+							tr(class="score-info")
+								td=idx
+								td(class="hybird2")
+									img(src=item.avatar || "../../../public/add_image/user-small-icon.png" alt="")
+									span=item.nickname
+								td( class="hybird2")
+									img(src=item.teamLogo || "../../../public/add_image/small-icon.png" alt="")
+									span=item.name
+								td=item.red_card + '/' + item.yellow_card
+						else
+							tr(class="score-info")
+								td=idx
+								td(class="hybird2")
+									img(src=item.avatar || "../../../public/add_image/user-small-icon.png" alt="")
+									span=item.nickname
+								td( class="hybird2")
+									img(src=item.teamLogo || "../../../public/add_image/small-icon.png" alt="")
+									span=item.name
+								td=item.red_card + '/' + item.yellow_card
+					else
+						p(style="color：#fff") 暂时没有数据
+
+		//红黄牌结束
+
+		//footer开始
+		div(class="score-footer")
+			ul
+				li
+					div(class="footer-icon")
+						img(src="../../../public/add_image/jifen-light.png" alt="")
+					div(class="footer-icon2")
+						img(src="../../../public/add_image/jifen-gray.png" alt="")
+					h1 	积分
+				li
+					div(class="footer-icon")
+						img(src="../../../public/add_image/sheshou-light.png" alt="")
+					div(class="footer-icon2")
+						img(src="../../../public/add_image/sheshou-gray.png" alt="")
+					h1    射手
+				li
+					div(class="footer-icon")
+						img(src="../../../public/add_image/zhugong-light.png" alt="")
+					div(class="footer-icon2")
+						img(src="../../../public/add_image/zhugong-gray.png" alt="")
+					h1    助攻
+				li
+					div(class="footer-icon")
+						img(src="../../../public/add_image/card-light.png" alt="")
+					div(class="footer-icon2")
+						img(src="../../../public/add_image/card-gray.png" alt="")
+					h1    红黄牌
+		//footer结束
+
+	//积分榜结束
+
+	//动态开始
+	div(class="con common-div dynamic")
+		each item  in dynamicData
+			-var date=item.date
+			div(class="dynamic-header")=item.date
+			ul(class="dynamic-ul")
+				//a(href="dynamic?competition_id="+item.competition_id+'&posts_id='+ item.post_id)
+				li(onclick="transfer(this)")
+					p(style="display:none;" class="post")=item.post_id
+					p(style="display:none;" class="competition")=item.competition_id
+					p(style="display:none;" class="user_id")=user_id
+					div(class="dynamic-left")
+						img(src=item.img alt="")
+					div(class="dynamic-right")
+							p=item.title
+	//动态结束
+	//动态详情开始
+	div(class="con common-div dynamicDetail")
+	//动态详情结束
+	script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+	script(type="text/javascript", src="/public/js/add_basic.js")
+	script.
+		$('.baoming').click(function(){
+			var competition_id=$('.c_id').html();
+			window.location.href='enterCompetition?competition_id='+ competition_id
+		})
+		$('.slide-item').click(function(){
+			var idx=$(this).find('.slide-item-number').text();
+			var comp_id=$(this).find('.comp_id').text();
+				$.ajax({
+					url: 'http://sanlianfootball.top/competition/lunshu',
+					type:'post',
+					data:{turn:idx,comp_id:comp_id},
+					dataType:'json',
+					success:function(res){
+						var data= res.result;
+						var str='';
+						$('.saicheng a').empty();
+						var box= $('.saicheng');
+						$.each(data,function(index,item){
+							str+="<a href='raceDetail?competition_id='>" +
+									"</div >" +
+									"<div class='race-content'>" +
+										"<div class='top'>" +
+										"<h3>" + item.date2 +"  "+item.title+"</h1>" +
+										"<h1>" + item.address+"</h1>" +
+										"</div>" +
+										"<div class='down'>" +
+											"<div class='left'>" +
+												"<div class='left-icon'><img src="+item.homeLogo+"></div>" +
+												"<h1>"+item.homeName+"</h1>"+
+											"</div>" +
+											"<div class='mid'>" +
+												"<span>"+item.homeGoal+"</span>" +
+												"<span>:</span>" +
+												"<span>"+item.guestGoal+"</span>" +
+											"</div>" +
+											"<div class='right'>" +
+											"<div class='left-icon'>" +
+												"<img src=" +item.guestLogo+ ">" +
+												"</div>" +
+												"<h1>" + item.guestName+"</h1>" +
+											"</div>" +
+										"</div>" +
+									"</div>"+
+								"</a>"
+						} )
+						box.append(str)
+					},
+					error:function(err){
+						console.log(err)
+					}
+				})
+		})
+			$('.dynamic-ul li').click(function(){
+				var competition_id=$(this).find('.competition').text();
+				var posts_id=$(this).find('.post').text();
+				var user_id=$(this).find('.user_id').text();
+				console.log(competition_id)
+				console.log(posts_id)
+				$.ajax({
+					type:'post',
+					dataType:'json',
+					url:'http://sanlianfootball.top/competition/postsInfo',
+					data:{competition_id:competition_id,posts_id:posts_id},
+					success:function(msg){
+						var str='';
+						var com_str='';
+						var box=$('.dynamicDetail');
+						str+='<h1>'+msg.posts.title+'</h1>' +
+							'<div>'+msg.posts.content+'</div>' +
+							'<div class="comment"><h1>看看大家怎么说吧~~</h1></div>' +
+							'<div class="comment-box"><h1>评论:</h1>' +
+							'<input type="text" class="input-nicknme" placeholder="请输入昵称">'+
+							'<textarea name="" id="" class="common-text"></textarea>' +
+							'<input type="button" class="submit" value="确认评论" onclick="com(this)">' +
+							'<p style="display: none;" class="user_id">'+user_id+'</p>'+
+							'<p style="display: none;" class="competition_id">'+competition_id+'</p>'+
+							'<p style="display: none;"class="posts_id">'+posts_id+'</p>'+
+							'</div>';
+						var coms =msg.comments;
+						$.each(coms,function(a,b){
+							com_str+='<p><span>'+b.nickname+'</span>: <span style="margin-left: 5pt">'+b.content+'</span></p>';
+						})
+						box.empty();
+						box.append(str);
+						$('.comment').append(com_str);
+					},
+					error:function(err){console.log(err)
+					}
+				})
+			})
+			$('.team li').click(function(){
+				var ball_team_id= $(this).find('.ball_team_id').text();
+				var competition_id= $(this).find('.competition_id').text();
+				window.location.href="teamDetail?team_ball="+ball_team_id +'&competition_id='+competition_id
+			})
+	script.
+		function trans(){
+			var com_id=$('#comp_id').text();
+			var url='http://sanlianfootball.top/competition/ranking?competition_id='+com_id;
+			$('.score').empty();
+			$.ajax({
+				type:'get',
+				dataType:'json',
+				url:url,
+				//data:{competition_id:com_id},
+				success:function(msg){
+				var container=$('.score');
+				var str='';
+				var group_score=msg.group_scores;
+				var scores=msg.scores;
+				var type=msg.competition.type;
+					if(type==1){
+						$.each(group_score, function (idx, item) {
+							str += '<tr class="score-title">' +
+								'<td class="other"> <p>' + item[0]['group_name'] + '</p>排名</td>' +
+								'<td class="duiwu">队伍</td>' +
+								'<td class="other">赛</td>' +
+								'<td class="other">胜/负</td>' +
+								'<td class="other">平</td>' +
+								'<td class="other">进/失</td>' +
+								'<td class="other">积分</td>' +
+								'</tr>'
+							$.each(item, function (idx2, score) {
+								console.log(score)
+								var name = score.ball_team_name.length > 5 ? score.ball_team_name.substring(0, 7) + '..' : score.ball_team_name;
+								str += '<tr class="score-info">' +
+									'<td>' + Number(idx2 + 1) + '</td>' +
+									'<td class="hybird2" style="width: 39%;"><img src="' + score.ball_team_logo + '" alt=""> <span>' + name + '</span></td>' +
+									'<td>' + Number(score.win_match + score.fail_match + score.flat_match) + '</td>' +
+									'<td>' + score.win_match + '/' + score.fail_match + ' </td>' +
+									'<td>' + score.flat_match + '</td>' +
+									'<td>' + score.goals_scored + '/' + score.goals_against + '</td>' +
+									'<td>' + score.score + '</td>' +
+									'</tr>'
+							})
+						})
+						container.append(str)
+					}else if(type==0){
+							str += '<tr class="score-title">' +
+								'<td class="other">排名</td>' +
+								'<td class="duiwu">队伍</td>' +
+								'<td class="other">赛</td>' +
+								'<td class="other">胜/负</td>' +
+								'<td class="other">平</td>' +
+								'<td class="other">进/失</td>' +
+								'<td class="other">积分</td>' +
+								'</tr>'
+								$.each(scores,function (idx,item) {
+								var name=item.ball_team_name.length > 5 ? item.ball_team_name.substring(0, 7) + '..' : item.ball_team_name;;
+											str += '<tr class="score-info">' +
+											'<td>' + Number(idx + 1) + '</td>' +
+											'<td class="hybird2" style="width: 39%;"><img src="' + item.ball_team_logo + '" alt=""> <span>' + name + '</span></td>' +
+											'<td>' + Number(item.win_match + item.fail_match + item.flat_match) + '</td>' +
+											'<td>' + item.win_match + '/' + item.fail_match + ' </td>' +
+											'<td>' + item.flat_match + '</td>' +
+											'<td>' + item.goals_scored + '/' + item.goals_against + '</td>' +
+											'<td>' + item.score + '</td>' +
+											'</tr>'
+								})
+								container.append(str)
+					}
+
+				},
+				error:function(err){
+				alert(err)
+				}
+			})
+		}
+
+

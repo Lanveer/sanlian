@@ -1,0 +1,185 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/swiper-3.3.1.min.css", rel="stylesheet", type="text/css")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/Saishi_home.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		script(type="text/javascript", src="js/swiper-3.3.1.min.js")
+		title 赛事页面-首页详情
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="Saishi_home.html")
+					li
+						img(src="images/tab-shouye-pressed@3x.png")
+				a(href="Saishi_saicheng.html")
+					li
+						img(src="images/tab-saicheng@3x.png")
+				a(href="Saishi_dongtai.html")
+					li
+						img(src="images/tab-dongtai@3x.png")
+				a(href="Saishi_paihang.html")
+					li
+						img(src="images/tab-paihang@3x.png")
+				a(href="Saishi_baoming.html")
+					li
+						img(src="images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="images/nav_zhanweitu.png")
+		// nav end
+		.clear(style="height: 15px;")
+		// 赛事首页1 start
+		// banner start
+		.swiper-container
+			.swiper-wrapper
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+				.swiper-slide
+					img.banner_img(src="images/banner@2x.png")
+			// 分页器
+			.swiper-pagination.sd_right
+		// banner end
+		// 赛程推荐 start
+		.gk_photo
+			img.gk_photo_img(src="images/sctj_img@2x.png")
+			.dingwei_more
+				img.zhan_img2(src="images/zhan_img2@2x.png")
+			.two_bg(style="height: 15px;")
+			// 赛程推荐内容 有比分的 循环1 start  请上传98*104的图片
+			.two_bg
+				.sctj_main.padtop10
+					p.sctj_word.size12_hui.pub_Beyhid 06月11日 16:00 常规赛 第3轮
+					p.sctj_word.size14.padtop3.pub_Beyhid 长江南岸
+					.sctj_con
+						.sctj_conl
+							img.sctj_img(src="images/sctj_demo_img.png")
+							p.size14.padtop5.pub_Beyhid CDFEG
+						.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid 3 : 0
+						.sctj_conr
+							img.sctj_img(src="images/sctj_demo_img.png")
+							p.size14.padtop5.pub_Beyhid CDFEG
+						.clear
+				.sctj_btn
+					.sctj_btnl
+						img(src="images/btn-Graphic-record@2x.png")
+					.sctj_btnr
+						img(src="images/btn-The-game-highlights@2x.png")
+					.clear
+				img.img_shadow(src="images/Separation-line1@2x.png")
+			// 赛程推荐内容  循环1 end
+			// 赛程推荐内容 无比分的 循环2 start  请上传98*104的图片
+			.two_bg
+				.sctj_main.padtop10
+					p.sctj_word.size12_hui.pub_Beyhid 06月11日 16:00 常规赛 第3轮
+					p.sctj_word.size14.padtop3.pub_Beyhid 长江南岸
+					.sctj_con
+						.sctj_conl
+							img.sctj_img(src="images/sctj_demo_img.png")
+							p.size14.padtop5.pub_Beyhid CDFEG
+						.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid V S
+						.sctj_conr
+							img.sctj_img(src="images/sctj_demo_img.png")
+							p.size14.padtop5.pub_Beyhid CDFEG
+						.clear
+				// <img src="images/Separation-line1@2x.png" class="img_shadow"/>
+			// 赛程推荐内容  循环2 end
+		// 赛程推荐 end
+		// 参赛球队 start
+		.gk_photo
+			img.gk_photo_img(src="images/csqd_img@2x.png")
+			.dingwei_more
+				img.zhan_img2(src="images/zhan_img2@2x.png")
+			// 参赛球队内容start
+			.two_bg
+				ul.csqt_main
+					// 请上传98*104的图片
+					a(href="ss_home_jointeam.html")
+						li.csqt_mainli.pub_Beyhid
+							img(src="images/sctj_demo_img.png")
+							| DFRR
+					li.csqt_mainli.pub_Beyhid
+						img(src="images/sctj_demo_img.png")
+						| VGG
+					li.csqt_mainli.pub_Beyhid
+						img(src="images/sctj_demo_img.png")
+						| ERF
+					li.csqt_mainli.pub_Beyhid
+						img(src="images/sctj_demo_img.png")
+						| DXD
+					li.csqt_mainli.pub_Beyhid
+						img(src="images/sctj_demo_img.png")
+						| ERF
+					li.csqt_mainli.pub_Beyhid
+						img(src="images/sctj_demo_img.png")
+						| 3REF
+					.clear
+		// 参赛球队 end
+		// 赛事动态 start
+		.gk_photo
+			img.gk_photo_img(src="images/ssdt_img@2x.png")
+			.dingwei_more
+				img.zhan_img2(src="images/zhan_img2@2x.png")
+			.two_bg
+				// 赛事动态内容，此处请上传190*143的图片，与列图相同，循环1
+				.zixun_bg
+					.zixun
+						.zixunl
+							img(src="images/zixun_demo_img.png")
+						.zixunr
+							p.zixunr_word.pub_Beyhid 标题标题标题标题标题标题标题标题
+							p.zixunr_word.pub_Beyhid 标题标题标题标题
+							p.zixunr_time.pub_Beyhid 2016-05-22 18:25:00
+						.clear
+				// 赛事动态内容，此处请上传190*143的图片，与列图相同，循环2
+				.zixun_bg
+					.zixun
+						.zixunl
+							img(src="images/zixun_demo_img.png")
+						.zixunr
+							p.zixunr_word.pub_Beyhid 标题标题标题标题标题标题标题标题
+							p.zixunr_word.pub_Beyhid 标题标题标题标题
+							p.zixunr_time.pub_Beyhid 2016-05-22 18:25:00
+						.clear
+		// 赛事动态 end
+		// content_main end
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		// 首页轮播
+		script.
+			var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			autoplay : 4000,
+			autoplayDisableOnInteraction : false,
+			// 如果需要分页器
+			pagination: '.swiper-pagination',
+			})
+		script.
+			$(".sctj_btnl").click(function () {
+			$(this).children("img").attr("src","images/btn-Graphic-record-pressed@2x.png")
+			});
+			$(".sctj_btnr").click(function () {
+			$(this).children("img").attr("src","images/btn-The-game-highlights-pressed@2x.png")
+			});

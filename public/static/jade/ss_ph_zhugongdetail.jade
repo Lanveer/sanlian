@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="css/ss_ph_zhugongdetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		title 赛事页面-排行-助攻详情
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="Saishi_home.html")
+					li
+						img(src="images/tab-shouye@3x.png")
+				a(href="Saishi_saicheng.html")
+					li
+						img(src="images/tab-saicheng@3x.png")
+				a(href="Saishi_dongtai.html")
+					li
+						img(src="images/tab-dongtai@3x.png")
+				a(href="Saishi_paihang.html")
+					li
+						img(src="images/tab-paihang-pressed@3x.png")
+				a(href="Saishi_baoming.html")
+					li
+						img(src="images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="images/nav_zhanweitu.png")
+		// nav end
+		// 头像部分
+		.zgdetail_tx
+			.zgdetail_tx_margin
+				.zr_list_one
+					.zr_list_touxiang
+						img(src="images/zhaopian.png")
+					.zr_list_name
+						p.zr_list_name_head.pub_Beyhid 张萌萌
+						p.size12_hui.pub_Beyhid 中国
+						p.zgdetail_cion.size12_hui.pub_Beyhid
+							img.zgdetail_tx_cion(src="images/sctj_demo_img.png")
+							|  WNED | 21号
+					.clear
+		// 统计列表
+		.zg_detail_list
+			.tongji_list
+				p.tongji_list_p.pub_Beyhid
+					img(src="images/time@2x.png")
+					| 2016年
+				ul.tongji_listul
+					li
+						p.tongji_number.pub_Beyhid 24
+						p.tongji_number_word.pub_Beyhid 进球
+					li
+						p.tongji_number.pub_Beyhid 24
+						p.tongji_number_word.pub_Beyhid 助攻
+					li(style="border-right: none;")
+						p.tongji_number.pub_Beyhid.tongji_number_hui 0
+						p.tongji_number_word.pub_Beyhid 全场最佳
+					li
+						p.tongji_number.pub_Beyhid 12/12
+						p.tongji_number_word.pub_Beyhid 出场
+					li
+						p.tongji_number.pub_Beyhid 15
+						p.tongji_number_word.pub_Beyhid 红牌
+					li(style="border-right: none;")
+						p.tongji_number.pub_Beyhid 12
+						p.tongji_number_word.pub_Beyhid 黄牌
+					.clear
+		// 助攻队员详情
+		.zg_detail_duiyuan
+			.zg_detail_con
+				.zg_detail_dyname 张萌萌的生涯
+				.zg_detail_quan
+					img(src="images/Statistics@2x.png")
+					.zg_detail_quan_number 11
+				.zg_detail_quan_word
+					| 俱乐部 
+					span.zg_word_number 1
+					|   比赛 
+					span.zg_word_number 11
+				li.zg_detail_quan_title
+					span.size16 蓝宝FC
+					span.zg_title_number 11场
+		// 悬浮框二维码 start
+		.zhan_foot
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end

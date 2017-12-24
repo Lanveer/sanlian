@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="renderer" content="webkit")
+		meta(http-equiv="Cache-Control" content="no-siteapp")
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="telephone=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/add_detail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/add_basic.css", rel="stylesheet", type="text/css")
+		title 详情页面
+	body(style="padding-top:26pt;")
+		div(class="headers common-div")
+			ul
+				li
+					a(href="detail?competition_id="+posts.competition_id) 首页
+				li
+					a(href="detail?competition_id="+posts.competition_id) 赛程
+				li
+					a(href="detail?competition_id="+posts.competition_id) 积分榜
+				li(class="on") 动态
+		//dynamic content  begin
+		div(class="dynamic-detail")
+				//each item in dynamicDetail
+				//h1=item.title
+				//p(style="color:#fff")!=item.content.replace(/[\n,\r,\r\n]/g, '<br>').replace(/ /g, '').replace(/[<p>]/g,'').replace(/'imgsrc='/g,'')
+				p!{(posts.content)}
+				div(class="comment")
+					h1 看看大家怎么说:
+					p
+						span 张三:
+						span(style="margin-left:5pt;") 这场赛事还是不错的哈
+		div(class="comment-box" style="width:95%;margin:auto;")
+			h1 评论
+			textarea(class="common-text")
+			input(type="button" value="确认评论" class="submit")
+
+
+	script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+	script(type="text/javascript", src="/public/js/add-com.js")

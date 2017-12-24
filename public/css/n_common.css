@@ -1,0 +1,99 @@
+* { margin: 0; padding: 0;}
+body {
+    font-family: '微软雅黑 Light', '微软雅黑';
+    font-size: 16px;
+    background-color: #051024;
+    background: -webkit-linear-gradient(left, #061125, #0e1f4a,#061125);
+    background: -o-linear-gradient(right, #061125, #0e1f4a,#061125);
+    background: -moz-linear-gradient(right, #061125, #0e1f4a,#061125);
+    background: linear-gradient(to right, #061125, #0e1f4a,#061125);
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=1, startColorStr=#061125, endColorStr=#0e1f4a);
+    color: #fff;
+}
+:root .body{filter:none;}
+html,body,div,ol,img,a,span,input,h1,h2,h3,h4,h5,h6,p{ margin:0;border:0;padding:0;font-style:normal;}
+img { display: block;}
+li { list-style: none;}
+a:link { color: #fff;}
+a:visited { color: #fff;}
+a:hover { color: #fff;}
+a:active { color: #fff;}
+a{
+    text-decoration:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.clear{clear:both;height:0px;width:100%;line-height:0px;visibility:hidden;overflow:hidden;}
+.clear03 { clear:both;height:3px;width:100%;line-height:0px;visibility:hidden;overflow:hidden;}
+.pub_Break{word-break:break-all;word-wrap:break-word;}/*强制内容换行*/
+.pub_Beyhid{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;}/*超出部分隐藏*/
+
+/*第一栏文字样式*/
+.size14 { font-size: 14px; color: #ffffff;}
+.size16 { font-size: 16px; color: #ffffff;}
+.size12_blue { font-size: 12px; color: #3693f0;}
+.size12_hui { font-size: 12px; color: #b3b3b3;}
+.size18_blue { font-size: 18px; color: #56abfe;}
+.size12_sbule { color: #5e83b7; font-size: 12px;}
+.font_w { font-weight: bold;}
+
+
+.pading5 { padding-top: 5px; padding-bottom: 5px;}
+.pading10 { padding-top: 10px; padding-bottom: 10px;}
+.pading15 { padding-top: 15px; padding-bottom: 15px;}
+
+/*第二栏文字样式*/
+.size24_blue { font-size: 24px; color: #58aafe;}
+.padtop3 { padding-top: 3px;}
+.padtop5 { padding-top: 5px;}
+.padtop15 { padding-top: 15px;}
+.pading20 { padding-top: 20px;}
+.padtop25 { padding-top: 25px;}
+.padbottom5 { padding-bottom: 5px;}
+/*第三种宽度*/
+.three_width { width: 90%; margin: 0 auto;}
+
+
+/*二级背景层_透明蓝色那个*/
+.two_bg { width: 95%; margin: 0 auto; background-color: #1c2b54;}
+.three_bg { width: 100%; margin: 0 auto; background-color: #1c2b54;}
+
+
+/*二级背景层中的内容宽度   其他的基本上也是这个宽度*/
+.two_width { width: 98%; margin: 0 auto;}
+
+/*隐藏*/
+.yincang { display: none;}
+
+/*zhuan*/
+.rotate_clothes {
+    transform:rotate(-10deg);
+    -ms-transform:rotate(-10deg);
+    -moz-transform:rotate(-10deg);
+    -webkit-transform:rotate(-10deg);
+    -o-transform:rotate(-10deg);
+}
+
+/*foot_erweima===========================================*/
+.foot_erweima { position:fixed; bottom:0px; left:0px; width: 100%; height: 120px; background-color: #000000; opacity: 0.4; z-index: 1;}
+.erweima_content { position:fixed; bottom:0px; left:0px; width:100%; height: 120px; z-index: 2;}
+.erweima_contentl { width: 90px; height: 90px; background-color: #ffffff; float: left; margin-top: 12px; margin-left: 30px; border: 3px solid #ffffff;}
+.erweima_contentl img { width: 100%;}
+.erweima_contentr { float: left; color: #ffffff; font-size: 14px; text-align: center; width: 60%; padding-top: 22px;}
+.erweima_contentr p { padding-bottom: 5px;}
+.line_di { border-bottom: 1px solid #ffffff;}
+
+.foot_erweima2 { bottom:62px;}
+.erweima_content2 { bottom:62px;}
+
+.foot_erweima3 { bottom:52px;}
+.erweima_content3 { bottom:52px;}
+
+.zhan_foot { width: 100%; height: 120px;}
+
+
+
+@media only screen and (max-width:320px) {
+.erweima_contentr { font-size: 12px;}
+}
+

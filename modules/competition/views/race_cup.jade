@@ -1,0 +1,105 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/Saishi_home.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/ss_home_jointeam.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 赛事-赛程
+	body
+		// nav start
+		.ss_detail_nav
+			ul.ss_dul
+				a(href="home?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-shouye@3x.png")
+				a(href="race?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-saicheng-pressed@3x.png")
+				a(href="posts?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-dongtai@3x.png")
+				a(href="ranking?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-paihang@3x.png")
+				a(href="enterCompetition?competition_id=#{competition_id}")
+					li
+						img(src="/public/images/tab-baoming@3x.png")
+				.clear
+			img.nav_zhanweitu(src="/public/images/nav_zhanweitu.png")
+		// nav end
+		// 参赛球队_战绩页面 start
+		.jt_zhanji
+			.clear(style="height: 5px;")
+			// 战绩列表  循环1
+			.jt_zhanji_con
+				.jt_zhanji_head
+					.jt_zhanji_time 2016年06月05日
+					.jt_zhanji_cishu 常规赛 第1轮
+					.clear
+				.ji_zhanji_list
+					.sctj_main.padtop10
+						p.sctj_word.size12_hui 06月11日 16:00 常规赛 第3轮
+						p.sctj_word.size14.padtop3 长江南岸
+						.sctj_con
+							.sctj_conl
+								img.sctj_img(src="/public/images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid 3 : 0
+							.sctj_conr
+								img.sctj_img(src="/public/images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.clear
+					.sctj_btn
+						.sctj_btnl
+							img(src="/public/images/btn-Graphic-record@2x.png")
+						.sctj_btnr
+							img(src="/public/images/btn-The-game-highlights@2x.png")
+						.clear
+			// 战绩列表  循环2
+			.jt_zhanji_con
+				.jt_zhanji_head
+					.jt_zhanji_time 2016年06月05日
+					.jt_zhanji_cishu 常规赛 第1轮
+					.clear
+				.ji_zhanji_list
+					.sctj_main.padtop10
+						p.sctj_word.size12_hui 06月11日 16:00 常规赛 第3轮
+						p.sctj_word.size14.padtop3 长江南岸
+						.sctj_con
+							.sctj_conl
+								img.sctj_img(src="/public/images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.sctj_conc.size24_blue.padtop15.font_w.pub_Beyhid 3 : 0
+							.sctj_conr
+								img.sctj_img(src="/public/images/sctj_demo_img.png")
+								p.size14.padtop5 CDFEG
+							.clear
+					.sctj_btn
+						.sctj_btnl
+							img(src="/public/images/btn-Graphic-record@2x.png")
+						.sctj_btnr
+							img(src="/public/images/btn-The-game-highlights@2x.png")
+						.clear
+		// 参赛球队_战绩页面 end
+		//.zhan_foot
+		div(style="height:62px;width:100%")
+		.foot
+			ul#footul.footul
+				a(href="#")
+					li.footli_01.jli_now(style="width:50%;margin-top:10px;")
+						img(src="/public/images/race/Group-match@3x.png", style="height:40px;")
+				a(href="#")
+					li.footli_02(style="width:50%;margin-top:10px;")
+						img(src="/public/images/race/Knockout@3x.png", style="height:40px;")
+					.clear
+		script.
+			//点击后的按钮状态
+			$(".sctj_btnl").click(function () {
+			$(this).children("img").attr("src","/public/images/btn-Graphic-record-pressed@2x.png")
+			})
+			$(".sctj_btnr").click(function () {
+			$(this).children("img").attr("src","/public/images/btn-The-game-highlights-pressed@2x.png")
+			})

@@ -1,0 +1,332 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="/public/css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/index.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/TeamDetail.css", rel="stylesheet", type="text/css")
+		link(href="/public/css/PwsDetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="/public/js/jquery-1.7.2.min.js")
+		title 排位赛详情
+	body
+		.three_bg.padtop5
+			- if (qualifying_info.pay_num==2&&qualifying_info.refund_num==0&&qualifying_info.status==1)
+				// 3：0战绩的情况，此处被yincang这个类隐藏了，那个img也是在循环内的
+				.pws_head.pading15
+					.pws_headl
+						img.icon_img_left(src=home_team.logo)
+						.pws_headl_word
+							p.size14.pub_Beyhid #{home_team.name}
+						.pws_headl_img
+							img.rotate_clothes(src="/public/images/clothes/"+qualifying_info.home_color+"@2x.png")
+						.clear
+					.pws_headc
+						p.size24_blue.padtop15.pub_Beyhid.font_w #{qualifying_info.home_goal}:#{qualifying_info.guest_goal}
+						p.size12_hui.pading20.pub_Beyhid 战点获得
+					.pws_headr
+						img.icon_img_left(src=guest_team.logo)
+						.pws_headl_word
+							p.size14.pub_Beyhid #{guest_team.name}
+						.pws_headl_img
+							img.rotate_clothes(src="/public/images/clothes/"+qualifying_info.guest_color+"@2x.png")
+						.clear
+					.clear
+					.pws_baifenbi
+						.pws_baifenbil #{qualifying_info.home_score}  
+						.pws_baifenbic
+							.baifentiao_l(style="width:"+Math.abs(qualifying_info.home_score)/(Math.abs(qualifying_info.home_score)+Math.abs(qualifying_info.guest_score))*100+"%")
+							.baifentiao_r(style="width:"+Math.abs(qualifying_info.guest_score)/(Math.abs(qualifying_info.home_score)+Math.abs(qualifying_info.guest_score))*100+"%")
+							.clear
+						.pws_baifenbir #{qualifying_info.guest_score}    
+						.clear
+				// 3：0战绩 end
+			- else
+				// 待响应的情况 start
+				.pws_head.two_width.pading15
+					.pws_headl
+						img.icon_img_left(src=home_team.logo)
+						.pws_headl_word
+							p.size14.pub_Beyhid #{home_team.name}
+						.pws_headl_img
+							img.rotate_clothes(src="/public/images/clothes/"+qualifying_info.home_color+"@2x.png")
+						.clear
+					- if (qualifying_info.pay_num==2&&qualifying_info.refund_num==0)
+						.pws_headc
+							p.size14.pub_Beyhid= location.venue_name+'|'+location.court_name
+							p.size12_blue.pub_Beyhid #{location.type}
+							p.size12_hui.pub_Beyhid
+								| #{qualifying_info.date}
+								span= qualifying_info.start_hour+'-'+qualifying_info.end_hour
+							p.size18_blue.pading5.pub_Beyhid 已达成
+							p.size12_hui.pub_Beyhid= '总价'+qualifying_info.fee+' 线上'
+						.pws_headr
+							img.icon_img_left(src=guest_team.logo)
+							.pws_headl_word
+								p.size14.pub_Beyhid #{guest_team.name}
+							.pws_headl_img
+								img.rotate_clothes(src='/public/images/clothes/'+qualifying_info.guest_color+'@2x.png')
+							.clear
+						.clear
+					- else
+						.pws_headc
+							p.size14.pub_Beyhid= location.venue_name+'|'+location.court_name
+							p.size12_blue.pub_Beyhid #{location.type}
+							p.size12_hui.pub_Beyhid
+								| #{qualifying_info.date}
+								span= qualifying_info.start_hour + '-' + qualifying_info.end_hour
+							p.size18_blue.pading5.pub_Beyhid 待响应
+							p.size12_hui.pub_Beyhid= '总价'+qualifying_info.fee+' 线上'
+						.pws_headr
+							img.icon_img_left(src="/public/images/wait-for@2x.png")
+							.pws_headl_word(style="width:100%;")
+								p.size14.pub_Beyhid 等待应战者
+							.pws_headl_img
+								//img.rotate_clothes(src="/public/images/clothes-red@2x.png")
+							.clear
+						.clear
+				// 待响应 end
+		// nav start
+		.pwsdetail_navbg.padtop5
+			.pwsdetail_nav
+				ul#pwsdetailnav_ul.pwsdetailnav_ul
+					li.pli_hover.pli_now
+						.pli_01
+					li
+						.pli_02
+					li
+						.pli_03
+					.clear
+		// nav end
+		#pd_content.pd_content
+			// 排位赛信息
+			.gk_photo.pd_main.pd_content_now
+				img.gk_photo_img(src="/public/images/pws_info_img@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+				.two_bg
+					.two_width
+						.pws_info
+							.pws_info_with
+								.pws_info_word
+									img(src="/public/images/adressed@2x.png")
+									| #{location.venue_name}
+								.pws_info_word
+									img(src="/public/images/adressed2@2x.png")
+									| #{location.address}
+								- if (referee)
+									.pws_info_word
+										img(src="/public/images/referee@2x.png")
+										| 裁判：#{referee.name}
+								- if (cameraman)
+									.pws_info_word
+										img(src="/public/images/Photography@2x.png")
+										| 拍摄：#{cameraman.name}
+								.pws_info_word
+									img(src="/public/images/tiame@2x.png")
+									| #{qualifying_info.date}
+								.pws_info_word
+									img(src="/public/images/pay@2x.png")
+									| 线上AA #{qualifying_info.fee}元
+			// 双方阵容
+			.gk_photo.pd_main
+				img.gk_photo_img(src="/public/images/both_zr@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+				.two_bg
+					.three_width
+						.both_zr.pading15
+							// 主队
+							.both_zrl
+								.both_zrl_head 主队
+								.both_zrl_main
+									each member in home_team.members
+										// 此处为主队信息循环1
+										.both_zrl_main1
+											.both_touxiang
+												img(src=member.avatar)
+											.both_name
+												p.pub_Beyhid #{member.nickname}
+												p.size12_sbule.pub_Beyhid #{member.clubnumber} #{member.type}
+											.clear
+
+							// 客队
+							.both_zrr
+								.both_zrl_head 客队
+								.both_zrl_main
+									if guest_team
+										each member in guest_team.members
+											// 此处为客队信息循环1
+											.both_zrl_main1
+												.both_touxiang
+													img(src=member.avatar)
+												.both_name
+													p.pub_Beyhid #{member.nickname}
+													p.size12_sbule.pub_Beyhid #{member.clubnumber} #{member.type}
+												.clear
+
+							.clear
+			// 战点统计
+			.gk_photo.pd_main
+				img.gk_photo_img(src="/public/images/zhandiantj@2x.png")
+				.dingwei_more
+					img.zhan_img2(src="/public/images/zhan_img2@2x.png")
+				.two_bg
+					.two_width
+						- if(qualifying_info.status!=1)
+							// 没有战点统计的情况 此处被yincang这个类隐藏
+							.zhandian_info_none.yincang
+								p 暂无战点统计
+						-else
+							// 有战点统计的情况
+							.zhandian_info.three_width
+								// 合算战点
+								.hszd
+									p 合算战点
+									.pws_baifenbi
+										.pws_baifenbil #{qualifying_info.home_score}
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(qualifying_info.home_score) / (Math.abs(qualifying_info.home_score) + Math.abs(qualifying_info.guest_score)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(qualifying_info.guest_score) / (Math.abs(qualifying_info.home_score) + Math.abs(qualifying_info.guest_score)) * 100 + "%")
+											.clear
+										.pws_baifenbir #{qualifying_info.guest_score}
+										.clear
+								// 赛果
+								.hszd
+									p
+										-var h_g = g_g = '+3';
+										-var h_t = g_t = '平';
+										-if(qualifying_info.home_goal>qualifying_info.guest_goal)
+											- h_g = '+10';
+											- g_g = '0';
+											- h_t = "胜";
+											- g_t = "负";
+
+										- else if(qualifying_info.home_goal<qualifying_info.guest_goal)
+											- g_g = '+10';
+											- h_g = '0'
+											- g_t = "胜";
+											- h_t = "负";
+
+										span.hszd_sl=h_t
+										| 赛果
+										span.hszd_sr=g_t
+									.pws_baifenbi
+										.pws_baifenbil=h_g
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(h_g) / (Math.abs(h_g) + Math.abs(g_g)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(g_g) / (Math.abs(h_g) + Math.abs(g_g)) * 100 + "%")
+											.clear
+										.pws_baifenbir=g_g
+										.clear
+								// 进球数
+								.hszd
+									p
+										span.hszd_sl #{qualifying_info.home_goal}
+										| 进球数
+										span.hszd_sr #{qualifying_info.guest_goal}
+									.pws_baifenbi
+										.pws_baifenbil='+'+qualifying_info.home_goal
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(qualifying_info.home_goal) / (Math.abs(qualifying_info.home_goal) + Math.abs(qualifying_info.guest_goal)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(qualifying_info.guest_goal) / (Math.abs(qualifying_info.home_goal) + Math.abs(qualifying_info.guest_goal)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+qualifying_info.guest_goal
+										.clear
+								// 失球数
+								.hszd
+									p
+										span.hszd_sl #{qualifying_info.guest_goal}
+										| 失球数
+										span.hszd_sr #{qualifying_info.home_goal}
+									.pws_baifenbi
+										.pws_baifenbil='-'+qualifying_info.guest_goal
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(qualifying_info.guest_goal) / (Math.abs(qualifying_info.home_goal) + Math.abs(qualifying_info.guest_goal)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(qualifying_info.home_goal) / (Math.abs(qualifying_info.home_goal) + Math.abs(qualifying_info.guest_goal)) * 100 + "%")
+											.clear
+										.pws_baifenbir='-'+qualifying_info.home_goal
+										.clear
+								// 黄牌
+								.hszd
+									p
+										span.hszd_sl #{qualifying_info.home_yellow_card}
+										| 黄牌
+										span.hszd_sr #{qualifying_info.guest_yellow_card}
+									.pws_baifenbi
+										.pws_baifenbil='+'+qualifying_info.home_yellow_card
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(qualifying_info.home_yellow_card) / (Math.abs(qualifying_info.home_yellow_card) + Math.abs(qualifying_info.guest_yellow_card)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(qualifying_info.guest_yellow_card) / (Math.abs(qualifying_info.home_yellow_card) + Math.abs(qualifying_info.guest_yellow_card)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+qualifying_info.guest_yellow_card
+										.clear
+								// 红牌
+								.hszd
+									p
+										span.hszd_sl #{qualifying_info.home_red_card}
+										| 红牌
+										span.hszd_sr #{qualifying_info.guest_red_card}
+									.pws_baifenbi
+										.pws_baifenbil='+'+qualifying_info.home_red_card
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(qualifying_info.home_red_card) / (Math.abs(qualifying_info.home_red_card) + Math.abs(qualifying_info.guest_red_card)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(qualifying_info.guest_red_card) / (Math.abs(qualifying_info.home_red_card) + Math.abs(qualifying_info.guest_red_card)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+qualifying_info.guest_red_card
+										.clear
+								// 连胜
+								.hszd
+									p
+										span.hszd_sl #{home_team.continuous_win|0}
+										| 连胜
+										span.hszd_sr #{guest_team.continuous_win|0}
+									.pws_baifenbi
+										.pws_baifenbil='+'+home_team.continuous_win|0
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(home_team.continuous_win|0) / (Math.abs(home_team.continuous_win|0) + Math.abs(guest_team.continuous_win|0)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(guest_team.continuous_win|0) / (Math.abs(home_team.continuous_win|0) + Math.abs(guest_team.continuous_win|0)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+guest_team.continuous_win|0
+										.clear
+								// 连败
+								.hszd
+									p
+										span.hszd_sl #{home_team.continuous_fail|0}
+										| 连败
+										span.hszd_sr #{guest_team.continuous_fail|0}
+									.pws_baifenbi
+										.pws_baifenbil='+'+home_team.continuous_fail|0
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(home_team.continuous_fail|0) / (Math.abs(home_team.continuous_fail|0) + Math.abs(guest_team.continuous_fail|0)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(guest_team.continuous_fail|0) / (Math.abs(home_team.continuous_fail|0) + Math.abs(guest_team.continuous_fail|0)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+guest_team.continuous_fail|0
+										.clear
+								// 场次数
+								.hszd
+									p
+										span.hszd_sl #{home_team.game_times|0}
+										| 场次数
+										span.hszd_sr #{guest_team.game_times|0}
+									.pws_baifenbi
+										.pws_baifenbil='+'+home_team.game_times|0
+										.pws_baifenbic
+											.baifentiao_l(style="width:" + Math.abs(home_team.game_times|0) / (Math.abs(home_team.game_times|0) + Math.abs(guest_team.game_times|0)) * 100 + "%")
+											.baifentiao_r(style="width:" + Math.abs(guest_team.game_times|0) / (Math.abs(home_team.game_times|0) + Math.abs(guest_team.game_times|0)) * 100 + "%")
+											.clear
+										.pws_baifenbir='+'+guest_team.game_times|0
+										.clear
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="/public/images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script(type="text/javascript", src="/public/js/main.js")

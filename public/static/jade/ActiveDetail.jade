@@ -1,0 +1,90 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no")
+		link(href="css/n_common.css", rel="stylesheet", type="text/css")
+		link(href="css/TeamDetail.css", rel="stylesheet", type="text/css")
+		link(href="css/ActiveDetail.css", rel="stylesheet", type="text/css")
+		script(type="text/javascript", src="js/jquery-1.7.2.min.js")
+		title 活动详情
+	body
+		// 活动文本 start
+		.active_text
+			.active_with
+				.active_text_word
+					| 活动名称：
+					span 庆祝某某某球员的生日
+				.active_text_word
+					| 活动类型：
+					span 非赛事类
+				.active_text_word
+					| 活动费用(单价)：
+					span 150元
+				.active_text_word
+					| 活动时间：
+					span 2016年6月22日
+				.active_text_word
+					| 活动人数：
+					span 22人
+				.active_text_word
+					| 活动描述：
+					span 文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+				.active_text_word
+					| 活动地址：
+					span 高新区益州大道天府五街
+		// 活动文本 end
+		// 球队成员
+		.gk_photo
+			img.gk_photo_img(src="images/join_qiuyuan@2x.png")
+			.dingwei_more
+				img.zhan_img2(src="images/zhan_img2@2x.png")
+				a(href="#")
+					img.more_img(src="images/more@2x.png")
+			.two_bg
+				.two_width
+					ul.ad_qiuduiul
+						// 此处循环li标签，添加头像
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						li
+							.ad_touxiang
+								img(src="images/zhaopian.png")
+							p.ad_touxiang_name.pub_Beyhid 张大大
+						.clear
+		a.btn_baoming(href="#")
+			img(src="images/btn-sign-up@2x.png")
+		.zhan_foot
+		// 悬浮框二维码 start
+		.foot_erweima
+		.erweima_content
+			.erweima_contentl
+				img(src="images/zhaopian.png")
+			.erweima_contentr
+				p 创建你的球队 称霸你的主场
+				p.line_di 一站式球队服务专项平台
+				p.padtop5 长按二维码下载APP
+			.clear
+		// 悬浮框二维码 end
+		script.
+			$(".btn_baoming").click(function () {
+			$(this).children("img").attr("src","images/btn-sign-up-pressed@2x.png")
+			})

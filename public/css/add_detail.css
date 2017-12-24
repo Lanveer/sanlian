@@ -1,0 +1,1406 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    background: #060f23;
+}
+.header{
+    height:165pt;
+    background: red;
+}
+
+
+.header-top{
+    width:100%;
+    height:60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-top img{
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index:11;
+}
+.header-content{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:44;
+}
+.header-icon{
+    width:40pt;
+    height:40pt;
+    border-radius: 50%;
+    position: relative;
+    margin:5pt auto 0;
+}
+
+
+.header-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.header-content p{
+    color: #fff;
+    font-size: 12pt;
+    text-align: center;
+    margin-top: 5pt;
+}
+
+.header-race{
+    width:50%;
+    height:20pt;
+    margin: 5pt auto 0;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+.header-race p{
+    font-size: 10pt;
+    color: #fff;
+}
+.header-race p span{
+    margin-left: 10pt;
+}
+
+
+.header-down{
+    width:100%;
+    height:40%;
+    background: #dadce3;
+}
+
+.zan{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.zan img{
+    width:28%;margin-top: 10pt;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+.nav li {
+    width: 24%;
+    text-align: center;
+    color: #bbbcc0;
+    padding:5pt 5pt 7pt 5pt;
+}
+.nav li a{
+    width:100%;
+    display: block;
+    font-size: 10pt;
+    color:#999999;
+}
+.nav-on{
+    color:#0233ae;
+    border-bottom:3pt solid #0233ae;
+}
+
+.raceInfo{
+    width:95%;
+    height:auto;
+    margin:10pt auto;
+    border-radius: 5px;
+    background:#23304e;
+}
+
+.raceInfo-top{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction:column;
+    padding-bottom:10pt;
+    border-bottom: 1pt solid #000;
+}
+.raceInfo-top p{
+    color: #fff;
+    font-size: 10pt;
+    margin:10pt 0 5pt 15pt;
+}
+.raceInfo-down{
+    width:100%;
+    height:40pt;
+}
+.raceInfo-down a{
+    text-align: center;
+    line-height:40pt;
+    color: #fff;
+    display: block;
+    font-size: 9pt;
+}
+
+.team{
+    width:95%;
+    height:auto;
+    margin:10pt auto 45pt;
+    border-radius: 5px;
+    background:#23304e;
+    overflow: hidden;
+}
+.team p{
+    height:30pt;
+    color: #fff;
+    font-size: 9pt;
+    line-height:30pt;
+    padding-left: 15pt;
+    border-bottom: 1pt solid #000;
+}
+
+.team ul li{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.icon{
+    width:40pt;
+    height:40pt;
+    border-radius: 50%;
+    margin-left: 15pt;
+}
+.icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.info{
+    color: #fff;
+    margin:10pt 0 10pt -20pt;
+}
+.info h1{
+    font-weight:normal;
+    font-size: 11pt;
+}
+.info span{
+    font-size: 9pt;margin-right: 10pt;
+}
+.arrow{
+    width:15pt;
+    height:20pt;
+    margin-right: 10pt;
+}
+.arrow img{
+    width:100%;
+    height:100%;
+}
+
+.attend{
+    width:100%;
+    height:40pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+}
+.attend a{
+    font-size: 12pt;
+    color: #fff;
+    line-height:40pt;
+    display: block;
+    text-align: center;
+
+}
+.con{
+    display: none;
+}
+
+
+
+/*headers部分样式开始*/
+
+.headers{
+    height:28pt;
+    position: fixed;
+    top:0;
+    border-top: 1px solid #001446;
+    background: #001d6b;
+}
+.headers ul{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.headers ul li{
+    font-size: 10pt;
+    color: #999;
+    line-height:25pt;
+    text-align: center;
+    width:23%;
+}
+.on{
+    color: #fff!important;
+    border-bottom: 2pt solid #fff;
+}
+/*headers部分样式结束*/
+
+
+
+
+/*赛程板块开始*/
+.race-header{
+    height:40pt;
+    background:#0e1f4a;
+    line-height:45pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.race-header h1{
+    font-weight: normal;
+    font-size: 9pt;
+    color:#58abff;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.race-content{
+    border-bottom: 1px solid #24385d;
+}
+
+
+.top{
+    text-align: center;
+}
+.top h3{
+    font-weight: normal;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 15pt;
+}
+
+.top h1{
+    font-weight: normal;
+    font-size: 11pt;
+    color:#ccced3;
+    margin-top: 5pt;
+}
+.down{
+    margin-top: -5pt;
+    padding-bottom:10pt;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.left{
+    width:35%;
+    height:90pt;
+}
+.left-icon {
+    width:60pt;
+    height:60pt;
+    margin:5pt auto 0;
+    border-radius: 50%;
+}
+.left-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.left h1,.right h1{
+    font-size: 10pt;
+    color: #c0c1c5;
+    text-align: center;
+    margin-top: 5pt;
+}
+.mid{
+    width:30%;
+    height:90pt;
+    text-align: center;
+    line-height:90pt;
+}
+.mid span{
+    text-align: center;
+    font-size: 2em;
+    font-weight:bold;
+    color:#58abff;
+}
+
+.right{
+    width:35%;
+    height:90pt;
+}
+
+.race-footer{
+    width:100%;
+    height:50pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+}
+
+
+
+/*赛程板块结束*/
+
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    background: #060f23;
+}
+.header{
+    height:165pt;
+    background: red;
+}
+
+
+.header-top{
+    width:100%;
+    height:60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-top img{
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index:11;
+}
+.header-content{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:44;
+}
+.header-icon{
+    width:40pt;
+    height:40pt;
+    border-radius: 50%;
+    position: relative;
+    margin:5pt auto 0;
+}
+
+
+.header-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.header-content p{
+    color: #fff;
+    font-size: 12pt;
+    text-align: center;
+    margin-top: 5pt;
+}
+
+.header-race{
+    width:50%;
+    height:20pt;
+    margin: 5pt auto 0;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+.header-race p{
+    font-size: 10pt;
+    color: #fff;
+}
+.header-race p span{
+    margin-left: 10pt;
+}
+
+
+.header-down{
+    width:100%;
+    height:40%;
+    background: #dadce3;
+}
+
+.zan{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.zan img{
+    width:28%;margin-top: 10pt;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+.nav li {
+    width: 24%;
+    text-align: center;
+    color: #bbbcc0;
+    padding:5pt 5pt 7pt 5pt;
+}
+.nav li a{
+    width:100%;
+    display: block;
+    font-size: 10pt;
+    color:#999999;
+}
+.nav-on{
+    color:#0233ae;
+    border-bottom:3pt solid #0233ae;
+}
+
+.raceInfo{
+    width:95%;
+    height:auto;
+    margin:10pt auto;
+    border-radius: 5px;
+    background:#23304e;
+}
+
+.raceInfo-top{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction:column;
+    padding-bottom:10pt;
+    border-bottom: 1pt solid #000;
+}
+.raceInfo-top p{
+    color: #fff;
+    font-size: 10pt;
+    margin:10pt 0 5pt 15pt;
+}
+.raceInfo-down{
+    width:100%;
+    height:40pt;
+}
+.raceInfo-down a{
+    text-align: center;
+    line-height:40pt;
+    color: #fff;
+    display: block;
+    font-size: 9pt;
+}
+
+.team{
+    width:95%;
+    height:auto;
+    margin:10pt auto 45pt;
+    border-radius: 5px;
+    background:#23304e;
+    overflow: hidden;
+}
+.team p{
+    height:30pt;
+    color: #fff;
+    font-size: 9pt;
+    line-height:30pt;
+    padding-left: 15pt;
+    border-bottom: 1pt solid #000;
+}
+
+.team ul li{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.icon{
+    width:40pt;
+    height:40pt;
+    border-radius: 50%;
+    margin-left: 15pt;
+}
+.icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.info{
+    color: #fff;
+    margin:10pt 0 10pt -20pt;
+}
+.info h1{
+    font-weight:normal;
+    font-size: 11pt;
+}
+.info span{
+    font-size: 9pt;margin-right: 10pt;
+}
+.arrow{
+    width:15pt;
+    height:20pt;
+    margin-right: 10pt;
+}
+.arrow img{
+    width:100%;
+    height:100%;
+}
+
+.attend{
+    width:100%;
+    height:40pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+}
+.attend a{
+    font-size: 12pt;
+    color: #fff;
+    line-height:40pt;
+    display: block;
+    text-align: center;
+
+}
+.con{
+    display: none;
+}
+
+
+
+/*headers部分样式开始*/
+
+.headers{
+    height:28pt;
+    position: fixed;
+    top:0;
+    border-top: 1px solid #001446;
+    background: #001d6b;
+    z-index:33;
+}
+.headers ul{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.headers ul li{
+    font-size: 10pt;
+    color: #999;
+    line-height:25pt;
+    text-align: center;
+    width:23%;
+}
+.on{
+    color: #fff!important;
+    border-bottom: 2pt solid #fff;
+}
+/*headers部分样式结束*/
+
+
+
+
+/*赛程板块开始*/
+.race-header{
+    height:40pt;
+    background:#0e1f4a;
+    line-height:45pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.race-header h1{
+    font-weight: normal;
+    font-size: 9pt;
+    color:#58abff;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.race-content{
+    border-bottom: 1px solid #24385d;
+}
+
+
+.top{
+    text-align: center;
+}
+.top h3{
+    font-weight: normal;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 15pt;
+}
+
+.top h1{
+    font-weight: normal;
+    font-size: 11pt;
+    color:#ccced3;
+    margin-top: 5pt;
+}
+.down{
+    margin-top: -5pt;
+    padding-bottom:10pt;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.left{
+    width:35%;
+    height:90pt;
+}
+.left-icon {
+    width:60pt;
+    height:60pt;
+    margin:5pt auto 0;
+    border-radius: 50%;
+}
+.left-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.left h1,.right h1{
+    font-size: 10pt;
+    color: #c0c1c5;
+    text-align: center;
+    margin-top: 5pt;
+}
+.mid{
+    width:30%;
+    height:90pt;
+    text-align: center;
+    line-height:90pt;
+}
+.mid span{
+    text-align: center;
+    font-size: 2em;
+    font-weight:bold;
+    color:#58abff;
+}
+
+.right{
+    width:35%;
+    height:90pt;
+}
+
+.race-footer{
+    width:100%;
+    height:50pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+}
+.
+
+
+
+
+/*赛程板块结束*/
+
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body{
+    background: #060f23;
+}
+.header{
+    height:165pt;
+    background: red;
+}
+
+
+.header-top{
+    width:100%;
+    height:60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-top img{
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index:11;
+}
+.header-content{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:44;
+}
+.header-icon{
+    width:40pt;
+    height:40pt;
+    border-radius: 50%;
+    position: relative;
+    margin:5pt auto 0;
+}
+
+
+.header-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.header-content p{
+    color: #fff;
+    font-size: 12pt;
+    text-align: center;
+    margin-top: 5pt;
+}
+
+.header-race{
+    width:50%;
+    height:20pt;
+    margin: 5pt auto 0;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-between;
+}
+.header-race p{
+    font-size: 10pt;
+    color: #fff;
+}
+.header-race p span{
+    margin-left: 10pt;
+}
+
+
+.header-down{
+    width:100%;
+    height:40%;
+    background: #dadce3;
+}
+
+.zan{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.zan img{
+    width: 20%;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    height: 15pt;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+.nav li {
+    width: 24%;
+    text-align: center;
+    color: #bbbcc0;
+    padding:5pt 5pt 10pt 5pt;
+}
+.nav li a{
+    width:100%;
+    display: block;
+    font-size: 10pt;
+    color:#999999;
+}
+.nav-on{
+    color:#0233ae;
+    border-bottom:3pt solid #0233ae;
+}
+
+.raceInfo{
+    width:95%;
+    height:auto;
+    margin:10pt auto;
+    border-radius: 5px;
+    background:#23304e;
+}
+
+.raceInfo-top{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction:column;
+    padding-bottom:10pt;
+    border-bottom: 1pt solid #000;
+}
+.raceInfo-top p{
+    color: #fff;
+    font-size: 10pt;
+    margin:10pt 0 5pt 15pt;
+}
+.raceInfo-down{
+    width:100%;
+    height:40pt;
+}
+.raceInfo-down a{
+    text-align: center;
+    line-height:40pt;
+    color: #fff;
+    display: block;
+    font-size: 9pt;
+}
+
+.team{
+    width:95%;
+    height:auto;
+    margin:10pt auto 45pt;
+    border-radius: 5px;
+    background:#23304e;
+    overflow: hidden;
+}
+.team p{
+    height:30pt;
+    color: #fff;
+    font-size: 9pt;
+    line-height:30pt;
+    padding-left: 15pt;
+    border-bottom: 1pt solid #000;
+}
+
+.team ul li{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.icon{
+    width:35pt;
+    height:35pt;
+    border-radius: 50%;
+    margin-left: 15pt;
+}
+.icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+.info{
+    color: #fff;
+    margin:10pt 0 10pt -20pt;
+}
+.info h1{
+    font-weight:normal;
+    font-size: 10pt;
+}
+.info span{
+    font-size: 9pt;margin-right: 10pt;
+}
+.arrow{
+    width: 6pt;
+    height: 9pt;
+    margin-right: 10pt;
+}
+.arrow img{
+    width:100%;
+    height:100%;
+}
+
+.attend{
+    width:100%;
+    height:40pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+}
+.attend a{
+    font-size: 12pt;
+    color: #fff;
+    line-height:40pt;
+    display: block;
+    text-align: center;
+
+}
+.con{
+    display: none;
+}
+
+.s-con{
+    display: none;
+}
+
+
+/*headers部分样式开始*/
+
+.headers{
+    height:28pt;
+    position: fixed;
+    top:0;
+    border-top: 1px solid #001446;
+    background: #001d6b;
+    z-index:88;
+}
+.headers ul{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.headers ul li{
+    font-size: 10pt;
+    color: #999;
+    line-height:25pt;
+    text-align: center;
+    width:23%;
+}
+.on{
+    color: #fff!important;
+    border-bottom: 2pt solid #fff;
+}
+/*headers部分样式结束*/
+
+
+
+
+/*赛程板块开始*/
+.race-header{
+    height:40pt;
+    background:#0e1f4a;
+    line-height:45pt;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.race-header h1{
+    font-weight: normal;
+    font-size: 9pt;
+    color:#58abff;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.race-content{
+    border-bottom: 1px solid #24385d;
+}
+
+
+.top{
+    text-align: center;
+}
+.top h3{
+    font-weight: normal;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 15pt;
+}
+
+.top h1{
+    font-weight: normal;
+    font-size: 9pt;
+    color:#ccced3;
+    margin-top: 5pt;
+}
+.down{
+    margin-top: -10pt;
+    padding-bottom:0pt;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+
+.left{
+    width:35%;
+    height:70pt;
+}
+.left-icon {
+    width:30pt;
+    height:30pt;
+    margin:5pt auto 0;
+    border-radius: 50%;
+}
+.left-icon img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+
+.left h1,.right h1{
+    font-size: 9pt;
+    color: #c0c1c5;
+    text-align: center;
+    margin-top: 5pt;
+    font-weight:normal;
+}
+.mid{
+    width:30%;
+    height:70pt;
+    text-align: center;
+    line-height:70pt;
+}
+.mid span{
+    text-align: center;
+    font-size:16pt;
+    /*font-weight:bold;*/
+    color:#58abff;
+}
+
+.right{
+    width:35%;
+    height:70pt;
+}
+
+.race-footer{
+    width:100%;
+    height:50pt;
+    background:#0e2a66;
+    position: fixed;
+    bottom:0;
+    display: -webkit-box;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling:touch;
+
+}
+.slide-item{
+    width: 50pt;
+    height: 25pt;
+    margin-top: 12.5pt;
+    margin-right: 5pt;
+    font-size: 10pt;
+    color: #666666;
+    text-align: center;
+    line-height:25pt;
+}
+
+::-webkit-scrollbar {/*隐藏滚轮*/
+    display: none;
+}
+
+.slide-item:hover{
+    color: #fff;
+}
+/*赛程板块结束*/
+
+
+
+/*积分榜开始*/
+
+.score-footer{
+    height:45pt;
+    width:100%;
+    background: #00227a;
+    position: fixed;
+    bottom:0;
+    z-index:333;
+}
+.score-footer ul{
+    display: flex;
+    flex-direction:row;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.score-footer ul li{
+    width:24%;
+    height:35pt;
+    margin-top: 5pt;
+    text-align: center;
+}
+.footer-icon{
+    width:15pt;
+    height:18pt;
+    margin:auto;
+    display: none;
+}
+
+.footer-icon img{
+    width:100%;
+    height:100%;
+}
+.footer-icon2{
+    width:15pt;
+    height:18pt;
+    margin:auto;
+    display: block;
+}
+
+.footer-icon2 img{
+    width:100%;
+    height:100%;
+}
+
+.score-footer ul li h1{
+    color: #fff;
+    font-weight: normal;
+    font-size: 10pt;
+    margin-top: 5px;
+}
+.footer-icon img{
+    width:100%;
+    height:100%;
+}
+
+
+/*积分页面开始*/
+
+.table{
+    width:100%;
+    margin:auto;
+    border:0;
+}
+.table td{
+    border: none;
+}
+.score-title{
+    color:#b6b6b6;
+    font-size: 10pt;
+    background:#091633;
+    height:40pt;
+    vertical-align: middle
+}
+.score-title td{
+    text-align: left;
+    padding-left: 10pt;
+}
+.score-info{
+    color: #d6d7da;
+    font-size: 9pt;
+}
+.score-info-especial{
+    color: #3d7bec;
+}
+
+
+.score-info td{
+    height:40pt;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+border-bottom: 1px solid #1c4679;
+}
+.duiwu{
+    width:25%;text-align:left;
+}
+
+.other{
+    width:13%;
+}
+.hybird{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    text-align: center;
+}
+.hybird img{
+    width:14pt;
+    height:14pt;
+    margin-right: 3pt;
+}
+/*积分页面结束*/
+
+
+/*射手开始*/
+.hybird2{
+    text-align: left!important;
+}
+.hybird2 img{
+    width:14pt;
+    height:14pt;
+    vertical-align: top;
+    margin-right: 3pt;
+}
+/*射手结束*/
+
+/*红黄牌开始*/
+.card-num{
+    color:#4682c5;
+}
+/*红黄牌结束*/
+
+
+/*积分榜结束*/
+
+
+/*动态开始*/
+.dynamic-header{
+    height:40pt;
+    background:#0d1e47;
+    line-height:40pt;
+    color: #506e9a;
+    font-size: 10pt;
+    padding-left:3%;
+}
+.dynamic-ul{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    position: relative;
+    z-index:47;
+}
+
+.dynamic-ul li{
+    width:95%;
+    display: block;
+    margin:auto;
+    position: relative;
+    overflow: hidden;
+    padding:5pt 0 10pt 0;
+    z-index:1;
+    border-bottom: 1px solid #1c4679;
+}
+.dynamic-left{
+    width:80pt;
+    height:70pt;
+    float: left;
+}
+.dynamic-left img{
+    width:100%;
+    height:100%;
+}
+.dynamic-right{
+    width:calc(100% - 95pt);
+    float: right;
+}
+
+.dynamic-right p{
+    font-size: 10pt;
+    color:#ebecee;
+    line-height:150%;
+}
+
+/*动态结束*/
+
+/*动态详情开始*/
+.dynamic-detail{
+    width:95%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+}
+.dynamic-detail h1{
+    font-size: 10pt;
+    color: #fff;
+    padding:5pt 0 5pt 0;
+}
+.dynamicDetail h1{
+    font-size: 10pt;
+    color: #fff;
+    padding:5pt 0 5pt 0;
+}
+.dynamic-detail img{
+    width:100%;
+    height:auto;
+    margin-bottom: 5pt;
+}
+.comment{
+    width:95%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+    border-top: 1px solid #1c4679;
+    border-bottom: 1px solid #1c4679;
+    padding:8pt 0 8pt 0;
+}
+.comment h1{
+    font-weight: normal;
+    font-size: 10pt;
+    color: #fff;
+}
+.comment p{
+    font-size: 9pt;
+    color: #fff;
+    margin-bottom: 5pt;
+}
+.comment-box{
+    width:95%;
+    height:auto;
+    overflow: hidden;
+    margin:auto;
+}
+.comment-box h1{
+    font-weight: normal;
+    font-size: 10pt;
+    color: #fff;
+    margin-top: 10pt;
+}
+
+.common-text{
+    display: block;
+    width:80%;
+    height:120pt;
+    border:1px solid #1958cb;
+    border-radius: 5px;
+    margin:10pt auto 20pt;
+    background: transparent;
+    color: #fff;
+}
+.input-nicknme{
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 25pt;
+    background: transparent;
+    border: 1px solid #1958cb;
+    border-radius: 5px;
+    color: #fff;
+}
+.input-nicknme::placeholder{
+    padding-left:10pt;
+}
+.submit{
+    width:70%;
+    height:30pt;
+    display: block;
+    margin:0 auto 50pt;
+    line-height:30pt;
+    font-size: 10pt;
+    color: #fff;
+    border-radius: 5px;
+    background:#002478;
+    border:none;
+    outline:none;
+}
+
+/*动态详情结束*/
+
+
+

@@ -1,0 +1,318 @@
+body{
+    background:#061023;
+}
+
+
+/*赛事模块开始*/
+.race{
+    width:100%;height:auto;
+    overflow: hidden;
+    position: relative;
+}
+.search{
+    width:100%;
+    height:65px;
+    /*background: linear-gradient(left,#061024, #0c204f,#061024);*/
+    background: linear-gradient(left,#000, #fff);
+}
+.search-left{
+    width:60.6666%;
+    height:30px;
+    float: left;
+    margin-top: 15px;
+    margin-left:3%;
+    border-radius: 10px;
+    position: relative;
+    /*overflow: hidden;*/
+}
+.search-icon{
+    width:40px;
+    height:30px;
+    position: absolute;
+    background: green;
+    overflow: hidden;
+    left:-10px;
+    background:url("../imgs/search.png");
+    background-repeat:no-repeat;
+    background-position: 25px 7px;
+    background-size: 90%;
+}
+.search-left input{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    padding-left:35px;
+    background:transparent;
+    border:1px solid #fff;
+    font-size: 10pt;
+    color: #fff;
+}
+.search-left input::placeholder{margin-left: 10px;}
+
+.search-right{
+    width:19%;
+    height:30px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 3%;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content: space-around;
+}
+.search-right span{
+    font-size: 11pt;
+    color: #fff;
+}
+.choose-icon{
+    width:30px;
+    height:40px;
+    overflow: hidden;
+    background: #000;
+    background:url("../imgs/search.png");
+    background-repeat:no-repeat;
+    background-position: -16px 12px;
+    background-size: 121%;
+}
+
+.adv{
+    width:100%;
+    height:auto;
+    margin-bottom: 3%;
+    overflow: hidden;
+}
+.adv img{
+    max-width:100%;
+    width:100%;
+    height:auto;
+
+}
+.list>li{
+    width:95%;
+    height:auto;
+    margin:0 auto 3%;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-top{
+    height:80pt;
+    width:95%;
+    margin:auto;
+    border-bottom: 1px solid #000;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-around;
+}
+.list-top .left{
+    width:40pt;
+    height:40pt;
+}
+.list-top .left img{
+    width:100%;
+    height:auto;
+}
+
+.list-top .mid{
+    width: calc( 100% - 100pt);
+    margin-left: 5%;
+}
+.list-top .mid h1{
+    font-weight:normal;font-size: 12pt;
+    color:#333;
+}
+.list-top .mid h1 span{
+    font-size: 10pt; color: #7a7a7a;
+}
+
+.list-top .mid ol {
+    margin-top: 5%;
+}
+.list-top .mid ol>li{
+    width: 50%!important;
+    font-size: 9pt;
+    float: left;
+    line-height:160%;
+    color: #7a7a7a;
+}
+
+.list-top .right{
+    width:40pt;
+    border-radius: 5px;
+}
+
+.list-top .right .status{
+    width:100%;
+    height:20pt;
+    display: block;
+    text-align: center;
+    line-height:20pt;
+    color: #fff;
+    background: #002686;
+    border-radius: 5px;
+    font-size: 9pt;
+}
+
+
+.list-down{
+    height:auto;
+}
+.list-down ul{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+    justify-content:space-around;
+}
+
+.list-down ul li{
+    margin:5% 0 5% 0;
+    width:70pt;
+    height:auto;
+    overflow: hidden;
+    display: flex;
+    vertical-align:middle;
+}
+.list-down ul li img{
+    max-width:100%;
+    width:85%;
+    height:auto;
+    margin:auto;
+}
+
+/*赛事模块结束*/
+
+
+/*约战模块开始*/
+
+/*适配开始*/
+
+ /*iphone5*/
+ @media screen and (min-width: 320px) and (max-width: 370px) {
+     .fight-mid h1{font-size: 10pt!important;}
+ }
+/*iphone 6*/
+@media screen and (min-width: 374px) and (max-width: 410px) {
+    .fight-left ,.fight-right{
+        width:60pt!important;
+    }
+    
+}
+
+/*iphone plus*/
+
+@media screen and (min-width: 414px) {
+    .fight-left ,.fight-right{
+        width:80pt!important;
+    }
+}
+
+
+/*适配结束*/
+
+
+.fight ul{
+    height:auto;
+}
+
+.fight ul>li{
+    width:95%;
+    height:auto;
+    margin:auto;
+    position: relative;
+    background: #243a68;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+    border-bottom: 1px solid #4870b8;
+    padding-bottom:10px;
+}
+.fight-left{
+    width:40pt;
+    height:auto;
+    text-align: center;
+}
+.fight-left-icon{
+    width:90%;
+    height:auto;
+    margin: 25% auto 5px;
+    position: relative;
+}
+.clothes{
+    width:20px;
+    height:20px;
+    position: absolute;
+    bottom:-10%;
+    right:-17%;
+    background: url("../imgs/clothes.png");
+    background-repeat:no-repeat;
+    background-position: 0px 0px;
+    background-size: 300%;
+}
+
+.fight-left-icon img{
+    width:100%;
+    height:auto;
+}
+.fight-left span{
+    font-size: 12pt;
+    color: #fff;
+}
+
+
+.fight-mid{
+    width:calc( 100% - 90pt);
+    height:auto;
+}
+.fight-mid h1{
+    font-weight:normal;
+    font-size: 11pt;
+    color: #fff;text-align: center;
+}
+.fight-mid h2{
+    font-weight:normal;
+    font-size: 9pt;
+    color:#3793ee;
+    text-align: center;
+    margin-top: 2%;
+}
+.fight-mid h3{
+    font-weight:normal;
+    font-size: 9pt;
+    color:#989aa0;
+    text-align: center;
+}
+.fight-mid p{
+    font-weight:normal;
+    font-size: 12pt;
+    color:#58abff;
+    text-align: center;
+    margin:2% 0 2% 0;
+}
+.fight-mid{text-align: center}
+
+.fight-right{
+    width:40pt;
+    height:auto;
+    text-align: center;
+}
+.fight-right span{
+    font-size: 11pt;
+    color: #fff;
+}
+
+.score{
+    font-size: 2em!important;
+    font-weight: bolder;
+    color:#58abff!important;
+}
+
+/*约战模块结束*/
+

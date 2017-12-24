@@ -1,0 +1,284 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no')
+        title 排位赛首页
+        link(href='/public/css/swiper-3.3.1.min.css' rel='stylesheet' type='text/css')
+        link(href='/public/css/n_common.css' rel='stylesheet' type='text/css')
+        link(href='/public/css/index.css' rel='stylesheet' type='text/css')
+        script(type='text/javascript' src='/public/js/jquery-1.7.2.min.js')
+        script(type='text/javascript' src='/public/js/swiper-3.3.1.min.js')
+
+    body
+        <!--内容 start-->
+        div.content
+            div.swiper-container
+                div.swiper-wrapper
+                    each banner in banners
+                        div.swiper-slide
+                            img.banner_img(src=banner.imagepath)
+
+                <!-- 分页器 -->
+                div.swiper-pagination
+            <!--banner end-->
+            div.clear
+            <!--content_main start-->
+            div.content_main
+                <!--nav start-->
+                div.shouye_navbg
+                    div.shouye_nav
+                        ul#nav_ul
+                            li.li_hover.li_now
+                                div.li_01
+                            li
+                                div.li_02
+                            div.clear
+                <!--nav end-->
+                <!--排位赛list-->
+                div#all_content.all_content
+                    div.shouye_paiweisai.all_main.content_now
+                        div.two_bg
+                            each qualifying in qualifyings
+                                - if (qualifying.pay_num==2&&qualifying.refund_num==0&&qualifying.status==1)
+                                    <!--path_one start 此处循环3：0战绩，那个img也是在循环内的-->
+                                    div.pws_head.pading15
+                                        div.pws_headl
+                                            img.icon_img_left(src=qualifying.home_team.logo)
+                                            div.pws_headl_word
+                                                p.size14.pub_Beyhid #{qualifying.home_team.name}
+                                            div.pws_headl_img
+                                                img.rotate_clothes(src='/public/images/clothes/'+qualifying.home_color+'@2x.png')
+                                            div.clear
+                                        div.pws_headc
+                                            p.size24_blue.padtop15.pub_Beyhid.font_w #{qualifying.home_goal}:#{qualifying.guest_goal}
+                                            p.size12_hui.pading20.pub_Beyhid 战点获得
+                                        div.pws_headr
+                                            img.icon_img_left(src=qualifying.guest_team.logo)
+                                            div.pws_headl_word
+                                                p.size14.pub_Beyhid #{qualifying.guest_team.name}
+                                            div.pws_headl_img
+                                                img.rotate_clothes(src='/public/images/clothes/'+qualifying.guest_color+'@2x.png')
+                                            div.clear
+                                        div.clear
+                                        div.pws_baifenbi
+                                            div.pws_baifenbil #{qualifying.home_score}
+                                            div.pws_baifenbic
+                                                div.baifentiao_l(style="width:"+Math.abs(qualifying.home_score)/(Math.abs(qualifying.home_score)+Math.abs(qualifying.guest_score))*100+"%")
+                                                div.baifentiao_r(style="width:"+Math.abs(qualifying.guest_score)/(Math.abs(qualifying.home_score)+Math.abs(qualifying.guest_score))*100+"%")
+                                                div.clear
+                                            div.pws_baifenbir #{qualifying.guest_score}
+                                            div.clear
+                                    img.img_shadow(src='/public/images/Separation-line1@2x.png')
+                                    <!--path_one end-->
+                                -else
+                                    <!--待响应 start-->
+                                    div.pws_head.two_width.pading15
+                                        div.pws_headl
+                                            img.icon_img_left(src=qualifying.home_team.logo)
+                                            div.pws_headl_word
+                                                p.size14.pub_Beyhid #{qualifying.home_team.name}
+                                            div.pws_headl_img
+                                                img.rotate_clothes(src='/public/images/clothes/'+qualifying.home_color+'@2x.png')
+                                            div.clear
+                                        - if (qualifying.pay_num==2&&qualifying.refund_num==0)
+                                            div.pws_headc
+                                                p.size14.pub_Beyhid #{qualifying.title}
+                                                p.size12_blue.pub_Beyhid #{qualifying.court_type}
+                                                p.size12_hui.pub_Beyhid= qualifying.date
+                                                    span= qualifying.start_hour+'-'+qualifying.end_hour
+                                                p.size18_blue.pading5.pub_Beyhid 已达成
+                                                p.size12_hui.pub_Beyhid= '总价'+qualifying.fee+' 线上'
+                                            div.pws_headr
+                                                img.icon_img_left(src=qualifying.guest_team.logo)
+                                                div.pws_headl_word
+                                                    p.size14.pub_Beyhid=qualifying.guest_team.name
+                                                div.pws_headl_img
+                                                    img.rotate_clothes(src='/public/images/clothes/'+qualifying.guest_color+'@2x.png')
+                                                div.clear
+                                        - else
+                                            div.pws_headc
+                                                p.size14.pub_Beyhid #{qualifying.title}
+                                                p.size12_blue.pub_Beyhid #{qualifying.court_type}
+                                                p.size12_hui.pub_Beyhid #{qualifying.date}
+                                                    span= qualifying.start_hour+'-'+qualifying.end_hour
+                                                p.size18_blue.pading5.pub_Beyhid 待响应
+                                                p.size12_hui.pub_Beyhid= '总价' + qualifying.fee + ' 线上'
+                                            div.pws_headr
+                                                img.icon_img_left(src='/public/images/wait-for@2x.png')
+                                                div.pws_headl_word(style="width:100%")
+                                                    p.size14.pub_Beyhid 等待应战者
+                                                div.pws_headl_img
+                                                    //img.rotate_clothes(src='/public/images/clothes/red@2x.png')
+                                                div.clear
+                                        div.clear
+                                    img.img_shadow(src='/public/images/Separation-line1@2x.png')
+                                    <!--待响应 end-->
+
+                    <!--排位赛list end-->
+                    <!--排名list start-->
+                    div.shouye_paiming.all_main
+                        <!--排头详情-->
+                        -if (my_team)
+                            div.pm_bg
+                                img.pmbg_img(src='/public/images/background@2x.png')
+                                div.pm_head.padtop25
+                                    div.pm_headl.size14
+                                        p 人数
+                                            span  #{my_team.members.length}人
+                                        p.pading5.pub_Beyhid 均龄
+                                            span  #{my_team.avg_age.toFixed(1)}岁
+                                        p.pading5.pub_Beyhid 均高
+                                            span  #{my_team.avg_height.toFixed(1)}cm
+                                        p.pading5.pub_Beyhid 均重
+                                            span  #{my_team.avg_weight.toFixed(1)}KG
+                                    div.pm_headc
+                                        img.icon_img_center(src=my_team.logo)
+                                        p.myteam 我的球队
+                                    div.pm_headr.size14
+                                        p.pub_Beyhid 战点
+                                            span  #{my_team.san_score}
+                                        p.pading5.pub_Beyhid 胜率
+                                            span  #{Number(my_team.win_rate).toFixed(1)}%
+                                    div.clear
+                                    div.myteam_name.pub_Beyhid.size16  #{my_team.name}
+                                div.paiming_yuan
+                                    div.pm_number #{my_team.ranking}
+                                    div.pm_number_word 排名
+                        -else
+                            =''
+                        <!--豪门排名 start-->
+                        div.haomen
+                            img.haomen_img(src='/public/images/haomen_img@2x.png')
+                            img.haomen_zhan(src='/public/images/zhan_img@2x.png')
+                        <!--haomen1 start  此处为豪门排位循环1-->
+                        each team,key in ball_teams
+                            -if (team.san_score>=rules[0]['min'])
+                                div.two_bg
+                                    div.haomen_cont
+                                        div.two_width
+                                            -var suffix = "";
+                                            -if (key==0) suffix='st';
+                                            -if (key==1) suffix='nd';
+                                            -if (key==2) suffix='rd';
+                                            div.haomen_contl #{key+1}#{suffix}
+                                            div.haomen_contc
+                                                img(src=team.logo)
+                                            div.haomen_contr
+                                                div.haomen_contr_head.pub_Beyhid #{team.name}
+                                                ul.haomen_ul
+                                                    li.li_one.pub_Beyhid #{team.game_times}场
+                                                    li.li_one.pub_Beyhid #{team.game_win}胜
+                                                    li.li_one.pub_Beyhid #{team.game_draw}平
+                                                    li.li_one.pub_Beyhid #{team.game_fail}负
+                                                    li.li_two.pub_Beyhid 三联点#{team.san_score}
+                                                    li.li_two.pub_Beyhid 胜率#{Number(team.win_rate).toFixed(1)}%
+                                                    div.clear.pub_Beyhid
+
+                                            div.clear
+                                        <!--此图标为那个左上角战字的小旗标-->
+                                        - if(team.is_qualifying)
+                                            img.icon_zhan(src='/public/images/Bannerol-Challenge@2x.png')
+                                <!--haomen2 start 此处为豪门排位循环2-->
+                            <!--豪门排名 end-->
+
+                        <!--劲旅排名 start-->
+                        div.haomen
+                            img.haomen_img(src='/public/images/jinlv_img@2x.png')
+                            img.haomen_zhan(src='/public/images/zhan_img@2x.png')
+                        <!--haomen1 start 此处为劲旅循环-->
+                        each team,key in ball_teams
+                            -if (team.san_score>=rules[1]['min'] && team.san_score<rules[0]['min'])
+                                div.two_bg
+                                    div.haomen_cont
+                                        div.two_width
+                                            -var suffix = "";
+                                            -if (key==0) suffix='st';
+                                            -if (key==1) suffix='nd';
+                                            -if (key==2) suffix='rd';
+                                            div.haomen_contl #{key + 1}#{suffix}
+                                            div.haomen_contc
+                                                img(src=team.logo)
+                                            div.haomen_contr
+                                                div.haomen_contr_head.pub_Beyhid #{team.name}
+                                                ul.haomen_ul
+                                                    li.li_one.pub_Beyhid #{team.game_times}场
+                                                    li.li_one.pub_Beyhid #{team.game_win}胜
+                                                    li.li_one.pub_Beyhid #{team.game_draw}平
+                                                    li.li_one.pub_Beyhid #{team.game_fail}负
+                                                    li.li_two.pub_Beyhid 三联点#{team.san_score}
+                                                    li.li_two.pub_Beyhid 胜率#{Number(team.win_rate).toFixed(1)}%
+                                                    div.clear.pub_Beyhid
+
+                                            div.clear
+                                        <!--此图标为那个左上角战字的小旗标-->
+                                        - if(team.is_qualifying)
+                                         img.icon_zhan(src='/public/images/Bannerol-Challenge@2x.png')
+                            <!--劲旅排名 end-->
+
+                        <!--新贵排名 start-->
+                        div.haomen
+                            img.haomen_img(src='/public/images/xingui_img@2x.png')
+                            img.haomen_zhan(src='/public/images/zhan_img@2x.png')
+
+                        <!--haomen1 start  此处为新贵循环-->
+                        each team,key in ball_teams
+                            -if (team.san_score>=rules[2]['min'] && team.san_score<rules[1]['min'])
+                                div.two_bg
+                                    div.haomen_cont
+                                        div.two_width
+                                            -var suffix = "";
+                                            -if (key==0) suffix='st';
+                                            -if (key==1) suffix='nd';
+                                            -if (key==2) suffix='rd';
+                                            div.haomen_contl #{key + 1}#{suffix}
+                                            div.haomen_contc
+                                                img(src=team.logo)
+                                            div.haomen_contr
+                                                div.haomen_contr_head.pub_Beyhid #{team.name}
+                                                ul.haomen_ul
+                                                    li.li_one.pub_Beyhid #{team.game_times}场
+                                                    li.li_one.pub_Beyhid #{team.game_win}胜
+                                                    li.li_one.pub_Beyhid #{team.game_draw}平
+                                                    li.li_one.pub_Beyhid #{team.game_fail}负
+                                                    li.li_two.pub_Beyhid 三联点#{team.san_score}
+                                                    li.li_two.pub_Beyhid 胜率#{Number(team.win_rate).toFixed(1)}%
+                                                    div.clear.pub_Beyhid
+
+                                            div.clear
+                                        <!--此图标为那个左上角战字的小旗标-->
+                                        - if(team.is_qualifying)
+                                            img.icon_zhan(src='/public/images/Bannerol-Challenge@2x.png')
+                            <!--新贵排名 end-->
+                    <!--排名list end-->
+
+            <!--content_main end-->
+            div.zhan_foot
+
+            <!--悬浮框二维码 start-->
+            div.foot_erweima
+            div.erweima_content
+                div.erweima_contentl
+                    img(src='/public/images/zhaopian.png')
+                div.erweima_contentr
+                    p 创建你的球队 称霸你的主场
+                    p.line_di 一站式球队服务专项平台
+                    p.padtop5 长按二维码下载APP
+                div.clear
+            <!--悬浮框二维码 end-->
+
+        <!--内容 end-->
+
+
+    <!--首页轮播-->
+    script.
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay : 4000,
+            autoplayDisableOnInteraction : false,
+            // 如果需要分页器
+            pagination: '.swiper-pagination'
+        });
+
+    script(type='text/javascript' src='/public/js/main.js')

@@ -1,0 +1,2 @@
+06-19 11:1:3  UPDATE `t_order` SET ?   WHERE `order_id` in (17999,18020) AND `refund_type` < 3  {"refund_type":1}
+06-19 11:1:3  UPDATE `t_order` SET ?   WHERE `order_id` in (17999)  {"refund_type":2}
