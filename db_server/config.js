@@ -3,9 +3,7 @@
  */
 //
 exports.redis = {
-  host:'139.196.230.218',
-  port:'6379',
-  password:'sl123456'
+
 };
 //
 exports.mongodb = {
@@ -13,37 +11,19 @@ exports.mongodb = {
 };
 
 // exports.mysql_master = {
-//   host:'139.196.230.218',
-//   user:'root',
-//   password:'slqz1123456',
-//   database:'qiuchang3',
-//   connectionLimit:100
+
 // };
 //
 // exports.mysql_slave1 = {
-//   host:'139.196.230.218',
-//   user:'root',
-//   password:'slqz1123456',
-//   database:'qiuchang3',
-//   connectionLimit:100
+
 // };
 
 exports.mysql_master = {
-    host:'127.0.0.1',
-    user:'root',
-    password:'root',
-    database:'qiuchang3',
-    connectionLimit:100,
-    // multipleStatements: true
+
 };
 
 exports.mysql_slave1 = {
-    host:'127.0.0.1',
-    user:'root',
-    password:'root',
-    database:'qiuchang3',
-    connectionLimit:100,
-    // multipleStatements: true
+
 };
 
 
